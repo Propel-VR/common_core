@@ -1,0 +1,4 @@
+var namespace_common_core_scripts_1_1_dialogue_system_1_1_custom___assets =
+[
+    [ "NPCVariable", "class_common_core_scripts_1_1_dialogue_system_1_1_custom___assets_1_1_n_p_c_variable.html", "class_common_core_scripts_1_1_dialogue_system_1_1_custom___assets_1_1_n_p_c_variable" ]
+];
