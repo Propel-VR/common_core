@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fba6019d9b5044485231fe0f6d1569, type: 3}
+  m_Name: WireInLivingRoom
+  m_EditorClassIdentifier: 
+  <DisplayName>k__BackingField: Unsafe Electrical Coords
+  <Type>k__BackingField: 5
+  <Response>k__BackingField: 2
+  <IsBonus>k__BackingField: 0
+  <RiskExplaination>k__BackingField: The client could trip over the wires.
+  <FeedbackCorrectType>k__BackingField: Correct! Electrical cords that run in the
+    middle of walking areas can be a tripping hazard.
+  <FeedbackIncorrectType>k__BackingField: "Sorry, that\u2019s not the best option.
+    This is a tripping hazard. Clients could trip on electrical cords that run through
+    areas they typically move through."
+  <FeedbackCorrectResponse>k__BackingField: That's right! You should make your client
+    award of the hazardous cord so they do not trip, and safely reposition any electrical
+    cords that are running through any area they may move through. It is not necessary
+    to report this to your supervisor so long as repositioning the cords is manageable
+    and taken care of immediately.
+  <FeedbackIncorrectResponse>k__BackingField: Sorry, that's not the best option.
+    You should report it to the client and take care of it yourself. You should make
+    your client award of the hazardous cord so they do not trip, and safely reposition
+    any electrical cords that are running through any area they may move through.
+    It is not necessary to report this to your supervisor so long as repositioning
+    the cords is manageable and taken care of immediately.

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fba6019d9b5044485231fe0f6d1569, type: 3}
+  m_Name: LaundryPile
+  m_EditorClassIdentifier: 
+  <DisplayName>k__BackingField: Laundry Pile
+  <Type>k__BackingField: 5
+  <Response>k__BackingField: 2
+  <IsBonus>k__BackingField: 0
+  <RiskExplaination>k__BackingField: The laudry pile is on a floor, someone could
+    trip on it.
+  <FeedbackCorrectType>k__BackingField: Correct! Obstacles on the floor can create
+    a tripping hazard.
+  <FeedbackIncorrectType>k__BackingField: Sorry, that's not the best option. This
+    is a tripping hazard. Obstacles on the floor can cause you or your client to
+    trip and fall.
+  <FeedbackCorrectResponse>k__BackingField: 'That''s right! Make your client aware
+    of the obstacle that could create a tripping hazard and move it immediately. '
+  <FeedbackIncorrectResponse>k__BackingField: 'Sorry, that''s not the best option.
+    You should report it to the client and take care of it yourself. Make your client
+    aware of the obstacle that could create a tripping hazard and move it immediately. '

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c52df2cb963f75429d629e1db2e436e, type: 3}
+  m_Name: RiskAssesment
+  m_EditorClassIdentifier: 
+  name: Risk Assesment
+  type: 1
+  description: 'The Environmental Risk Assessment activity focuses on identifying
+    and resolving hazards in the client''s milieu. A total of 15 hazards are dispersed
+    throughout the home. After finding all of them, you will receive a report summarizing
+    how well you did. At any time, you may end the activity to see your progress
+    thus far.
+
+
+    Here are some details on the client whose home you will be assessing
+    today:'
+  sidebarLabel: Hazards identified
+  progressType: 0
+  targetSceneName: Main
+  startPosition: {x: 0.866, y: 0.188, z: 6.911}
+  startAngleY: 186
+  patientName: Catherine Johnson
+  patientAgeAndGender: Age 83, Female
+  patientPicture: {fileID: 2800000, guid: 13e2d7d9a401fe04b8d86b2f6624d9d4, type: 3}
+  patientPictureRatio: 1.41
+  patientDetails:
+  - title: Living Situation
+    description: Living Alone
+  - title: Conditions
+    description: High blood pressure
+  - title: Assistive Devices
+    description: None
+  - title: Specific tasks
+    description: Food preparation, grocery shopping, assistance with bathing/showering
+  - title: Dietary restrictions
+    description: Avoid foods high in sodium and fat, encourage foods high in fibre
+  - title: Pets
+    description: None
+  - title: Note
+    description: Catherine has fallen in the shower, so she requires assistance while
+      taking baths and showers.
+  footnote: 
