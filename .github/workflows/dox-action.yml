@@ -1,0 +1,24 @@
+name: Generate Doxygen
+# Controls when the action will run. Triggers the workflow when there is a new push to main
+on:
+  push:
+    branches: [ main ]
+  
+jobs:
+  generate-doxygen:
+    runs-on: ubuntu-latest
+    steps:
+    # Checks-out your repository
+    - uses: actions/checkout@v2
+    # Generates Doxygen 
+    - name: Generate Doxygen
+      uses: mattnotmitt/doxygen-action@v1.9.2
+      with:
+        doxyfile-path: "./Doxyfile" 
+        working-directory: "."
+    # Deploys html directory to github pages
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./html
