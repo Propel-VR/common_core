@@ -10,12 +10,12 @@ public class ModeSelection : MonoBehaviour
 
     public void SelectGuided()
     {
-        stepController.SetSimulationMode(StepController.SimulationMode.UnGuided);
+        //stepController.SetSimulationMode(StepController.SimulationMode.UnGuided);
         gameObject.SetActive(false);
     }
     public void SelectUnGuided()
     {
-        stepController.SetSimulationMode(StepController.SimulationMode.UnGuided);
+        //stepController.SetSimulationMode(StepController.SimulationMode.UnGuided);
         gameObject.SetActive(false);
     }
 }
