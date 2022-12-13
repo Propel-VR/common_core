@@ -1,0 +1,162 @@
+﻿//////////////////////////////////////////////////////
+/// This ComputeShader calculates bezier points
+/// using handles from Handle Buffer
+/// and the result will be stored into Node Buffer.
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+/// Group number is same as curve number (Dispatched from ProceduralTubeManager.cs)
+/// Thread number is same as node_number_per_curve
+//////////////////////////////////////////////////////
+
+#pragma kernel CalcBezierPoints
+#pragma kernel CalcHandleSpring
+
+#include "../CGIncludes/ProceduralTubeCG.cginc"
+
+
+StructuredBuffer<Handle> _HandleBufferFromTube;  // Read Only
+RWStructuredBuffer<Handle> _HandleBuffer;  // Read & Write
+RWStructuredBuffer<Node> _NodeBuffer;      // Read & Write
+
+
+//////////////////////////////////////////////////////
+/// Properties for Simulation
+//////////////////////////////////////////////////////
+float _DT;  // deltaTime
+
+float _intensitySpring;
+float _dragSpring;
+float _gravity;
+
+struct SpringProps {
+	float3 vel1;
+	float3 vel2;
+};
+RWStructuredBuffer<SpringProps> _SpringPropsBuffer;
+
+struct SpringHandleOffset {
+	float3 offset1;  // offset1 = point1 - point0, these offsets will be updated when the handles(p1,p2) are changed.
+	float3 offset2;  // offset2 = point2 - point3
+};
+StructuredBuffer<SpringHandleOffset> _SpringHandleOffset;
+//////////////////////////////////////////////////////
+
+
+
+
+float3 BezierPoint(float3 p0, float3 p1, float3 p2, float3 p3, float t) {
+	float oneMinusT = 1.0 - t;
+	return
+		oneMinusT * oneMinusT * oneMinusT * p0 +
+		3.0 * oneMinusT * oneMinusT * t * p1 +
+		3.0 * oneMinusT * t * t * p2 +
+		t * t * t * p3;
+}
+
+
+float RadiusInterpolation(int type, float radius1, float radius2, float t) {
+
+	float min = radius1;
+	float dif = radius2 - radius1;
+	
+	float r1 = (radius1 - min) / dif;
+	float r2 = (radius2 - min) / dif;
+
+	float r = lerp(r1, r2, t);
+	float radius;
+	switch (type) {
+		case 0:  // Linear
+			radius = r;
+			break;
+		case 1:  // Exponential
+			//radius = pow(r,3);
+			radius = r*r*r;
+			break;
+		case 2:  // InverseExponential
+			//radius = log2(r);
+			radius = sqrt(r);
+			break;
+		case 3:  // Smooth
+			//radius = smoothstep(r1, r2, t);
+			radius = r * r*(3.0 - 2.0*r);
+			break;
+		case 4:  // Symmetry
+			radius = sin(r*3.141592);
+			break;
+	}
+
+	return (radius*dif) + min;
+}
+
+
+
+[numthreads(64,1,1)]  // BasicNodeNum(8) * divNum(1~8) = 8~64
+void CalcBezierPoints(uint3 groupID: SV_GroupID, uint3 threadID : SV_GroupThreadID, uint3 id : SV_DispatchThreadID) {
+
+	if (threadID.x >= _NodeNumPerCurve) {  // Do not calculate for unuse nodes
+		return;                            // This will affects to nodeBufferIdx calculation. So neccessary
+	}
+
+	int nodeIdxPerCurve = threadID.x; // 0~63, 0~63.. per group(curve)
+	float t = saturate(1.0 * nodeIdxPerCurve / (_NodeNumPerCurve-1));  // 0~1, interpolation factor
+
+	// Get Handle from HandleBuffer
+	Handle handle = _HandleBuffer[groupID.x];
+	float3 p0 = handle.p0;
+	float3 p1 = handle.p1;
+	float3 p2 = handle.p2;
+	float3 p3 = handle.p3;
+
+	// If you want to play with curve animation
+	//float offset = threadID.x * 0.05;
+	//p1.x += cos(_Time*2 + offset);
+	//p1.y += sin(_Time*2 + offset);
+	//p2.x += cos(_Time*2 + 1.23 + offset);
+	//p2.y += sin(_Time*2 + 0.64 + offset);
+
+	// Get,Set Node from,to NodeBuffer
+	Node node;
+	node.radius = RadiusInterpolation(handle.taperType, handle.radiusStart, handle.radiusEnd, t);
+	//node.radius = 0.2;
+	node.pos = BezierPoint(p0, p1, p2, p3, t);
+
+	// 0~(NodeNumPerCurve*1-1), NodeNumPerCurve*1~(NodeNumPerCurve*2-1), NodeNumPerCurve*2~(NodeNumPerCurve*3-1)
+	int nodeBufferIdx = threadID.x + _NodeNumPerCurve * groupID.x;
+
+	_NodeBuffer[nodeBufferIdx] = node;
+}
+
+
+// Handle positions are changed into World Space when set buffers
+[numthreads(1, 1, 1)]
+void CalcHandleSpring(uint3 groupID: SV_GroupID) {
+	Handle handle_fromTube = _HandleBufferFromTube[groupID.x];
+	Handle handle = _HandleBuffer[groupID.x];
+	SpringProps props = _SpringPropsBuffer[groupID.x];
+	SpringHandleOffset handleOffset = _SpringHandleOffset[groupID.x];
+
+	float3 target1 = handle_fromTube.p0 + handleOffset.offset1;
+	props.vel1 += (target1 - handle.p1) * _intensitySpring;
+	props.vel1 += float3(0, -1, 0) * _gravity;
+	props.vel1 *= (1 - _dragSpring);
+
+	float3 target2 = handle_fromTube.p3 + handleOffset.offset2;
+	props.vel2 += (target2 - handle.p2) * _intensitySpring;
+	props.vel2 += float3(0, -1, 0) * _gravity;
+	props.vel2 *= (1 - _dragSpring);
+	
+	handle.p1 += props.vel1 * _DT;
+	handle.p2 += props.vel2 * _DT;
+
+	// Copy handle values from tube
+	handle.p0 = handle_fromTube.p0;
+	handle.p3 = handle_fromTube.p3;
+	handle.radiusStart = handle_fromTube.radiusStart;
+	handle.radiusEnd = handle_fromTube.radiusEnd;
+	handle.taperType = handle_fromTube.taperType;
+
+	_SpringPropsBuffer[groupID.x] = props;
+	_HandleBuffer[groupID.x] = handle;
+
+}
+
