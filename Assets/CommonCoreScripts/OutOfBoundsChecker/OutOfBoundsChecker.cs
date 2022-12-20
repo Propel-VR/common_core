@@ -146,7 +146,6 @@ namespace CommonCoreScripts.OutOfBoundsChecker
         {
             if ((Time.frameCount + _checkFrameOffset) % _checkBoundsEveryNFrames == 0)
             {
-                Debug.Log("frame " + Time.frameCount);
                 Transform player = GetPlayer();
 
                 if (IsOutOfBounds(player))

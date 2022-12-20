@@ -54,7 +54,7 @@ namespace CommonCoreScripts.OutOfBoundsChecker
             {
                 Gizmos.color = new Color(0f, 0f, 1f, 0.5f);
                 Gizmos.DrawMesh(Resources.GetBuiltinResource<Mesh>("Cube.fbx"), transform.position, transform.rotation, transform.lossyScale);
-                //Gizmos.DrawMesh(Resources.GetBuiltinResource<Mesh>("Cube.fbx"), transform.position, transform.rotation, -transform.lossyScale);
+                Gizmos.DrawMesh(Resources.GetBuiltinResource<Mesh>("Cube.fbx"), transform.position, transform.rotation, -transform.lossyScale);
             }
         }
 
