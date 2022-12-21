@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['makeselection_0',['MakeSelection',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#a7a7b010e9020f7f09e0303f570a80d0a',1,'CommonCoreScripts.DialogueSystem.DialogueSequence.MakeSelection(DialogueChunk chunk)'],['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#a36701d3567429a8cadcd224ae95d6e47',1,'CommonCoreScripts.DialogueSystem.DialogueSequence.MakeSelection(int chunkIndex)']]],
-  ['makeselectionforcurrentsequence_1',['MakeSelectionForCurrentSequence',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence_button.html#a458ae1bfe19fdf837b3ec1c2675f4921',1,'CommonCoreScripts::DialogueSystem::DialogueSequenceButton']]],
-  ['message_2',['Message',['../class_common_core_scripts_1_1_task_system_1_1_task.html#a7f601edb22a855523d610ab8771c2059',1,'CommonCoreScripts::TaskSystem::Task']]]
+  ['getchance_0',['GetChance',['../class_common_core_scripts_1_1_random_system_1_1_random_event.html#a7b0d5c782c0a240b0f210b3455066f85',1,'CommonCoreScripts::RandomSystem::RandomEvent']]],
+  ['getcurrentlanguageanswer_1',['GetCurrentLanguageAnswer',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_chunk.html#a93d8e73019e8e8ffd19b2885a58327d3',1,'CommonCoreScripts::DialogueSystem::DialogueChunk']]],
+  ['getcurrentlanguageaudio_2',['GetCurrentLanguageAudio',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_chunk.html#a1db741e02b6b57c7b100bc693dd71ad7',1,'CommonCoreScripts::DialogueSystem::DialogueChunk']]],
+  ['getcurrentlanguagetext_3',['GetCurrentLanguageText',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_chunk.html#aa5cd51aee3ecec6f96d345d8def6b6f8',1,'CommonCoreScripts::DialogueSystem::DialogueChunk']]],
+  ['getevent_4',['GetEvent',['../class_common_core_scripts_1_1_random_system_1_1_random_event.html#ac9ba6eb045a33b06889fe1ab4208c36f',1,'CommonCoreScripts::RandomSystem::RandomEvent']]],
+  ['getitemvisuals_5',['GetItemVisuals',['../class_common_core_scripts_1_1_inventory_system_1_1_item_visual_handler.html#a19c831f274f44990786f3bda80117ac5',1,'CommonCoreScripts::InventorySystem::ItemVisualHandler']]],
+  ['getnpc_6',['GetNPC',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_handler.html#aba8ec17e471bcf1975d792bf85767d25',1,'CommonCoreScripts::DialogueSystem::DialogueHandler']]]
 ];

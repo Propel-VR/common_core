@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['animations_0',['animations',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_chunk.html#ab4600f2d416406e731084ee469cfb1ae',1,'CommonCoreScripts::DialogueSystem::DialogueChunk']]],
-  ['animator_1',['animator',['../struct_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence_1_1_n_p_c_variables.html#a1197bd680317301d86c3328137e614a9',1,'CommonCoreScripts.DialogueSystem.DialogueSequence.NPCVariables.animator()'],['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_u_i.html#acbfbf4539019dfe1f6dba0446ed452cb',1,'CommonCoreScripts.DialogueSystem.DialogueUI.animator()']]],
-  ['audioen_2',['audioEN',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_chunk.html#a07cf07bd1994be2924edefd8e5ae44fc',1,'CommonCoreScripts::DialogueSystem::DialogueChunk']]],
-  ['audiofr_3',['audioFR',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_chunk.html#a1cc25f65a8a5d8c30a66a27fbd6276e1',1,'CommonCoreScripts::DialogueSystem::DialogueChunk']]],
-  ['audiosource_4',['audioSource',['../struct_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence_1_1_n_p_c_variables.html#a64193cabc53e1e94f7b615bc62523e18',1,'CommonCoreScripts.DialogueSystem.DialogueSequence.NPCVariables.audioSource()'],['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#a9061872744d97187607dde2b504df24b',1,'CommonCoreScripts.DialogueSystem.DialogueSequence.audioSource()'],['../class_common_core_scripts_1_1_dialogue_system_1_1_custom___assets_1_1_n_p_c_variable.html#adb292e54bc00317e691ea8f859af98da',1,'CommonCoreScripts.DialogueSystem.Custom_Assets.NPCVariable.audioSource()']]]
+  ['buttonhoverevent_0',['ButtonHoverEvent',['../class_common_core_scripts_1_1_extensions_1_1_button_hover_event.html',1,'CommonCoreScripts::Extensions']]],
+  ['buttonhoverevent_2ecs_1',['ButtonHoverEvent.cs',['../_button_hover_event_8cs.html',1,'']]],
+  ['buttons_2',['buttons',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_u_i___desktop.html#a162631730f0218bd5a133492243fa079',1,'CommonCoreScripts::DialogueSystem::DialogueUI_Desktop']]],
+  ['buttons_3',['Buttons',['../class_common_core_scripts_1_1_inventory_system_1_1_inventory_item_tooltip.html#aa338a86fb82badfac9ac7695413dd24aa5b3ec15499a125805b5bbf8e4afcec8c',1,'CommonCoreScripts::InventorySystem::InventoryItemTooltip']]]
 ];

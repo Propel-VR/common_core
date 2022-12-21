@@ -85,7 +85,8 @@ $(document).ready(function(){initNavTree('class_common_core_scripts_1_1_inventor
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="class_common_core_scripts_1_1_inventory_system_1_1_item-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">CommonCoreScripts.InventorySystem.Item Class Reference</div></div>
 </div><!--header-->
@@ -97,94 +98,250 @@ Inheritance diagram for CommonCoreScripts.InventorySystem.Item:</div>
   <img src="class_common_core_scripts_1_1_inventory_system_1_1_item.png" alt=""/>
  </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a3a67e8a5088bae5df4381db0b0a14ec9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#a3a67e8a5088bae5df4381db0b0a14ec9">itemName</a></td></tr>
-<tr class="separator:a3a67e8a5088bae5df4381db0b0a14ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a766a1be62c13675cccb4b377a6c3b63d"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#a766a1be62c13675cccb4b377a6c3b63d">itemParameters</a> = new ()</td></tr>
-<tr class="separator:a766a1be62c13675cccb4b377a6c3b63d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29fc402286fe6164653b72cd247d042a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#a29fc402286fe6164653b72cd247d042a">stackSize</a> = 64</td></tr>
-<tr class="separator:a29fc402286fe6164653b72cd247d042a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ade4b044f365f3cd26f752e06609244"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#a6ade4b044f365f3cd26f752e06609244">hasUse</a></td></tr>
-<tr class="separator:a6ade4b044f365f3cd26f752e06609244"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7e269f44f1cd5a3c2db5a97ec51fd0c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#ae7e269f44f1cd5a3c2db5a97ec51fd0c">hasHold</a></td></tr>
-<tr class="separator:ae7e269f44f1cd5a3c2db5a97ec51fd0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1beddb87c3b2c0e91dbe3783997086f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#a1beddb87c3b2c0e91dbe3783997086f1">hasCombine</a></td></tr>
-<tr class="separator:a1beddb87c3b2c0e91dbe3783997086f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0ae1667ed6248980dfdd8299737c742"><td class="memItemLeft" align="right" valign="top">UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#ad0ae1667ed6248980dfdd8299737c742">OnUse</a></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a179ae8bffc6429d92f58623823ec7248"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#a179ae8bffc6429d92f58623823ec7248">CanCombineWith</a> (<a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a> item)</td></tr>
+<tr class="separator:a179ae8bffc6429d92f58623823ec7248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfbacfe5de258b856324bc655c6c2bab"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#adfbacfe5de258b856324bc655c6c2bab">Equals</a> (object other)</td></tr>
+<tr class="separator:adfbacfe5de258b856324bc655c6c2bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a8884cc91449b0e983632edf079ae1a2b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#a8884cc91449b0e983632edf079ae1a2b">ItemName</a><code> [getset]</code></td></tr>
+<tr class="separator:a8884cc91449b0e983632edf079ae1a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24f432074c8809f264c774dc06b6842f"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#a24f432074c8809f264c774dc06b6842f">ItemParameters</a> = new()<code> [get]</code></td></tr>
+<tr class="separator:a24f432074c8809f264c774dc06b6842f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee379a755b463e8fd5a4b03c7ba90749"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#aee379a755b463e8fd5a4b03c7ba90749">StackSize</a><code> [getset]</code></td></tr>
+<tr class="separator:aee379a755b463e8fd5a4b03c7ba90749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5174d79af7e96096bc717db7b499dfa8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#a5174d79af7e96096bc717db7b499dfa8">IsConsumable</a><code> [getset]</code></td></tr>
+<tr class="separator:a5174d79af7e96096bc717db7b499dfa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0c4c93d2e8b43f72d4615a3a9046925"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#ad0c4c93d2e8b43f72d4615a3a9046925">HasUse</a><code> [get]</code></td></tr>
+<tr class="separator:ad0c4c93d2e8b43f72d4615a3a9046925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68285212e285c6f1786b62f96f3f3234"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#a68285212e285c6f1786b62f96f3f3234">HasHold</a><code> [get]</code></td></tr>
+<tr class="separator:a68285212e285c6f1786b62f96f3f3234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade81dbe37a058498e7ba30a5f92dfd41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#ade81dbe37a058498e7ba30a5f92dfd41">HasCombine</a><code> [get]</code></td></tr>
+<tr class="separator:ade81dbe37a058498e7ba30a5f92dfd41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b6824a8d27936124b77b8f7c9662de4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#a4b6824a8d27936124b77b8f7c9662de4">HasDrop</a><code> [get]</code></td></tr>
+<tr class="separator:a4b6824a8d27936124b77b8f7c9662de4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bec4151d3872e0d70761cd465118de5"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; <a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a>, <a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#a7bec4151d3872e0d70761cd465118de5">CombineResults</a><code> [get]</code></td></tr>
+<tr class="separator:a7bec4151d3872e0d70761cd465118de5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0ae1667ed6248980dfdd8299737c742"><td class="memItemLeft" align="right" valign="top">UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#ad0ae1667ed6248980dfdd8299737c742">OnUse</a><code> [get]</code></td></tr>
 <tr class="separator:ad0ae1667ed6248980dfdd8299737c742"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd23bd5a2a38ba8efba529ec02f41b35"><td class="memItemLeft" align="right" valign="top">UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#abd23bd5a2a38ba8efba529ec02f41b35">OnHold</a></td></tr>
+<tr class="memitem:abd23bd5a2a38ba8efba529ec02f41b35"><td class="memItemLeft" align="right" valign="top">UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#abd23bd5a2a38ba8efba529ec02f41b35">OnHold</a><code> [get]</code></td></tr>
 <tr class="separator:abd23bd5a2a38ba8efba529ec02f41b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70c3254998352a8b4acaa1b241f6650c"><td class="memItemLeft" align="right" valign="top">UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#a70c3254998352a8b4acaa1b241f6650c">OnCombine</a></td></tr>
+<tr class="memitem:a70c3254998352a8b4acaa1b241f6650c"><td class="memItemLeft" align="right" valign="top">UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#a70c3254998352a8b4acaa1b241f6650c">OnCombine</a><code> [get]</code></td></tr>
 <tr class="separator:a70c3254998352a8b4acaa1b241f6650c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a1beddb87c3b2c0e91dbe3783997086f1" name="a1beddb87c3b2c0e91dbe3783997086f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1beddb87c3b2c0e91dbe3783997086f1">&#9670;&nbsp;</a></span>hasCombine</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a179ae8bffc6429d92f58623823ec7248" name="a179ae8bffc6429d92f58623823ec7248"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a179ae8bffc6429d92f58623823ec7248">&#9670;&nbsp;</a></span>CanCombineWith()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CommonCoreScripts.InventorySystem.Item.hasCombine</td>
+          <td class="memname">bool CommonCoreScripts.InventorySystem.Item.CanCombineWith </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a>&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ae7e269f44f1cd5a3c2db5a97ec51fd0c" name="ae7e269f44f1cd5a3c2db5a97ec51fd0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7e269f44f1cd5a3c2db5a97ec51fd0c">&#9670;&nbsp;</a></span>hasHold</h2>
+<a id="adfbacfe5de258b856324bc655c6c2bab" name="adfbacfe5de258b856324bc655c6c2bab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfbacfe5de258b856324bc655c6c2bab">&#9670;&nbsp;</a></span>Equals()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CommonCoreScripts.InventorySystem.Item.hasHold</td>
+          <td class="memname">override bool CommonCoreScripts.InventorySystem.Item.Equals </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a6ade4b044f365f3cd26f752e06609244" name="a6ade4b044f365f3cd26f752e06609244"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ade4b044f365f3cd26f752e06609244">&#9670;&nbsp;</a></span>hasUse</h2>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a7bec4151d3872e0d70761cd465118de5" name="a7bec4151d3872e0d70761cd465118de5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bec4151d3872e0d70761cd465118de5">&#9670;&nbsp;</a></span>CombineResults</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool CommonCoreScripts.InventorySystem.Item.hasUse</td>
+          <td class="memname">Dictionary&lt;<a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a>, <a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a>&gt; CommonCoreScripts.InventorySystem.Item.CombineResults</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a3a67e8a5088bae5df4381db0b0a14ec9" name="a3a67e8a5088bae5df4381db0b0a14ec9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a67e8a5088bae5df4381db0b0a14ec9">&#9670;&nbsp;</a></span>itemName</h2>
+<a id="ade81dbe37a058498e7ba30a5f92dfd41" name="ade81dbe37a058498e7ba30a5f92dfd41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade81dbe37a058498e7ba30a5f92dfd41">&#9670;&nbsp;</a></span>HasCombine</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string CommonCoreScripts.InventorySystem.Item.itemName</td>
+          <td class="memname">bool CommonCoreScripts.InventorySystem.Item.HasCombine</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a766a1be62c13675cccb4b377a6c3b63d" name="a766a1be62c13675cccb4b377a6c3b63d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a766a1be62c13675cccb4b377a6c3b63d">&#9670;&nbsp;</a></span>itemParameters</h2>
+<a id="a4b6824a8d27936124b77b8f7c9662de4" name="a4b6824a8d27936124b77b8f7c9662de4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b6824a8d27936124b77b8f7c9662de4">&#9670;&nbsp;</a></span>HasDrop</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Dictionary&lt;string, string&gt; CommonCoreScripts.InventorySystem.Item.itemParameters = new ()</td>
+          <td class="memname">bool CommonCoreScripts.InventorySystem.Item.HasDrop</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68285212e285c6f1786b62f96f3f3234" name="a68285212e285c6f1786b62f96f3f3234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68285212e285c6f1786b62f96f3f3234">&#9670;&nbsp;</a></span>HasHold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CommonCoreScripts.InventorySystem.Item.HasHold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad0c4c93d2e8b43f72d4615a3a9046925" name="ad0c4c93d2e8b43f72d4615a3a9046925"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c4c93d2e8b43f72d4615a3a9046925">&#9670;&nbsp;</a></span>HasUse</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CommonCoreScripts.InventorySystem.Item.HasUse</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5174d79af7e96096bc717db7b499dfa8" name="a5174d79af7e96096bc717db7b499dfa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5174d79af7e96096bc717db7b499dfa8">&#9670;&nbsp;</a></span>IsConsumable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CommonCoreScripts.InventorySystem.Item.IsConsumable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8884cc91449b0e983632edf079ae1a2b" name="a8884cc91449b0e983632edf079ae1a2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8884cc91449b0e983632edf079ae1a2b">&#9670;&nbsp;</a></span>ItemName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CommonCoreScripts.InventorySystem.Item.ItemName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a24f432074c8809f264c774dc06b6842f" name="a24f432074c8809f264c774dc06b6842f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24f432074c8809f264c774dc06b6842f">&#9670;&nbsp;</a></span>ItemParameters</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;string, string&gt; CommonCoreScripts.InventorySystem.Item.ItemParameters = new()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -194,11 +351,19 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">UnityEvent CommonCoreScripts.InventorySystem.Item.OnCombine</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -208,11 +373,19 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">UnityEvent CommonCoreScripts.InventorySystem.Item.OnHold</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -222,25 +395,41 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">UnityEvent CommonCoreScripts.InventorySystem.Item.OnUse</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a29fc402286fe6164653b72cd247d042a" name="a29fc402286fe6164653b72cd247d042a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29fc402286fe6164653b72cd247d042a">&#9670;&nbsp;</a></span>stackSize</h2>
+<a id="aee379a755b463e8fd5a4b03c7ba90749" name="aee379a755b463e8fd5a4b03c7ba90749"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee379a755b463e8fd5a4b03c7ba90749">&#9670;&nbsp;</a></span>StackSize</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int CommonCoreScripts.InventorySystem.Item.stackSize = 64</td>
+          <td class="memname">int CommonCoreScripts.InventorySystem.Item.StackSize</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

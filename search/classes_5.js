@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stack_0',['Stack',['../class_common_core_scripts_1_1_inventory_system_1_1_stack.html',1,'CommonCoreScripts::InventorySystem']]]
+  ['lockedtask_0',['LockedTask',['../class_common_core_scripts_1_1_task_system_1_1_locked_task.html',1,'CommonCoreScripts::TaskSystem']]]
 ];

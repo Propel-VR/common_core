@@ -1,13 +1,21 @@
 var searchData=
 [
-  ['commoncorescripts_0',['CommonCoreScripts',['../namespace_common_core_scripts.html',1,'']]],
-  ['completetask_1',['CompleteTask',['../class_common_core_scripts_1_1_task_system_1_1_locked_task.html#aea93f70633dab008fd5b29fc8bf43920',1,'CommonCoreScripts.TaskSystem.LockedTask.CompleteTask()'],['../class_common_core_scripts_1_1_task_system_1_1_task.html#a0342452073732ad1b218f72e39894ccc',1,'CommonCoreScripts.TaskSystem.Task.CompleteTask()'],['../class_common_core_scripts_1_1_task_system_1_1_task_pool.html#ac802af8ac927a6318cf5b0fcab0c6c02',1,'CommonCoreScripts.TaskSystem.TaskPool.CompleteTask()']]],
-  ['count_2',['Count',['../class_common_core_scripts_1_1_inventory_system_1_1_stack.html#aa05081bae1837667ef1a7d5b8ae044e6',1,'CommonCoreScripts::InventorySystem::Stack']]],
-  ['currentchunk_3',['currentChunk',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#ad8ac8104cac7b4c15b22de54aef39e66',1,'CommonCoreScripts::DialogueSystem::DialogueSequence']]],
-  ['currentsequence_4',['currentSequence',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_u_i.html#a4844c52774e4fd898364a67f2e336bf7',1,'CommonCoreScripts::DialogueSystem::DialogueUI']]],
-  ['currentui_5',['currentUI',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#a7f9831d0e57266016a6b5e0ccb824685',1,'CommonCoreScripts.DialogueSystem.DialogueSequence.currentUI()'],['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence_button.html#a8d12f4100d09f9317981c042a973e257',1,'CommonCoreScripts.DialogueSystem.DialogueSequenceButton.currentUI()']]],
-  ['custom_5fassets_6',['Custom_Assets',['../namespace_common_core_scripts_1_1_dialogue_system_1_1_custom___assets.html',1,'CommonCoreScripts::DialogueSystem']]],
-  ['dialoguesystem_7',['DialogueSystem',['../namespace_common_core_scripts_1_1_dialogue_system.html',1,'CommonCoreScripts']]],
-  ['inventorysystem_8',['InventorySystem',['../namespace_common_core_scripts_1_1_inventory_system.html',1,'CommonCoreScripts']]],
-  ['tasksystem_9',['TaskSystem',['../namespace_common_core_scripts_1_1_task_system.html',1,'CommonCoreScripts']]]
+  ['delay_0',['delay',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_chunk.html#a96686201da8d54d508a3b3b042235870',1,'CommonCoreScripts::DialogueSystem::DialogueChunk']]],
+  ['dialoguechunk_1',['DialogueChunk',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_chunk.html',1,'CommonCoreScripts::DialogueSystem']]],
+  ['dialoguechunk_2ecs_2',['DialogueChunk.cs',['../_dialogue_chunk_8cs.html',1,'']]],
+  ['dialoguehandler_3',['DialogueHandler',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_handler.html',1,'CommonCoreScripts::DialogueSystem']]],
+  ['dialoguehandler_2ecs_4',['DialogueHandler.cs',['../_dialogue_handler_8cs.html',1,'']]],
+  ['dialoguesequence_5',['DialogueSequence',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html',1,'CommonCoreScripts::DialogueSystem']]],
+  ['dialoguesequence_2ecs_6',['DialogueSequence.cs',['../_dialogue_sequence_8cs.html',1,'']]],
+  ['dialoguesequencebutton_7',['DialogueSequenceButton',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence_button.html',1,'CommonCoreScripts::DialogueSystem']]],
+  ['dialoguesequencebutton_2ecs_8',['DialogueSequenceButton.cs',['../_dialogue_sequence_button_8cs.html',1,'']]],
+  ['dialoguesequencestatus_9',['DialogueSequenceStatus',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#a8a91366c4859b9aee1b93e9c482b4d1c',1,'CommonCoreScripts::DialogueSystem::DialogueSequence']]],
+  ['dialoguesetter_10',['DialogueSetter',['../class_common_core_scripts_1_1_extensions_1_1_dialogue_setter.html',1,'CommonCoreScripts::Extensions']]],
+  ['dialoguesetter_2ecs_11',['DialogueSetter.cs',['../_dialogue_setter_8cs.html',1,'']]],
+  ['dialogueui_12',['DialogueUI',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_u_i.html',1,'CommonCoreScripts::DialogueSystem']]],
+  ['dialogueui_2ecs_13',['DialogueUI.cs',['../_dialogue_u_i_8cs.html',1,'']]],
+  ['dialogueui_5fdesktop_14',['DialogueUI_Desktop',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_u_i___desktop.html',1,'CommonCoreScripts::DialogueSystem']]],
+  ['dialogueui_5fdesktop_2ecs_15',['DialogueUI_Desktop.cs',['../_dialogue_u_i___desktop_8cs.html',1,'']]],
+  ['displayname_16',['DisplayName',['../class_common_core_scripts_1_1_inventory_system_1_1_item_visuals.html#ad299b5d8e4ae914ee0bda8a6fbed23b7',1,'CommonCoreScripts::InventorySystem::ItemVisuals']]],
+  ['drop_17',['Drop',['../class_common_core_scripts_1_1_inventory_system_1_1_inventory_item_tooltip.html#aa98289441ac29eeb4a958b6f80145294',1,'CommonCoreScripts::InventorySystem::InventoryItemTooltip']]]
 ];

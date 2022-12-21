@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['item_0',['Item',['../class_common_core_scripts_1_1_inventory_system_1_1_stack.html#a6bf9effe107f21d90f12a9d39e038c40',1,'CommonCoreScripts::InventorySystem::Stack']]],
-  ['itemname_1',['itemName',['../class_common_core_scripts_1_1_inventory_system_1_1_item.html#a3a67e8a5088bae5df4381db0b0a14ec9',1,'CommonCoreScripts::InventorySystem::Item']]],
-  ['itemparameters_2',['itemParameters',['../class_common_core_scripts_1_1_inventory_system_1_1_item.html#a766a1be62c13675cccb4b377a6c3b63d',1,'CommonCoreScripts::InventorySystem::Item']]],
-  ['itemvisuals_3',['ItemVisuals',['../class_common_core_scripts_1_1_inventory_system_1_1_item_visual_handler.html#a89390cca2926fd29bdd9f4b8dabb45f8',1,'CommonCoreScripts::InventorySystem::ItemVisualHandler']]]
+  ['name_0',['name',['../class_common_core_scripts_1_1_dialogue_system_1_1_custom___assets_1_1_n_p_c_variable.html#a7f0d777a63360e26833139f3f72e6db8',1,'CommonCoreScripts::DialogueSystem::Custom_Assets::NPCVariable']]],
+  ['nametext_1',['nameText',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_u_i___desktop.html#a5f60ddd0be04870102a5fb46c008bdd0',1,'CommonCoreScripts::DialogueSystem::DialogueUI_Desktop']]],
+  ['nextchunkanswersen_2',['nextChunkAnswersEN',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_chunk.html#ae9cc877329e95379eda3023dca74c848',1,'CommonCoreScripts::DialogueSystem::DialogueChunk']]],
+  ['nextchunkanswersfr_3',['nextChunkAnswersFR',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_chunk.html#a438618d4abd65e89d75b290439df38a6',1,'CommonCoreScripts::DialogueSystem::DialogueChunk']]],
+  ['nextchunks_4',['nextChunks',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_chunk.html#a6af7cafe0137e8ab9a77bb466597acf8',1,'CommonCoreScripts::DialogueSystem::DialogueChunk']]]
 ];

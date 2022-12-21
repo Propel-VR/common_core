@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['tryadditem_0',['TryAddItem',['../class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#ae63d013f5ed631ee5da3edbe41b8e710',1,'CommonCoreScripts::InventorySystem::Inventory']]],
-  ['tryremoveitem_1',['TryRemoveItem',['../class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#ad16e7488843c1d605870b1ab74b6b2fd',1,'CommonCoreScripts::InventorySystem::Inventory']]],
-  ['tryremoveitemfromstack_2',['TryRemoveItemFromStack',['../class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a760abb6938619981923a27e41daff3b0',1,'CommonCoreScripts::InventorySystem::Inventory']]],
-  ['tryremoveitems_3',['TryRemoveItems',['../class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#ada4683c9c0685a9f4c1afe5a7d13dbfd',1,'CommonCoreScripts::InventorySystem::Inventory']]],
-  ['tryunlocktask_4',['TryUnlockTask',['../class_common_core_scripts_1_1_task_system_1_1_task_unlock_handler.html#a76884a922ec849d3ebca0a25208f4711',1,'CommonCoreScripts::TaskSystem::TaskUnlockHandler']]]
+  ['istasklocked_0',['IsTaskLocked',['../class_common_core_scripts_1_1_task_system_1_1_task_unlock_handler.html#a23c3dbe318799108971789fc2f3a85f3',1,'CommonCoreScripts::TaskSystem::TaskUnlockHandler']]],
+  ['itemstack_1',['ItemStack',['../class_common_core_scripts_1_1_inventory_system_1_1_item_stack.html#a38085d167d10582419d3fa9116ac9ef0',1,'CommonCoreScripts::InventorySystem::ItemStack']]],
+  ['itemvisuals_2',['ItemVisuals',['../class_common_core_scripts_1_1_inventory_system_1_1_item_visuals.html#ac970dc8685728d11a8a907da833026c4',1,'CommonCoreScripts::InventorySystem::ItemVisuals']]]
 ];

@@ -10,12 +10,13 @@ var class_common_core_scripts_1_1_task_system_1_1_task_pool =
       [ "Unordered", "class_common_core_scripts_1_1_task_system_1_1_task_pool.html#a9b85d65405d1a2acf787011121eb1dd9a288d468c5e0969f26a310773eda65603", null ]
     ] ],
     [ "CompleteTask", "class_common_core_scripts_1_1_task_system_1_1_task_pool.html#ac802af8ac927a6318cf5b0fcab0c6c02", null ],
+    [ "FindTask", "class_common_core_scripts_1_1_task_system_1_1_task_pool.html#a920679e0f9e408fdd2b1799125fc5da0", null ],
     [ "StartPool", "class_common_core_scripts_1_1_task_system_1_1_task_pool.html#a4ce1b93caa3ef6654ce9cc923eaf8b1f", null ],
     [ "UpdateStatus", "class_common_core_scripts_1_1_task_system_1_1_task_pool.html#a4b5c1077fc37bba71ae578e32e46ce0a", null ],
-    [ "_tasks", "class_common_core_scripts_1_1_task_system_1_1_task_pool.html#af5c4bb74e1b20afd10a6cfbd11dd7162", null ],
     [ "OnFinishPool", "class_common_core_scripts_1_1_task_system_1_1_task_pool.html#aa1c5191246fcfeeb79d269f2efddda26", null ],
     [ "OnFinishTask", "class_common_core_scripts_1_1_task_system_1_1_task_pool.html#a1d56be01ec491e1e2b7bfdebbbf5c2d6", null ],
     [ "OnStartPool", "class_common_core_scripts_1_1_task_system_1_1_task_pool.html#ac63748eeb4e6eddd229762ac2e0fa76c", null ],
     [ "OnStartTask", "class_common_core_scripts_1_1_task_system_1_1_task_pool.html#aba287f8eccbfbd91c408c2819d91aa09", null ],
-    [ "status", "class_common_core_scripts_1_1_task_system_1_1_task_pool.html#a0498e7071f09104b19d00cf6f72f957b", null ]
+    [ "Status", "class_common_core_scripts_1_1_task_system_1_1_task_pool.html#a378276434a11a6c7a5d35b7c0d9b8e49", null ],
+    [ "Type", "class_common_core_scripts_1_1_task_system_1_1_task_pool.html#a304596250e1c2968aefe20fba65f57ba", null ]
 ];

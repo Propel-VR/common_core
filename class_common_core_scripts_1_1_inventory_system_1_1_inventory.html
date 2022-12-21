@@ -86,6 +86,8 @@ $(document).ready(function(){initNavTree('class_common_core_scripts_1_1_inventor
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="class_common_core_scripts_1_1_inventory_system_1_1_inventory-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">CommonCoreScripts.InventorySystem.Inventory Class Reference</div></div>
 </div><!--header-->
@@ -108,11 +110,99 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ada4683c9c0685a9f4c1afe5a7d13dbfd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#ada4683c9c0685a9f4c1afe5a7d13dbfd">TryRemoveItems</a> (<a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a> item, int count)</td></tr>
 <tr class="memdesc:ada4683c9c0685a9f4c1afe5a7d13dbfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an amount of the same item from the inventory  <a href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#ada4683c9c0685a9f4c1afe5a7d13dbfd">More...</a><br /></td></tr>
 <tr class="separator:ada4683c9c0685a9f4c1afe5a7d13dbfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a760abb6938619981923a27e41daff3b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a760abb6938619981923a27e41daff3b0">TryRemoveItemFromStack</a> (<a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_stack.html">Stack</a> s)</td></tr>
-<tr class="memdesc:a760abb6938619981923a27e41daff3b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an item from the stack  <a href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a760abb6938619981923a27e41daff3b0">More...</a><br /></td></tr>
-<tr class="separator:a760abb6938619981923a27e41daff3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e6cd102e23c367dd6cfa9598d7153c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a8e6cd102e23c367dd6cfa9598d7153c3">TryRemoveItemFromStack</a> (<a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item_stack.html">ItemStack</a> s)</td></tr>
+<tr class="memdesc:a8e6cd102e23c367dd6cfa9598d7153c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an item from the itemStack  <a href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a8e6cd102e23c367dd6cfa9598d7153c3">More...</a><br /></td></tr>
+<tr class="separator:a8e6cd102e23c367dd6cfa9598d7153c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39fd256a622f943fe37cccfb4cccac76"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a39fd256a622f943fe37cccfb4cccac76">ContainsItem</a> (<a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a> item)</td></tr>
+<tr class="memdesc:a39fd256a622f943fe37cccfb4cccac76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the inventory contains the item.  <a href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a39fd256a622f943fe37cccfb4cccac76">More...</a><br /></td></tr>
+<tr class="separator:a39fd256a622f943fe37cccfb4cccac76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee0f98ce4a45bffa49d4465ecc44f5b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#aee0f98ce4a45bffa49d4465ecc44f5b0">TryUse</a> (<a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a> item)</td></tr>
+<tr class="memdesc:aee0f98ce4a45bffa49d4465ecc44f5b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to use <em>item</em> , removing one from the inventory if successful.  <a href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#aee0f98ce4a45bffa49d4465ecc44f5b0">More...</a><br /></td></tr>
+<tr class="separator:aee0f98ce4a45bffa49d4465ecc44f5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77c846b7bfd19c6dbe08e0d531d14744"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a77c846b7bfd19c6dbe08e0d531d14744">TryHold</a> (<a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a> item)</td></tr>
+<tr class="memdesc:a77c846b7bfd19c6dbe08e0d531d14744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to hold <em>item</em> , removing one from the inventory if successful. NOTE: the item holding implementation must be handled by the <a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a>'s <a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#abd23bd5a2a38ba8efba529ec02f41b35">Item.OnHold</a> event (spawn in worldspace, spawn in hand, add to UI as sprite for desktop, etc).  <a href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a77c846b7bfd19c6dbe08e0d531d14744">More...</a><br /></td></tr>
+<tr class="separator:a77c846b7bfd19c6dbe08e0d531d14744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d128bf4c5a5e00655d21303f6e82aad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a6d128bf4c5a5e00655d21303f6e82aad">TryCombine</a> (<a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a> item, <a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a> other)</td></tr>
+<tr class="separator:a6d128bf4c5a5e00655d21303f6e82aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a397be83470d4ef3eb224048994f4a280"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a397be83470d4ef3eb224048994f4a280">TestAdd</a> ()</td></tr>
+<tr class="separator:a397be83470d4ef3eb224048994f4a280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a703e7ac925ed64a3e68dbcc9132e6073"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a703e7ac925ed64a3e68dbcc9132e6073">RefreshUI</a> ()</td></tr>
+<tr class="separator:a703e7ac925ed64a3e68dbcc9132e6073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a132008761e7b5a7b9d92852bc0e70e3e"><td class="memItemLeft" align="right" valign="top">UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a132008761e7b5a7b9d92852bc0e70e3e">OnInventoryChanged</a> = new ()</td></tr>
+<tr class="separator:a132008761e7b5a7b9d92852bc0e70e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a003fc214823313fd0a889fe45e5dc00f"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item_stack.html">ItemStack</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a003fc214823313fd0a889fe45e5dc00f">Items</a><code> [get]</code></td></tr>
+<tr class="separator:a003fc214823313fd0a889fe45e5dc00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92c3e20e04f80cfc12595d0b978ef11b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a92c3e20e04f80cfc12595d0b978ef11b">IsPlayerInventory</a><code> [get]</code></td></tr>
+<tr class="separator:a92c3e20e04f80cfc12595d0b978ef11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a39fd256a622f943fe37cccfb4cccac76" name="a39fd256a622f943fe37cccfb4cccac76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39fd256a622f943fe37cccfb4cccac76">&#9670;&nbsp;</a></span>ContainsItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CommonCoreScripts.InventorySystem.Inventory.ContainsItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a>&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the inventory contains the item. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The item to be searched.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the inventory contains the item, false otherwise.</dd></dl>
+
+</div>
+</div>
+<a id="a703e7ac925ed64a3e68dbcc9132e6073" name="a703e7ac925ed64a3e68dbcc9132e6073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a703e7ac925ed64a3e68dbcc9132e6073">&#9670;&nbsp;</a></span>RefreshUI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommonCoreScripts.InventorySystem.Inventory.RefreshUI </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a397be83470d4ef3eb224048994f4a280" name="a397be83470d4ef3eb224048994f4a280"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a397be83470d4ef3eb224048994f4a280">&#9670;&nbsp;</a></span>TestAdd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommonCoreScripts.InventorySystem.Inventory.TestAdd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae63d013f5ed631ee5da3edbe41b8e710" name="ae63d013f5ed631ee5da3edbe41b8e710"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae63d013f5ed631ee5da3edbe41b8e710">&#9670;&nbsp;</a></span>TryAddItem()</h2>
 
@@ -137,6 +227,61 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>True</code> if the item was successfully added, <code>False</code> if not.</dd></dl>
+
+</div>
+</div>
+<a id="a6d128bf4c5a5e00655d21303f6e82aad" name="a6d128bf4c5a5e00655d21303f6e82aad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d128bf4c5a5e00655d21303f6e82aad">&#9670;&nbsp;</a></span>TryCombine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CommonCoreScripts.InventorySystem.Inventory.TryCombine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a>&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a>&#160;</td>
+          <td class="paramname"><em>other</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77c846b7bfd19c6dbe08e0d531d14744" name="a77c846b7bfd19c6dbe08e0d531d14744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77c846b7bfd19c6dbe08e0d531d14744">&#9670;&nbsp;</a></span>TryHold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CommonCoreScripts.InventorySystem.Inventory.TryHold </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a>&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tries to hold <em>item</em> , removing one from the inventory if successful. NOTE: the item holding implementation must be handled by the <a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a>'s <a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html#abd23bd5a2a38ba8efba529ec02f41b35">Item.OnHold</a> event (spawn in worldspace, spawn in hand, add to UI as sprite for desktop, etc). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The item to be held</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the operation; True if the item was successfully held, false otherwise</dd></dl>
 
 </div>
 </div>
@@ -167,8 +312,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a760abb6938619981923a27e41daff3b0" name="a760abb6938619981923a27e41daff3b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a760abb6938619981923a27e41daff3b0">&#9670;&nbsp;</a></span>TryRemoveItemFromStack()</h2>
+<a id="a8e6cd102e23c367dd6cfa9598d7153c3" name="a8e6cd102e23c367dd6cfa9598d7153c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e6cd102e23c367dd6cfa9598d7153c3">&#9670;&nbsp;</a></span>TryRemoveItemFromStack()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,17 +321,17 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">bool CommonCoreScripts.InventorySystem.Inventory.TryRemoveItemFromStack </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_stack.html">Stack</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item_stack.html">ItemStack</a>&#160;</td>
           <td class="paramname"><em>s</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Removes an item from the stack </p>
+<p>Removes an item from the itemStack </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">s</td><td>The stack from which to remove the item</td></tr>
+    <tr><td class="paramname">s</td><td>The itemStack from which to remove the item</td></tr>
   </table>
   </dd>
 </dl>
@@ -229,6 +374,93 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>True</code> if the items were successfully removed, <code>False</code> if not.</dd></dl>
+
+</div>
+</div>
+<a id="aee0f98ce4a45bffa49d4465ecc44f5b0" name="aee0f98ce4a45bffa49d4465ecc44f5b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee0f98ce4a45bffa49d4465ecc44f5b0">&#9670;&nbsp;</a></span>TryUse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CommonCoreScripts.InventorySystem.Inventory.TryUse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item.html">Item</a>&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tries to use <em>item</em> , removing one from the inventory if successful. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The item to be used</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the operation; True if the item was successfully used, false otherwise</dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a132008761e7b5a7b9d92852bc0e70e3e" name="a132008761e7b5a7b9d92852bc0e70e3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a132008761e7b5a7b9d92852bc0e70e3e">&#9670;&nbsp;</a></span>OnInventoryChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UnityEvent CommonCoreScripts.InventorySystem.Inventory.OnInventoryChanged = new ()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a92c3e20e04f80cfc12595d0b978ef11b" name="a92c3e20e04f80cfc12595d0b978ef11b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92c3e20e04f80cfc12595d0b978ef11b">&#9670;&nbsp;</a></span>IsPlayerInventory</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CommonCoreScripts.InventorySystem.Inventory.IsPlayerInventory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a003fc214823313fd0a889fe45e5dc00f" name="a003fc214823313fd0a889fe45e5dc00f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a003fc214823313fd0a889fe45e5dc00f">&#9670;&nbsp;</a></span>Items</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="class_common_core_scripts_1_1_inventory_system_1_1_item_stack.html">ItemStack</a>&gt; CommonCoreScripts.InventorySystem.Inventory.Items</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

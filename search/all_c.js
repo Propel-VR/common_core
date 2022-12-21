@@ -1,11 +1,22 @@
 var searchData=
 [
-  ['name_0',['name',['../class_common_core_scripts_1_1_dialogue_system_1_1_custom___assets_1_1_n_p_c_variable.html#a7f0d777a63360e26833139f3f72e6db8',1,'CommonCoreScripts::DialogueSystem::Custom_Assets::NPCVariable']]],
-  ['nametext_1',['nameText',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_u_i___desktop.html#a5f60ddd0be04870102a5fb46c008bdd0',1,'CommonCoreScripts::DialogueSystem::DialogueUI_Desktop']]],
-  ['nextchunkanswersen_2',['nextChunkAnswersEN',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_chunk.html#ae9cc877329e95379eda3023dca74c848',1,'CommonCoreScripts::DialogueSystem::DialogueChunk']]],
-  ['nextchunkanswersfr_3',['nextChunkAnswersFR',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_chunk.html#a438618d4abd65e89d75b290439df38a6',1,'CommonCoreScripts::DialogueSystem::DialogueChunk']]],
-  ['nextchunks_4',['nextChunks',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_chunk.html#a6af7cafe0137e8ab9a77bb466597acf8',1,'CommonCoreScripts::DialogueSystem::DialogueChunk']]],
-  ['npcvariable_5',['NPCVariable',['../class_common_core_scripts_1_1_dialogue_system_1_1_custom___assets_1_1_n_p_c_variable.html',1,'CommonCoreScripts::DialogueSystem::Custom_Assets']]],
-  ['npcvariable_2ecs_6',['NPCVariable.cs',['../_n_p_c_variable_8cs.html',1,'']]],
-  ['npcvariables_7',['NPCVariables',['../struct_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence_1_1_n_p_c_variables.html',1,'CommonCoreScripts::DialogueSystem::DialogueSequence']]]
+  ['onchunkstart_0',['OnChunkStart',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#a8807bfe8a97801a31ec6d42ac78502a6',1,'CommonCoreScripts::DialogueSystem::DialogueSequence']]],
+  ['onclick_1',['OnClick',['../class_common_core_scripts_1_1_inventory_system_1_1_inventory_item_slot_desktop.html#acf8877a8fd467b78c56c34940c7ba760',1,'CommonCoreScripts::InventorySystem::InventoryItemSlotDesktop']]],
+  ['oncombine_2',['OnCombine',['../class_common_core_scripts_1_1_inventory_system_1_1_item.html#a70c3254998352a8b4acaa1b241f6650c',1,'CommonCoreScripts::InventorySystem::Item']]],
+  ['onfinishpool_3',['OnFinishPool',['../class_common_core_scripts_1_1_task_system_1_1_task_pool.html#aa1c5191246fcfeeb79d269f2efddda26',1,'CommonCoreScripts::TaskSystem::TaskPool']]],
+  ['onfinishtask_4',['OnFinishTask',['../class_common_core_scripts_1_1_task_system_1_1_task_pool.html#a1d56be01ec491e1e2b7bfdebbbf5c2d6',1,'CommonCoreScripts::TaskSystem::TaskPool']]],
+  ['onhold_5',['OnHold',['../class_common_core_scripts_1_1_inventory_system_1_1_item.html#abd23bd5a2a38ba8efba529ec02f41b35',1,'CommonCoreScripts::InventorySystem::Item']]],
+  ['onhoverenter_6',['OnHoverEnter',['../class_common_core_scripts_1_1_inventory_system_1_1_inventory_item_slot_desktop.html#ae6a7a9df5613197b6186e68f5c07ff1f',1,'CommonCoreScripts::InventorySystem::InventoryItemSlotDesktop']]],
+  ['onhoverexit_7',['OnHoverExit',['../class_common_core_scripts_1_1_inventory_system_1_1_inventory_item_slot_desktop.html#a1d979d99964d2f3ea8da7034fff8ef76',1,'CommonCoreScripts::InventorySystem::InventoryItemSlotDesktop']]],
+  ['oninventorychanged_8',['OnInventoryChanged',['../class_common_core_scripts_1_1_inventory_system_1_1_inventory.html#a132008761e7b5a7b9d92852bc0e70e3e',1,'CommonCoreScripts::InventorySystem::Inventory']]],
+  ['onpointerenter_9',['OnPointerEnter',['../class_common_core_scripts_1_1_extensions_1_1_button_hover_event.html#af3300b9406d6f648b2c60d65385b7507',1,'CommonCoreScripts::Extensions::ButtonHoverEvent']]],
+  ['onpointerexit_10',['OnPointerExit',['../class_common_core_scripts_1_1_extensions_1_1_button_hover_event.html#a0951e72cd904b8cdb3631d9158f3ea4e',1,'CommonCoreScripts::Extensions::ButtonHoverEvent']]],
+  ['onsequenceend_11',['OnSequenceEnd',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#a2ab24caab54ff7fb5a2faf9c9cc0cb96',1,'CommonCoreScripts::DialogueSystem::DialogueSequence']]],
+  ['onsequencestart_12',['OnSequenceStart',['../class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#acb791731b229cdf9edf3e1c64bc63711',1,'CommonCoreScripts::DialogueSystem::DialogueSequence']]],
+  ['onstartpool_13',['OnStartPool',['../class_common_core_scripts_1_1_task_system_1_1_task_pool.html#ac63748eeb4e6eddd229762ac2e0fa76c',1,'CommonCoreScripts::TaskSystem::TaskPool']]],
+  ['onstarttask_14',['OnStartTask',['../class_common_core_scripts_1_1_task_system_1_1_task_pool.html#aba287f8eccbfbd91c408c2819d91aa09',1,'CommonCoreScripts::TaskSystem::TaskPool']]],
+  ['ontaskcompleted_15',['OnTaskCompleted',['../class_common_core_scripts_1_1_task_system_1_1_task.html#a3160571aaec00787e5abc80b201fb48d',1,'CommonCoreScripts::TaskSystem::Task']]],
+  ['ontaskstarted_16',['OnTaskStarted',['../class_common_core_scripts_1_1_task_system_1_1_task.html#a5bc9a15b1dafa1ea91dbd7ca33f4f3d7',1,'CommonCoreScripts::TaskSystem::Task']]],
+  ['onuse_17',['OnUse',['../class_common_core_scripts_1_1_inventory_system_1_1_item.html#ad0ae1667ed6248980dfdd8299737c742',1,'CommonCoreScripts::InventorySystem::Item']]],
+  ['openfulltooltip_18',['OpenFullTooltip',['../class_common_core_scripts_1_1_inventory_system_1_1_inventory_u_i.html#ad2bde5dd9682cd25f273e1a15c60afcd',1,'CommonCoreScripts.InventorySystem.InventoryUI.OpenFullTooltip()'],['../class_common_core_scripts_1_1_inventory_system_1_1_inventory_u_i_desktop.html#a08966ad87b29249c07e307745200e516',1,'CommonCoreScripts.InventorySystem.InventoryUIDesktop.OpenFullTooltip()']]]
 ];

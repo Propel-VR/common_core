@@ -13,6 +13,7 @@ var class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence =
     [ "audioSource", "class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#a9061872744d97187607dde2b504df24b", null ],
     [ "currentChunk", "class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#ad8ac8104cac7b4c15b22de54aef39e66", null ],
     [ "currentUI", "class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#a7f9831d0e57266016a6b5e0ccb824685", null ],
+    [ "OnChunkStart", "class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#a8807bfe8a97801a31ec6d42ac78502a6", null ],
     [ "OnSequenceEnd", "class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#a2ab24caab54ff7fb5a2faf9c9cc0cb96", null ],
     [ "OnSequenceStart", "class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#acb791731b229cdf9edf3e1c64bc63711", null ],
     [ "usingContinueButton", "class_common_core_scripts_1_1_dialogue_system_1_1_dialogue_sequence.html#a905525731cf63376807cac23415fa604", null ],
