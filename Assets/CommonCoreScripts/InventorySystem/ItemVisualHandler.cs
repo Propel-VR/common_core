@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using UnityEngine;
@@ -7,8 +8,9 @@ namespace CommonCoreScripts.InventorySystem
 {
     public class ItemVisualHandler : SerializedMonoBehaviour
     {
-        public static ItemVisualHandler Instance { get; private set; }
-        public Dictionary<Item, ItemVisuals> ItemVisuals = new ();
+        public static ItemVisualHandler Instance { get; set; }
+        [OdinSerialize] private Dictionary<Item, ItemVisuals> _itemVisuals = new();
+        public Dictionary<Item, ItemVisuals> ItemVisuals => _itemVisuals;
 
         private void Awake()
         {
@@ -19,19 +21,10 @@ namespace CommonCoreScripts.InventorySystem
             }
             Instance = this;
         }
-    }
-    
-    public class ItemVisuals
-    {
-        public GameObject physicalModel;
-        public Sprite menuSprite;
-        public string displayName;
         
-        public ItemVisuals(GameObject physicalModel, Sprite menuSprite, string displayName)
+        public ItemVisuals GetItemVisuals(Item item)
         {
-            this.physicalModel = physicalModel;
-            this.menuSprite = menuSprite;
-            this.displayName = displayName;
+            return _itemVisuals.Any(x => x.Key.Equals(item)) ? _itemVisuals.First(x => x.Key.Equals(item)).Value : null;
         }
     }
 }
