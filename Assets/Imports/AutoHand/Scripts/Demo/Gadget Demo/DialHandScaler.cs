@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Autohand.Demo{
-    public class DialHandScaler : PhysicsGadgetHingeAngleReader{
+    public class DialHandScaler : PhysicsGadgetHingeAngleReader
+    {
         public Hand hand;
         public Vector3 minScale;
         public Vector3 maxScale;

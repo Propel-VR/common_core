@@ -16,7 +16,7 @@ public class TestCables :MonoBehaviour {
     public Transform cube;
     public Transform sphere;
 
-    private int num = 100;
+    private int num = 1;
 
     private void Generate(int n) {
         for(int i = 0; i < n; i++) {
