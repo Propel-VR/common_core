@@ -38,6 +38,8 @@ namespace CommonCoreScripts.TaskSystem
             // if the pool is already started or finished, do nothing
             if (Status != PoolStatus.Idle) return;
             
+            OnStartPool?.Invoke();
+            
             // if the pool is sequential, start the first task
             if (Type == PoolType.Sequential)
             {
@@ -49,8 +51,6 @@ namespace CommonCoreScripts.TaskSystem
                 OnStartTask?.Invoke();
             }
 
-            OnStartPool?.Invoke();
-            
             Status = PoolStatus.Started;
             
             UpdateStatus();
@@ -58,6 +58,14 @@ namespace CommonCoreScripts.TaskSystem
 
         public void CompleteTask(Task task)
         {
+            if (Type == PoolType.Sequential 
+                && tasks.FindIndex(t => t.Item1 == task) != 0 
+                && tasks.FindIndex(t => t.Item1 == task) - 1 != tasks.IndexOf(tasks.Last(t => t.Item2)))
+            {
+                Debug.LogError("Task is not the current task");
+                return;
+            }
+            
             if (Status != PoolStatus.Started) return;
             var taskIndex = tasks.FindIndex(t => t.Item1 == task);
             if (taskIndex == -1) return;

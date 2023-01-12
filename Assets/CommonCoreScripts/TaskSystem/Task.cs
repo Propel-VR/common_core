@@ -20,6 +20,7 @@ namespace CommonCoreScripts.TaskSystem
             if (ParentPool == null || ParentPool.Status != TaskPool.PoolStatus.Started) return;
             
             OnTaskStarted.Invoke();
+            ParentPool.OnStartTask.Invoke();
         }
         
         public void CompleteTask()

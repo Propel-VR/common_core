@@ -25,7 +25,7 @@ namespace CommonCoreScripts.DialogueSystem
 
         public NPCVariable GetNPC(string npcName)
         {
-            return npcs.FirstOrDefault(npc => npc.name == name);
+            return npcs.FirstOrDefault(npc => npc.name == npcName);
         }
     }
 }
