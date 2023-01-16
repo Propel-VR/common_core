@@ -28,19 +28,21 @@ public class LinkSegment : MonoBehaviour
     {
         _body= GetComponent<Rigidbody>();
         _joint= GetComponent<ConfigurableJoint>();
+        _hands = new List<Hand>();
+        
+        //add all hands in scene here (should use a helper script so as not to have so many finds on awake)
+        Hand[] handsInScene = FindObjectsOfType<Hand>();
+        foreach(Hand h in handsInScene)
+            _hands.Add(h);
     }
 
-    private void Update()
-    {
-        DisplayHighestValue.Instance.AddValue((int) _joint.currentForce.magnitude);
-
-    }
+  
 
     private void FixedUpdate()
     {
         if (_joint.currentForce.magnitude >= breakAt)
         {
-
+            //break grab if too much tension occurs
             foreach(Hand h in _hands) { h.ForceReleaseGrab(); }
 
 
@@ -48,62 +50,15 @@ public class LinkSegment : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// called on instantiation to setup the visuals bebtween two vables
+    /// </summary>
+    /// <param name="other"> previous cable </param>
     public void SetUpVisuals(Transform other)
     {
-
+        
         _simpcab.SetSettings(other, this._bottomTransform, this.transform, this._bottomTransform);
 
     }
-
-    /*
-     *
-    public void SetupSegment(float size, Rigidbody connectedBody)
-    {
-
-        transform.localScale = new Vector3(transform.localScale.x, size, transform.localScale.z);
-
-        if (connectedBody)
-        {
-            _joint.connectedBody = connectedBody;
-
-            
-            _joint.angularXMotion = ConfigurableJointMotion.Locked;
-            _joint.angularYMotion = ConfigurableJointMotion.Locked;
-            _joint.angularZMotion = ConfigurableJointMotion.Locked;
-
-            StartCoroutine(UnlockJoints());
-            
-        }
-    }
-
-    public void SetupAsFirstSegment(float size, Rigidbody connectedBody)
-    {
-
-        transform.localScale = new Vector3(transform.localScale.x, size, transform.localScale.z);
-
-        if (connectedBody)
-        {
-            _joint.connectedBody = connectedBody;
-            _joint.connectedAnchor = Vector3.zero;
-            _joint.angularXMotion = ConfigurableJointMotion.Locked;
-            _joint.angularYMotion = ConfigurableJointMotion.Locked;
-            _joint.angularZMotion = ConfigurableJointMotion.Locked;
-
-            //connectedBody.transform.localRotation = Quaternion.Euler(Vector3.up * -90);
-
-            //StartCoroutine(UnlockJoints());
-        }
-    }
-
-    private IEnumerator UnlockJoints()
-    {
-
-        yield return new WaitForSeconds(0.5f);
-
-        _joint.angularXMotion = ConfigurableJointMotion.Limited;
-        _joint.angularYMotion = ConfigurableJointMotion.Limited;
-        _joint.angularZMotion = ConfigurableJointMotion.Limited;
-    }
-    */
 
 }

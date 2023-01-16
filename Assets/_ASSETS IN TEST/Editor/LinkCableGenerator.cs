@@ -6,10 +6,13 @@ using System.Runtime.InteropServices;
 using UnityEditor;
 using UnityEngine;
 
+/// <summary>
+/// Editor window used to gemnerate a link cable from a link prefab
+/// </summary>
 public class LinkCableGenerator : EditorWindow
 {
 
-
+    #region private fields
     Rigidbody _fromPoint;
     ConfigurableJoint _toPoint;
 
@@ -19,6 +22,7 @@ public class LinkCableGenerator : EditorWindow
     GameObject _linkPrefab;
 
     List<GameObject> _linkSegments = new List<GameObject>();
+    #endregion
 
 
     [MenuItem("Tools/Link Cable Generator")]
@@ -53,11 +57,8 @@ public class LinkCableGenerator : EditorWindow
     {
         Rigidbody lastPoint = _fromPoint;
 
-        //setupFirstLink
-        //GameObject firstLink = GameObject.Instantiate(_linkPrefab, Vector3.zero, Quaternion.identity);
+        /*setupFirstLink*/
         GameObject firstLink = GameObject.Instantiate(_linkPrefab, lastPoint.transform.position+lastPoint.transform.up.normalized* (2 * _linkSize), Quaternion.identity);
-
-        //firstLink.GetComponent<LinkSegment>().SetupAsFirstSegment(_linkSize, lastPoint);
 
         SetupAsFirstSegment(firstLink, lastPoint);
 
@@ -65,7 +66,7 @@ public class LinkCableGenerator : EditorWindow
 
         _linkSegments.Add(firstLink);
 
-
+        /*set up middle links*/
         for (int i = 1; i < _numLinks; i++)
         {
 
@@ -85,6 +86,7 @@ public class LinkCableGenerator : EditorWindow
 
         }
 
+        /*set up connected link point*/
         if (_toPoint)
         {
             _toPoint.connectedBody = lastPoint;
@@ -93,6 +95,11 @@ public class LinkCableGenerator : EditorWindow
        
     }
 
+    /// <summary>
+    /// set up the required link and set up connections
+    /// </summary>
+    /// <param name="linkGO">game object of the link to be setup</param>
+    /// <param name="connectedBody">previous rigidbody in the link cable</param>
     private void SetupSegment(GameObject linkGO, Rigidbody connectedBody)
     {
         linkGO.transform.localScale = new Vector3(linkGO.transform.localScale.x, _linkSize, linkGO.transform.localScale.z);
@@ -103,15 +110,15 @@ public class LinkCableGenerator : EditorWindow
         {
             joint.connectedBody = connectedBody;
 
-            /*
-            _joint.angularXMotion = ConfigurableJointMotion.Locked;
-            _joint.angularYMotion = ConfigurableJointMotion.Locked;
-            _joint.angularZMotion = ConfigurableJointMotion.Locked;
 
-            */
         }
     }
 
+    /// <summary>
+    /// set up the FIRST link in the cable and set up its connections
+    /// </summary>
+    /// <param name="linkGO">game object of the link to be setup</param>
+    /// <param name="connectedBody">previous rigidbody in the link cable</param>
     private void SetupAsFirstSegment(GameObject linkGO, Rigidbody connectedBody)
     {
         linkGO.transform.localScale = new Vector3(linkGO.transform.localScale.x, _linkSize, linkGO.transform.localScale.z);
@@ -122,32 +129,8 @@ public class LinkCableGenerator : EditorWindow
         {
             joint.connectedBody = connectedBody;
             joint.connectedAnchor = Vector3.zero;
-            /*
-            joint.angularXMotion = ConfigurableJointMotion.Locked;
-            joint.angularYMotion = ConfigurableJointMotion.Locked;
-            joint.angularZMotion = ConfigurableJointMotion.Locked;
-            */
-            //connectedBody.transform.localRotation = Quaternion.Euler(Vector3.up * -90);
+            
         }
-    }
-
-    private void ConnectJointedBodies()
-    {
-
-        foreach(GameObject go in _linkSegments)
-        {
-            Grabbable grabbable = go.GetComponent<Grabbable>();
-
-            foreach (GameObject link in _linkSegments)
-            { 
-        
-                if(link!=go)
-                    grabbable.jointedBodies.Add(link.GetComponent<Rigidbody>());
-                
-            }
-
-        }
-
     }
 
 

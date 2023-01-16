@@ -184,7 +184,9 @@ namespace MassiveProceduralTube {
         // When a handle is enabled or disabled. When the handle number(=node number) is changed.
         private void UpdateHandlesBuffer() {
             //Debug.Log("ProceduralTube/Manager] Handles Updated.");
-            for(int i = 0; i < curveNum; i++) {
+            for(int i = 0; i < handles.Length; i++) {
+            //for(int i = 0; i < curveNum; i++){
+                    
                 Transform tr = tubes[i].transform;
                 handles[i].p0 = tr.TransformPoint(tubes[i].handle.p0);  // Local To World
                 handles[i].p1 = tr.TransformPoint(tubes[i].handle.p1);

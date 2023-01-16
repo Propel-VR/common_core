@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// simple script to expose trigger enter and exit events on an object whgen it touches a specific collider
+/// </summary>
 public class TriggerEvents : MonoBehaviour
 {
     [SerializeField]

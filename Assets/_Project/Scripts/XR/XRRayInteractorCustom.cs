@@ -27,7 +27,7 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
     [SerializeField] Gradient invalidGradient;
 
     [Header("Reference")]
-    [SerializeField] PlayerController player;
+    [SerializeField] Transform playerController;
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] Transform origin;
     [SerializeField] Transform reticle;
@@ -79,7 +79,7 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
             {
                 isValid = false;
             }
-            if(Physics.Linecast(player.transform.TransformPoint(Vector3.up), m_rayStart, colliderLayers.value, triggerInteraction))
+            if(Physics.Linecast(playerController.TransformPoint(Vector3.up), m_rayStart, colliderLayers.value, triggerInteraction))
             {
                 // Cancel if the arm is not linked to the body (trying to put your hands throught the wall to teleport throught it
                 isValid = false;
