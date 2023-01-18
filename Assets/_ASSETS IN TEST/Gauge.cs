@@ -149,7 +149,7 @@ public class Gauge : MonoBehaviour
         }
 
 
-        gauguePin.transform.rotation = Quaternion.Euler(0, 0, _value);
+        gauguePin.transform.localRotation = Quaternion.Euler(0, 0, _value);
     }
 
 }
