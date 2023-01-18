@@ -53,6 +53,9 @@ public class LinkCableGenerator : EditorWindow
         }
     }
 
+    /// <summary>
+    /// Called on button press to generate 
+    /// </summary>
     public void GenerateCable()
     {
         Rigidbody lastPoint = _fromPoint;
