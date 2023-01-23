@@ -182,8 +182,9 @@ namespace Autohand {
                 placeObj.body.isKinematic = makePlacedKinematic;
             }
             else if (placedJointLink != null){
-
+                
                 joint = placedJointLink.gameObject.AddComponent<FixedJoint>();
+
                 joint.connectedBody = placeObj.body;
                 joint.breakForce = jointBreakForce;
                 joint.breakTorque = jointBreakForce;
