@@ -34,6 +34,8 @@ namespace CommonCoreScripts.DialogueSystem
         public UnityEvent OnSequenceStart;
         public UnityEvent OnSequenceEnd;
         
+        public Dictionary<DialogueChunk, UnityEvent> OnChunkStart;
+
         [Button("DEBUG: Start Dialogue")]
         public void StartSequence()
         {
@@ -92,6 +94,7 @@ namespace CommonCoreScripts.DialogueSystem
                 return;
             }
             currentChunk = chunk;
+            if (OnChunkStart.ContainsKey(currentChunk)) OnChunkStart[currentChunk]?.Invoke();
             PlayDialogue();
         }
 

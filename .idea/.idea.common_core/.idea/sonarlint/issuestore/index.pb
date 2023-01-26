@@ -1,0 +1,17 @@
+
+t
+DAssets/CommonCoreScripts/InventorySystem/InventoryItemSlotDesktop.cs,1\9\1979f33e1d404f7d0dd9b6c832df332e7a1a566d
+m
+=Assets/CommonCoreScripts/InventorySystem/ItemVisualHandler.cs,1\a\1a22c1207da8c16fd7dceb8c474b4c4daf727afa
+e
+5Assets/CommonCoreScripts/InventorySystem/Inventory.cs,8\f\8f7e1d8bcdc390833d3d6a827ad1d7983af41f85
+`
+0Assets/CommonCoreScripts/InventorySystem/Item.cs,1\6\1621856a9f0cdac3548d4a13ecf74de4d1d7191a
+n
+>Assets/CommonCoreScripts/InventorySystem/InventoryUIDesktop.cs,f\e\fe4b905577e406c5146bd1f207dbd3312c72209c
+p
+@Assets/CommonCoreScripts/InventorySystem/InventoryItemTooltip.cs,e\2\e2fd19735930a3bce3aac187f56c487d3485e3c9
+h
+8Assets/CommonCoreScripts/DialogueSystem/DialogueChunk.cs,c\d\cd502af5e2099df45fbf63f5ed0c9271236c8359
+m
+=Assets/CommonCoreScripts/DialogueSystem/DialogueUI_Desktop.cs,4\8\48bf831410841c562159e4f4095a751e9c73706c

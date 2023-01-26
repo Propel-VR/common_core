@@ -22,70 +22,83 @@ namespace CommonCoreScripts.TaskSystem
             Finished
         }
         
-        [SerializeField] private PoolType type;
-        [SerializeField] public PoolStatus status;
-        
+        [OdinSerialize] public PoolType Type { get; set; }
+        [OdinSerialize] public PoolStatus Status { get; set; }
+
         public UnityEvent OnStartPool;
         public UnityEvent OnFinishPool;
         public UnityEvent OnStartTask;
         public UnityEvent OnFinishTask;
 
-        [Tooltip("Item 1 -> Task\nItem 2 -> Done?")]
-        public List<(Task, bool)> _tasks = new ();
+        [Tooltip("Item 1 -> Task\nItem 2 -> Done?")] 
+        [OdinSerialize] private List<(Task, bool)> tasks = new ();
 
         public void StartPool()
         {
             // if the pool is already started or finished, do nothing
-            if (status != PoolStatus.Idle) return;
+            if (Status != PoolStatus.Idle) return;
+            
+            OnStartPool?.Invoke();
             
             // if the pool is sequential, start the first task
-            if (type == PoolType.Sequential)
+            if (Type == PoolType.Sequential)
             {
-                if (_tasks.FirstOrDefault() == (null, false) ) return;
+                if (tasks.FirstOrDefault() == (null, false) ) return;
                 
-                var task = _tasks.FirstOrDefault().Item1;
+                var task = tasks.FirstOrDefault().Item1;
                 
                 task.StartTask();
                 OnStartTask?.Invoke();
             }
 
-            OnStartPool?.Invoke();
-            
-            status = PoolStatus.Started;
+            Status = PoolStatus.Started;
             
             UpdateStatus();
         }
 
         public void CompleteTask(Task task)
         {
-            if (status != PoolStatus.Started) return;
-            var taskIndex = _tasks.FindIndex(t => t.Item1 == task);
+            if (Type == PoolType.Sequential 
+                && tasks.FindIndex(t => t.Item1 == task) != 0 
+                && tasks.FindIndex(t => t.Item1 == task) - 1 != tasks.IndexOf(tasks.Last(t => t.Item2)))
+            {
+                Debug.LogError("Task is not the current task");
+                return;
+            }
+            
+            if (Status != PoolStatus.Started) return;
+            var taskIndex = tasks.FindIndex(t => t.Item1 == task);
             if (taskIndex == -1) return;
-            _tasks[taskIndex] = (task, true);
+            tasks[taskIndex] = (task, true);
             OnFinishTask?.Invoke();
             
-            if (type == PoolType.Sequential && _tasks[taskIndex] != _tasks.Last())
-                _tasks[taskIndex + 1].Item1.StartTask();
+            if (Type == PoolType.Sequential && tasks[taskIndex] != tasks.Last())
+                tasks[taskIndex + 1].Item1.StartTask();
             
             UpdateStatus();
         }
 
         public void UpdateStatus()
         {
-            switch (status)
+            switch (Status)
             {
                 case PoolStatus.Idle:
                     break;
                 case PoolStatus.Started:
-                    if (_tasks != null && _tasks.All(task => task.Item2))
+                    if (tasks != null && tasks.All(task => task.Item1.IsOptional || task.Item2)) // if the tasks collection is not empty and all tasks are either done or optional
                     {
-                        status = PoolStatus.Finished;
+                        Status = PoolStatus.Finished;
                         OnFinishPool?.Invoke();
                     }
                     break;
                 case PoolStatus.Finished:
                     break;
             }
+        }
+
+        public Task FindTask(string taskName)
+        {
+            return tasks.FirstOrDefault(t => t.Item1.name == taskName).Item1;
         }
     }
 }

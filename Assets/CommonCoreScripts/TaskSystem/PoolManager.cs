@@ -8,10 +8,10 @@ namespace CommonCoreScripts.TaskSystem
 {
     public class PoolManager : SerializedMonoBehaviour
     {
-        public static PoolManager Instance { get; set; }
+        private static PoolManager Instance { get; set; }
 
-        [OdinSerialize] private List<TaskPool> pools;
-        public IEnumerable<TaskPool> RemainingPools => pools.Where(p => p.status != TaskPool.PoolStatus.Finished);
+        [OdinSerialize] private List<TaskPool> _pools;
+        public IEnumerable<TaskPool> RemainingPools => _pools.Where(p => p.Status != TaskPool.PoolStatus.Finished);
 
         // Singleton Awake
         private void Awake()
@@ -26,7 +26,7 @@ namespace CommonCoreScripts.TaskSystem
 
         public void StartPool(TaskPool pool)
         {
-            if (!pools.Contains(pool)) return;
+            if (!_pools.Contains(pool)) return;
             
             pool.StartPool();
         }
