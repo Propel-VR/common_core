@@ -14,6 +14,14 @@ using Unity.XR.CoreUtils;
 
 public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
 {
+    public enum Mode
+    {
+        VisibleLine,
+        ReticleOnly
+    }
+
+    [SerializeField] Mode mode = Mode.VisibleLine;
+
     [Header("Ray Parameters")]
     [SerializeField] bool autoUpdate = true;
     [SerializeField] float maxDistance = 5;
@@ -27,7 +35,7 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
     [SerializeField] Gradient invalidGradient;
 
     [Header("Reference")]
-    [SerializeField] Transform playerController;
+    [SerializeField] Transform playerTransform;
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] Transform origin;
     [SerializeField] Transform reticle;
@@ -36,8 +44,11 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
     bool lastTriggerValue;
     Collider lastCollider;
     IInteractableObject currentObject;
+    bool isValidHit = false;
 
-    private void Awake ()
+    public float MaxDistance { get => maxDistance; set => maxDistance = value; }
+
+    private void Awake()
     {
         if (!string.IsNullOrEmpty(targetLayer))
         {
@@ -45,7 +56,7 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
         }
     }
 
-    private void Update ()
+    private void LateUpdate()
     {
         if (autoUpdate) OnUpdate();
 
@@ -56,7 +67,7 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
         lineRenderer.positionCount = 2;
     }
 
-    public void OnUpdate ()
+    public void OnUpdate()
     {
         Collider newCollider = null;
         Vector3 hitPoint = Vector3.zero;
@@ -75,11 +86,11 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
             didHitSomething = true;
 
             bool isValid = true;
-            if(targetLayerIndex != -1 && hitInfo.collider.gameObject.layer != targetLayerIndex)
+            if (targetLayerIndex != -1 && hitInfo.collider.gameObject.layer != targetLayerIndex)
             {
                 isValid = false;
             }
-            if(Physics.Linecast(playerController.TransformPoint(Vector3.up), m_rayStart, colliderLayers.value, triggerInteraction))
+            if (Physics.Linecast(playerTransform.TransformPoint(Vector3.up), m_rayStart, colliderLayers.value, triggerInteraction))
             {
                 // Cancel if the arm is not linked to the body (trying to put your hands throught the wall to teleport throught it
                 isValid = false;
@@ -87,13 +98,14 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
             if (isValid)
             {
                 newCollider = hitInfo.collider;
+                Debug.Log("HIT OBJ: "+hitInfo.collider.gameObject.name);
             }
         }
 
         // Raycasting UI
-        if(TryGetCurrentUIRaycastResult(out RaycastResult raycastResult, out int raycastEndpointIndex))
+        if (TryGetCurrentUIRaycastResult(out RaycastResult raycastResult, out int raycastEndpointIndex))
         {
-            if(raycastResult.isValid)
+            if (raycastResult.isValid)
             {
                 didHitSomething = true;
                 didHitUI = true;
@@ -103,56 +115,102 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
         }
 
         // No longer focusing on last,
-        if(newCollider != lastCollider && lastCollider != null)
+        if (newCollider != lastCollider && lastCollider != null)
         {
             currentObject.OnEndHover();
             currentObject = null;
         }
         // Focusing on new object
-        if(newCollider != lastCollider && newCollider != null)
+        if (newCollider != lastCollider && newCollider != null)
         {
             currentObject = (IInteractableObject)newCollider.GetComponent(typeof(IInteractableObject));
             currentObject.OnBeginHover();
         }
 
-        // Reticle
-        if (reticle.gameObject.activeSelf != didHitSomething) reticle.gameObject.SetActive(didHitSomething);
-        if(didHitSomething)
+        isValidHit = didHitUI || (currentObject != null && currentObject.IsInteractable());
+
+        if (isValidHit)
+        {
+            Debug.Log("VALID");
+            Debug.Log(currentObject);
+        }
+
+            // Reticle
+            if (mode == Mode.VisibleLine)
+        {
+            if (reticle.gameObject.activeSelf != didHitSomething)
+                reticle.gameObject.SetActive(didHitSomething);
+        }
+        else
+        {
+            if (reticle.gameObject.activeSelf != isValidHit)
+                reticle.gameObject.SetActive(isValidHit);
+        }
+
+        if (reticle.gameObject.activeSelf)
         {
             reticle.transform.forward = hitNormal;
             reticle.transform.position = hitPoint + hitNormal * 0.005f;
         }
 
         // Renderer
-        lineRenderer.colorGradient = (didHitUI || (currentObject != null && currentObject.IsInteractable())) ? validGradient : invalidGradient;
-        lineRenderer.SetPosition(0, ray.origin);
-        if(didHitSomething)
-            lineRenderer.SetPosition(1, hitPoint - ray.direction * 0.02f);
-        else
-            lineRenderer.SetPosition(1, ray.origin + ray.direction * maxDistance);
+
+        if (mode == Mode.VisibleLine)
+        {
+            lineRenderer.colorGradient = isValidHit ? validGradient : invalidGradient;
+            lineRenderer.SetPosition(0, ray.origin);
+            if (didHitSomething)
+                lineRenderer.SetPosition(1, hitPoint - ray.direction * 0.02f);
+            else
+                lineRenderer.SetPosition(1, ray.origin + ray.direction * maxDistance);
+        }
 
         // Selection
         bool triggerValue = Input.GetAxisRaw("XRI_Right_Trigger") > 0.5f || Input.GetMouseButton(0);
-        if(triggerValue && !lastTriggerValue && currentObject != null) {
+        if (triggerValue && !lastTriggerValue && currentObject != null)
+        {
+            Debug.Log("INTERACTED");
             currentObject.OnInteract();
+        }
+        else
+        {
+            Debug.Log("NO INTERACT");
         }
 
         lastTriggerValue = triggerValue;
         lastCollider = newCollider;
-        
-    }
 
-    void OnEnable ()
+    }
+    void OnEnable()
     {
         if (m_EnableUIInteraction)
             RegisterWithXRUIInputModule();
     }
 
-    void OnDisable ()
+    void OnDisable()
     {
         if (m_EnableUIInteraction)
             UnregisterFromXRUIInputModule();
     }
+
+    public void SetMode(Mode mode)
+    {
+        this.mode = mode;
+
+        switch (mode)
+        {
+            case Mode.VisibleLine:
+                lineRenderer.enabled = true;
+                break;
+            case Mode.ReticleOnly:
+                lineRenderer.enabled = false;
+                break;
+        }
+    }
+
+    public void SetModeVisibleLine() => SetMode(Mode.VisibleLine);
+    public void SetModeReticleOnly() => SetMode(Mode.ReticleOnly);
+
 
 
     #region UI Interaction
@@ -164,7 +222,7 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
     XRInteractionManager m_InteractionManager;
     static XRInteractionManager s_InteractionManagerCache;
 
-    void FindCreateInteractionManager ()
+    void FindCreateInteractionManager()
     {
         if (m_InteractionManager != null)
             return;
@@ -182,7 +240,7 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
     }
 
     #region XRUI Creation/Registering
-    void FindOrCreateXRUIInputModule ()
+    void FindOrCreateXRUIInputModule()
     {
         var eventSystem = FindObjectOfType<EventSystem>();
         if (eventSystem == null)
@@ -200,7 +258,7 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
             m_InputModule = eventSystem.gameObject.AddComponent<XRUIInputModule>();
     }
 
-    void RegisterWithXRUIInputModule ()
+    void RegisterWithXRUIInputModule()
     {
         if (m_InputModule == null)
             FindOrCreateXRUIInputModule();
@@ -212,10 +270,10 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
 
         m_InputModule.RegisterInteractor(this);
         m_RegisteredInputModule = m_InputModule;
-        
+
     }
 
-    void UnregisterFromXRUIInputModule ()
+    void UnregisterFromXRUIInputModule()
     {
         if (m_RegisteredInputModule != null)
             m_RegisteredInputModule.UnregisterInteractor(this);
@@ -224,7 +282,7 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
     }
     #endregion
 
-    public bool TryGetCurrentUIRaycastResult (out RaycastResult raycastResult, out int raycastEndpointIndex)
+    public bool TryGetCurrentUIRaycastResult(out RaycastResult raycastResult, out int raycastEndpointIndex)
     {
         if (TryGetUIModel(out var model) && model.currentRaycast.isValid)
         {
@@ -239,7 +297,7 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
     }
 
 
-    public virtual void UpdateUIModel (ref TrackedDeviceModel model)
+    public virtual void UpdateUIModel(ref TrackedDeviceModel model)
     {
         if (!isActiveAndEnabled)
             return;
@@ -255,7 +313,7 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
         raycastPoints.Add(m_rayEnd);
     }
 
-    public bool TryGetUIModel (out TrackedDeviceModel model)
+    public bool TryGetUIModel(out TrackedDeviceModel model)
     {
         if (m_InputModule != null)
         {
@@ -266,11 +324,12 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
         return false;
     }
 
-    public bool IsOverUIGameObject ()
+    public bool IsOverUIGameObject()
     {
         return m_EnableUIInteraction && m_InputModule != null && TryGetUIModel(out var uiModel) && m_InputModule.IsPointerOverGameObject(uiModel.pointerId);
     }
 
 
     #endregion
+
 }

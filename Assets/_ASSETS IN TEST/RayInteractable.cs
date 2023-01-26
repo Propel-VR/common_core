@@ -39,6 +39,7 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
     {
         if (isHovering)
         {
+            Debug.Log("IM BEING HOVERED");
             float hoverDelayValue = Mathf.Clamp01((Time.unscaledTime - initHoverTime) / minTimeBeforeFadeIn);
 
             if (hoverDelayValue < 1f)
@@ -65,6 +66,7 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
 
     public void OnInteract()
     {
+        Debug.Log("IM BEING INTERACTED");
         if (Time.unscaledTime - initHoverTime > minTimeBeforeFadeIn)
         {
             onInteract?.Invoke();
