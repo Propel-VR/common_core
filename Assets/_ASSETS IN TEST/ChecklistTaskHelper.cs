@@ -22,10 +22,14 @@ public class ChecklistTaskHelper : MonoBehaviour
     {
         checkID = Tablet.Instance.AddCheckListItem(gameObject.name);
 
+        Debug.Log("SET UP TASK WITH ID: " + checkID);
+
     }
 
     public void OnComplete()
     {
+
+        Debug.Log("TASK COMPLETE FOR \""+gameObject.name+"\"");
         Tablet.Instance.CompleteItem(checkID);
     }
 

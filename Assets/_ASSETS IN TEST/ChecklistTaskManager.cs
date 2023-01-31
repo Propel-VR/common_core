@@ -9,7 +9,7 @@ public class ChecklistTaskManager : MonoBehaviour
     {
         AddTaskToTablet(transform, false);
 
-        Tablet.Instance.UpdateChecklist();
+        Tablet.Instance.StartTasks();
     }
 
 

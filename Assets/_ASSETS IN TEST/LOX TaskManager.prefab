@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2868840799319653838}
   - component: {fileID: 375711940968482373}
+  - component: {fileID: 782418906}
   m_Layer: 0
   m_Name: Open Service Line Shutoff
   m_TagString: Untagged
@@ -57,6 +58,18 @@ MonoBehaviour:
   OnTaskDisabled:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &782418906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287052803921346264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &521873891370523643
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,6 +80,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7583867867135522924}
   - component: {fileID: 1394241374424414647}
+  - component: {fileID: 1087261579}
   m_Layer: 0
   m_Name: Maintain Pressure (should this be a fail instead?)
   m_TagString: Untagged
@@ -104,7 +118,19 @@ MonoBehaviour:
   _prerequisites: []
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1394241374424414647}
+        m_TargetAssemblyTypeName: CamhOO.Task, Assembly-CSharp
+        m_MethodName: CompleteTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -114,6 +140,18 @@ MonoBehaviour:
   OnTaskDisabled:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1087261579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521873891370523643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &579914141663074092
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2550824755149231210}
   - component: {fileID: 8985130502914032859}
+  - component: {fileID: 528119499}
   m_Layer: 0
   m_Name: Open Service line drain valve
   m_TagString: Untagged
@@ -171,6 +210,18 @@ MonoBehaviour:
   OnTaskDisabled:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &528119499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579914141663074092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2188257338361307525
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3951959222527551418}
   - component: {fileID: 1559605690707163364}
+  - component: {fileID: 916658312}
   m_Layer: 0
   m_Name: Close Service Line Drain Valve
   m_TagString: Untagged
@@ -228,6 +280,18 @@ MonoBehaviour:
   OnTaskDisabled:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &916658312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188257338361307525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2849841666369070731
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,8 +302,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2849841666369070741}
   - component: {fileID: 2849841666369070730}
+  - component: {fileID: 1637091246}
   m_Layer: 0
-  m_Name: TaskManager
+  m_Name: LOX TaskManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,6 +353,18 @@ MonoBehaviour:
   OnFinishTask:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1637091246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2849841666369070731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fed8d542bb1f1743b8fe7865ad08a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3683476907751953950
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2513993507124123256}
   - component: {fileID: 8309935787902186604}
+  - component: {fileID: 1410550330}
   m_Layer: 0
   m_Name: Close Service Line Shut Off Valve
   m_TagString: Untagged
@@ -477,6 +555,18 @@ MonoBehaviour:
   OnTaskDisabled:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1410550330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348249568191727298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6380127581517411181
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,8 +577,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7044645290767871647}
   - component: {fileID: 5943997393873132570}
+  - component: {fileID: 1087261580}
   m_Layer: 0
-  m_Name: Open BuildUp VAlve 45% +-5
+  m_Name: Open BuildUp VAlve 45 PSI +-5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -534,6 +625,18 @@ MonoBehaviour:
   OnTaskDisabled:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1087261580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6380127581517411181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6561518735768227906
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9007913360286378982}
   - component: {fileID: 424717742394834295}
+  - component: {fileID: 1087261582}
   m_Layer: 0
   m_Name: Clean Adapter (NOT READY)
   m_TagString: Untagged
@@ -581,9 +685,6 @@ MonoBehaviour:
   _prerequisites: []
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 424717742394834295}
         m_TargetAssemblyTypeName: CamhOO.Task, Assembly-CSharp
@@ -597,12 +698,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnTaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
   OnTaskDisabled:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1087261582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6561518735768227906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6622713151591725030
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5648645135440590449}
   - component: {fileID: 4003468362016030163}
+  - component: {fileID: 2052751208}
   m_Layer: 0
   m_Name: Steady Flow Achieved (NOT READY)
   m_TagString: Untagged
@@ -672,6 +789,18 @@ MonoBehaviour:
   OnTaskDisabled:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2052751208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6622713151591725030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7313306901553760562
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1460750743523113154}
   - component: {fileID: 4634747846708228221}
+  - component: {fileID: 1087261581}
   m_Layer: 0
   m_Name: Place Adapter Firmly on Service Cart
   m_TagString: Untagged
@@ -729,6 +859,18 @@ MonoBehaviour:
   OnTaskDisabled:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1087261581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7313306901553760562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8233302030809829173
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 731094185277065219}
   - component: {fileID: 6695675897978349774}
+  - component: {fileID: 769305275}
   m_Layer: 0
   m_Name: Liquid Stops Flowing (NOT READY)
   m_TagString: Untagged
@@ -798,6 +941,18 @@ MonoBehaviour:
   OnTaskDisabled:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &769305275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8233302030809829173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8769199321928368073
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4544035235178170005}
   - component: {fileID: 9033553273371673602}
+  - component: {fileID: 1087261583}
   m_Layer: 0
   m_Name: Remove Adapter
   m_TagString: Untagged
@@ -848,13 +1004,37 @@ MonoBehaviour:
       m_Calls: []
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1087261583}
+        m_TargetAssemblyTypeName: ChecklistTaskHelper, Assembly-CSharp
+        m_MethodName: OnComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
   OnTaskDisabled:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1087261583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8769199321928368073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9136389938221196942
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,6 +1045,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4230707430326695864}
   - component: {fileID: 3785413133198469625}
+  - component: {fileID: 453641475}
   m_Layer: 0
   m_Name: Remove Service Hose from Purge Adapter
   m_TagString: Untagged
@@ -912,3 +1093,15 @@ MonoBehaviour:
   OnTaskDisabled:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &453641475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9136389938221196942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

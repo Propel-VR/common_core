@@ -28,6 +28,15 @@ public class Tablet : MonoBehaviour
         Instance= this;
     }
 
+    public void StartTasks()
+    {
+        ChecklistItemData data = checklistItemData[0];
+        data.Current = true;
+        checklistItemData[0] = data;
+
+        UpdateChecklist();
+    }
+
     public void CompleteItem(int id)
     {
         if (id >= checklistItemData.Count)
@@ -40,6 +49,14 @@ public class Tablet : MonoBehaviour
 
         item.Complete = true;
 
+        checklistItemData[id] = item;
+
+        if(id<checklistItemData.Count-2) 
+        {
+        
+            item = checklistItemData[id+1];
+            item.Current= true;
+        }
 
         UpdateChecklist();
     }
@@ -53,6 +70,7 @@ public class Tablet : MonoBehaviour
         item.ID = checklistItemData.Count;
         item.Complete= false;
         item.Fail = false;
+        item.Current = false;
         checklistItemData.Add(item);
 
         return item.ID;
@@ -61,7 +79,7 @@ public class Tablet : MonoBehaviour
 
     public void NextChecklistPage()
     {
-        if (checklistPageNum+1 * pageSize > checklistItemData.Count-1)
+        if (checklistPageNum+1 * pageSize >= checklistItemData.Count)
             return;
 
         checklistPageNum++;
@@ -90,11 +108,23 @@ public class Tablet : MonoBehaviour
         for(int i=0; i<pageSize; i++)
         {
             int id = pageSize * checklistPageNum + i;
-            checklistItems[id].SetText(checklistItemData[i].ItemText);
-            if (checklistItemData[id].Complete)
-                checklistItems[id].Complete();
-            if (checklistItemData[id].Fail)
-                checklistItems[id].Fail();  
+            if (id >= checklistItemData.Count && id >= 0)
+            {
+                Debug.Log("failed to set item, out of bounds ID #" + id);
+                checklistItems[i].SetText("");
+            }
+            else
+            {
+                Debug.Log("Setting item #" + i + ", using ID #" + id);
+                checklistItems[i].SetText(checklistItemData[id].ItemText);
+                if (checklistItemData[id].Complete)
+                    checklistItems[i].Complete();
+                if (checklistItemData[id].Fail)
+                    checklistItems[i].Fail();
+                if (checklistItemData[id].Current)
+                    checklistItems[i].Current();
+
+            }
 
         }
     }
@@ -134,6 +164,7 @@ public class Tablet : MonoBehaviour
     {
         public int ID;
         public string ItemText;
+        public bool Current;
         public bool Complete;
         public bool Fail;
     }
