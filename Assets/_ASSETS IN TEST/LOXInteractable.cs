@@ -20,7 +20,7 @@ public class LOXInteractable : MonoBehaviour
 
     public void TaskStarted()
     {
-        outline.OutlineMode = Outline.Mode.SilhouetteOnly;
+        outline.OutlineMode = Outline.Mode.OutlineAll;
         grabUI.SetActive(true);
     }
 
