@@ -11,13 +11,21 @@ public class Tablet : MonoBehaviour
     [SerializeField]
     TabletScreen[] tabletScreens= null;
 
+   
+
     [SerializeField]
-    List<ChecklistItemData> checklistItemData=new List<ChecklistItemData>();
+    List<TOCChapterData> tocChapterData= new List<TOCChapterData>();
 
     [SerializeField]
     ChecklistItem[] checklistItems;
 
+    [SerializeField]
+    TOCChapterItem[] tocChapterItems;
+    [SerializeField]
+    TOCCurrentChapter currentChapter;
+
     int checklistPageNum = 0;
+    int currentChapterID;
     int pageSize;
 
     public static Tablet Instance { get; private set; }
@@ -28,63 +36,116 @@ public class Tablet : MonoBehaviour
         Instance= this;
     }
 
-    public void StartTasks()
+    public void StartChapter(int chapterNum)
     {
-        ChecklistItemData data = checklistItemData[0];
-        data.Current = true;
-        checklistItemData[0] = data;
+        currentChapterID= chapterNum;
 
-        UpdateChecklist();
+        TOCChapterData data = tocChapterData[chapterNum];
+        data.Current = true;
+        currentChapter.SetChapter(data.ChapterName, data.Image);
+        tocChapterData[chapterNum] = data;
+
+        UpdateChapters();
+        UpdateChecklist(chapterNum);
+
     }
 
-    public void CompleteItem(int id)
+    public void StartTasks(int chapterID)
     {
-        if (id >= checklistItemData.Count)
+        ChecklistItemData data = tocChapterData[chapterID].ChecklistItemData[0];
+        data.Current = true;
+        tocChapterData[chapterID].ChecklistItemData[0] = data;
+
+        UpdateChecklist(chapterID);
+    }
+
+
+    public void CompleteItem(int id, int chapterID)
+    {
+        if (id >= tocChapterData[chapterID].ChecklistItemData.Count)
         {
             Debug.Log("OUT OF BOUND ID");
                 return;
         }
 
-        ChecklistItemData item = checklistItemData[id];
+        ChecklistItemData item = tocChapterData[chapterID].ChecklistItemData[id];
 
         item.Complete = true;
+        item.Current = false;
 
-        checklistItemData[id] = item;
+        tocChapterData[chapterID].ChecklistItemData[id] = item;
 
-        if(id<checklistItemData.Count-2) 
+        if(id< tocChapterData[chapterID].ChecklistItemData.Count-2) 
         {
         
-            item = checklistItemData[id+1];
+            item = tocChapterData[chapterID].ChecklistItemData[id+1];
             item.Current= true;
+            tocChapterData[chapterID].ChecklistItemData[id + 1] = item;
         }
 
-        UpdateChecklist();
+        UpdateChecklist(chapterID);
     }
 
-    public int AddCheckListItem(string itemText)
+    public void CompleteChapterItem(int id)
+    {
+        if (id >= tocChapterData.Count)
+        {
+            Debug.Log("OUT OF BOUND ID");
+            return;
+        }
+
+        TOCChapterData item = tocChapterData[id];
+
+        item.Complete = true;
+        item.Current = false;
+     
+        UpdateChapters();
+    }
+
+    public int AddCheckListItem(string itemText, int chapterID, bool complete, bool warning, bool caution)
     {
 
         ChecklistItemData item;
 
         item.ItemText = itemText;
-        item.ID = checklistItemData.Count;
-        item.Complete= false;
+        item.ID =tocChapterData[chapterID].ChecklistItemData.Count;
+        item.Complete= complete;
         item.Fail = false;
         item.Current = false;
-        checklistItemData.Add(item);
+        item.HasWarning= warning;
+        item.HasCaution= caution;
+        tocChapterData[chapterID].ChecklistItemData.Add(item);
 
         return item.ID;
 
     }
 
+
+    public int AddChapter(string chapterName, Sprite chapterImg)
+    {
+        TOCChapterData chapter;
+
+        chapter.ChapterName = chapterName;
+        chapter.ID = tocChapterData.Count;
+        chapter.Complete = false;
+        chapter.Fail = false;
+        chapter.Current = false;
+        chapter.Image = chapterImg;
+        chapter.ChecklistItemData = new List<ChecklistItemData>();
+        tocChapterData.Add(chapter);
+
+
+        return chapter.ID;
+    }
+
     public void NextChecklistPage()
     {
-        if (checklistPageNum+1 * pageSize >= checklistItemData.Count)
+        if (checklistPageNum+1 * pageSize >= tocChapterData[currentChapterID].ChecklistItemData.Count)
             return;
 
         checklistPageNum++;
 
-        UpdateChecklist();
+        UpdateChecklist(currentChapterID);
 
     }
 
@@ -95,10 +156,10 @@ public class Tablet : MonoBehaviour
 
         checklistPageNum--;
 
-        UpdateChecklist();
+        UpdateChecklist(currentChapterID);
     }
 
-    public void UpdateChecklist()
+    public void UpdateChecklist(int chapterID)
     {
         foreach(ChecklistItem item in checklistItems)
         {
@@ -108,7 +169,7 @@ public class Tablet : MonoBehaviour
         for(int i=0; i<pageSize; i++)
         {
             int id = pageSize * checklistPageNum + i;
-            if (id >= checklistItemData.Count && id >= 0)
+            if (id >= tocChapterData[chapterID].ChecklistItemData.Count || id < 0)
             {
                 Debug.Log("failed to set item, out of bounds ID #" + id);
                 checklistItems[i].SetText("");
@@ -116,13 +177,47 @@ public class Tablet : MonoBehaviour
             else
             {
                 Debug.Log("Setting item #" + i + ", using ID #" + id);
-                checklistItems[i].SetText(checklistItemData[id].ItemText);
-                if (checklistItemData[id].Complete)
+                checklistItems[i].SetText(tocChapterData[chapterID].ChecklistItemData[id].ItemText);
+                if (tocChapterData[chapterID].ChecklistItemData[id].Complete)
                     checklistItems[i].Complete();
-                if (checklistItemData[id].Fail)
+                if (tocChapterData[chapterID].ChecklistItemData[id].Fail)
                     checklistItems[i].Fail();
-                if (checklistItemData[id].Current)
+                if (tocChapterData[chapterID].ChecklistItemData[id].Current)
                     checklistItems[i].Current();
+                checklistItems[i].SetWarningCaution(tocChapterData[chapterID].ChecklistItemData[id].HasWarning, tocChapterData[chapterID].ChecklistItemData[id].HasCaution);
+                
+
+            }
+
+        }
+    }
+
+    public void UpdateChapters()
+    {
+        foreach (TOCChapterItem item in tocChapterItems)
+        {
+            item.UnComplete();
+        }
+
+        for (int i = 0; i < tocChapterItems.Count(); i++)
+        {
+            int id = i;
+            if (id >= tocChapterData.Count || id < 0)
+            {
+                Debug.Log("failed to set chapter item, out of bounds ID #" + id);
+                tocChapterItems[i].SetTextAndImage("",null);
+            }
+            else
+            {
+                Debug.Log("Setting chapter item #" + i + ", using ID #" + id);
+                tocChapterItems[i].SetTextAndImage(tocChapterData[id].ChapterName, tocChapterData[id].Image);
+                tocChapterItems[i].SetProgress(GetNumTaskComplete(id), tocChapterData[id].ChecklistItemData.Count);
+                if (tocChapterData[id].Complete)
+                    tocChapterItems[i].Complete();
+                if (tocChapterData[id].Fail)
+                    tocChapterItems[i].Fail();
+                if (tocChapterData[id].Current)
+                    tocChapterItems[i].Current();
 
             }
 
@@ -140,6 +235,7 @@ public class Tablet : MonoBehaviour
     {
         foreach (GameObject go in tabletScreens[screenID].gameObjects)
             go.SetActive(true);
+
     }
 
     private void DisableScreens()
@@ -149,6 +245,15 @@ public class Tablet : MonoBehaviour
             foreach(GameObject go in screen.gameObjects)
                 go.SetActive(false);
         }
+    }
+
+    private int GetNumTaskComplete(int chapterNum)
+    {
+        int numTaskComplete = 0;
+        foreach(ChecklistItemData data in tocChapterData[chapterNum].ChecklistItemData)
+            if(data.Complete) numTaskComplete++;
+
+        return numTaskComplete;
     }
 
 
@@ -167,5 +272,21 @@ public class Tablet : MonoBehaviour
         public bool Current;
         public bool Complete;
         public bool Fail;
+
+        public bool HasWarning, HasCaution;
     }
+
+    [System.Serializable]
+    public struct TOCChapterData
+    {
+        public int ID;
+        public string ChapterName;
+        public bool Current;
+        public bool Complete;
+        public bool Fail;
+        public Sprite Image;
+
+        public List<ChecklistItemData> ChecklistItemData;
+    }
+
 }

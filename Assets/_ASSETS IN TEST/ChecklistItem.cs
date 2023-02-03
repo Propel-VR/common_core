@@ -15,6 +15,8 @@ public class ChecklistItem : MonoBehaviour
     Color _currentTaskColour;
     [SerializeField]
     Button _button;
+    [SerializeField]
+    GameObject _warning, _caution;
 
     public UnityEvent OnCompleteItem, OnFailItem, OnUnCommpleteItem;
 
@@ -32,6 +34,9 @@ public class ChecklistItem : MonoBehaviour
         ColorBlock colors = _button.colors;
         colors.normalColor = Color.clear;
         _button.colors = colors;
+
+        _warning.SetActive(false); 
+        _caution.SetActive(false);
 
         if (_text.text.IsNullOrEmpty())
             return;
@@ -58,6 +63,12 @@ public class ChecklistItem : MonoBehaviour
     {
         _text.text = textString;
 
+    }
+
+    public void SetWarningCaution(bool warn, bool caut)
+    {
+        _warning.SetActive(warn);
+        _caution.SetActive(caut);
     }
 
 }
