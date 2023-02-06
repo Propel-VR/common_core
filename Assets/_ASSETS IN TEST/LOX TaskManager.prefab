@@ -49,7 +49,19 @@ MonoBehaviour:
   _prerequisites: []
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -282,6 +294,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -478,10 +502,34 @@ MonoBehaviour:
   _prerequisites: []
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_MethodName: TaskComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -585,7 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startComplete: 1
+  startComplete: 0
   hasCaution: 0
   hasWarning: 0
 --- !u!1 &2188257338361307525
@@ -637,10 +685,34 @@ MonoBehaviour:
   _prerequisites: []
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_MethodName: TaskComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -1011,10 +1083,9 @@ MonoBehaviour:
   - {fileID: 5943997393873132570}
   - {fileID: 1394241374424414647}
   - {fileID: 375711940968482373}
-  - {fileID: 0}
+  - {fileID: 8309935787902186604}
   - {fileID: 8309935787902186604}
   - {fileID: 8985130502914032859}
-  - {fileID: 0}
   - {fileID: 1559605690707163364}
   - {fileID: 3785413133198469625}
   OnStartPool:
@@ -1053,7 +1124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66563c80f9be974c9a435a4b800bb97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chapterSprite: {fileID: 21300000, guid: bf4e7e0afde729e4098cf3f7a2c156ef, type: 3}
+  chapterSprite: {fileID: 21300000, guid: 34f49f99ae5ba4144b4a57bdeef4b04f, type: 3}
 --- !u!1 &4147855934784961482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,7 +1922,19 @@ MonoBehaviour:
       m_Calls: []
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_MethodName: TaskComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -1922,10 +2005,46 @@ MonoBehaviour:
   _prerequisites: []
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_MethodName: TaskComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -2009,9 +2128,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_MethodName: TaskComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -2325,10 +2468,34 @@ MonoBehaviour:
   _prerequisites: []
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_MethodName: TaskComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -2607,6 +2774,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
@@ -2993,7 +3172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startComplete: 1
+  startComplete: 0
   hasCaution: 0
   hasWarning: 0
 --- !u!1 &9000190085534736425
@@ -3066,7 +3245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startComplete: 1
+  startComplete: 0
   hasCaution: 0
   hasWarning: 0
 --- !u!1 &9103808468823187005
@@ -3253,10 +3432,34 @@ MonoBehaviour:
   _prerequisites: []
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_MethodName: TaskComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
