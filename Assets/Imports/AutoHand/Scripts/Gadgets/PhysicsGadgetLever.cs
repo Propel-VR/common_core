@@ -14,7 +14,7 @@ public class PhysicsGadgetLever : PhysicsGadgetHingeAngleReader{
     bool min = false;
     bool max = false;
     bool mid = true;
-
+// Max event will run every frame..? Do we want this? SR
     protected void FixedUpdate(){
         var value = GetValue();
 
