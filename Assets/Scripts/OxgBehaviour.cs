@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class OxgBehaviour : MonoBehaviour
 {
@@ -12,12 +13,9 @@ public class OxgBehaviour : MonoBehaviour
     public ParticleSystem liquid;
     public ParticleSystem liquidSteam;
 
-    public Animator anim;
-
-    void BeginStream()
+    public void BeginStream()
     {
         steam.Play();
-        anim.SetTrigger("TransitionTrigger");
     }
 
    
@@ -28,36 +26,5 @@ public class OxgBehaviour : MonoBehaviour
         steam.Stop();
         liquidSteam.Play();
     }
-
-// Start is called before the first frame update
-    void Start()
-    {
-        BeginStream();
-        StartCoroutine(CheckHoldTime(timeToHold));
-        
-    }
-
-    /*
-    IEnumerator StreamAnimate()
-    {
-        ParticleSystem.MainModule main = steam.main;
-        main.startLifetime = 1f;
-        float t = 0;
-
-        while(t < 5)
-        {
-            main.startLifetime = Mathf.Lerp(1f, 4f, t / 5);
-            t += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
-        }
-    }
-    */
-    /*public void BeginStream()
-{
-    steam.Play();
-
-    StartCoroutine(StreamAnimate());
-}
-
-*/
+    
 }
