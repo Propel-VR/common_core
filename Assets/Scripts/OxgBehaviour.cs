@@ -6,25 +6,34 @@ using UnityEngine.Events;
 public class OxgBehaviour : MonoBehaviour
 {
 
-    public float timeToHold;
-    public float timeHeld;
-
     public ParticleSystem steam;
     public ParticleSystem liquid;
-    public ParticleSystem liquidSteam;
 
     public void BeginStream()
     {
         steam.Play();
+        StartCoroutine(WaitForTransition(Random.Range(15.0f, 30.0f)));
+    }
+
+    public void EndStream()
+    {
+        steam.Stop();
+        liquid.Stop();
     }
 
    
-    IEnumerator CheckHoldTime(float timeToHold)
+    IEnumerator WaitForTransition(float time)
     {
-        yield return new WaitForSeconds(timeToHold);
+        yield return new WaitForSeconds(time);
         liquid.Play();
         steam.Stop();
-        liquidSteam.Play();
     }
-    
+
+   /*
+    private void Start()
+    {
+        BeginStream();
+    }
+   */ 
+
 }
