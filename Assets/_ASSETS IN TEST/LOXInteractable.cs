@@ -41,7 +41,7 @@ public class LOXInteractable : MonoBehaviour
         {
 
             var lookPos = Camera.main.transform.position - completeUI.transform.position;
-            lookPos.y = 0;
+            //lookPos.y = 0;
             completeUI.transform.rotation = Quaternion.LookRotation(lookPos);
             //completeUI.transform.rotation = Quaternion.Slerp(completeUI.transform.rotation, rotation, Time.deltaTime/* x damping */);
         }

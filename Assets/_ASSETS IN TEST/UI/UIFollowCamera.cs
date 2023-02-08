@@ -45,7 +45,7 @@ public class UIFollowCamera : MonoBehaviour
         Transform newTarget =  _target;
 
 
-        // Trying to figure out how far should the UI be placed from a wall using a sphere cast
+        // Trying to igure out how far should the UI be placed from a wall using a sphere cast
         Vector3 initPos = newTarget.position;
         Vector3 pos = initPos;
         float rotY = newTarget.eulerAngles.y;
@@ -91,7 +91,7 @@ public class UIFollowCamera : MonoBehaviour
             _posVel = Vector3.zero;
             _posSnap = false;
         }
-        if (dist > _maxDistBeforeSnap) _posSnap = true;
+        if (dist > _maxDistBeforeSnap || dist < _minDistAfterSnap) _posSnap = true;
         if (_posSnap)
         {
             // Gradually go toward target until min dist is reached

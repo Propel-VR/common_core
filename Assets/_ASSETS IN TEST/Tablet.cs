@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Device;
@@ -23,6 +24,9 @@ public class Tablet : MonoBehaviour
     TOCChapterItem[] tocChapterItems;
     [SerializeField]
     TOCCurrentChapter currentChapter;
+
+    [SerializeField]
+    TextMeshProUGUI progressText;
 
     int checklistPageNum = 0;
     int currentChapterID;
@@ -190,6 +194,8 @@ public class Tablet : MonoBehaviour
             }
 
         }
+
+        progressText.text = GetNumTaskComplete(chapterID) + 1 + "/" + tocChapterData[chapterID].ChecklistItemData.Count + " complete";
     }
 
     public void UpdateChapters()
