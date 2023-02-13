@@ -10,6 +10,8 @@ public class ChecklistTaskManager : MonoBehaviour
         AddChapterToTablet(transform);
 
         Tablet.Instance.UpdateChapters();
+
+        Tablet.Instance.StartChapter(3);
     }
 
 

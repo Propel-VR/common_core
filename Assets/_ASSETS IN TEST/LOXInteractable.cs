@@ -13,7 +13,7 @@ public class LOXInteractable : MonoBehaviour
 
     [SerializeField]
     Transform anchoredTo;
-    Vector3 offset= Vector3.up*0.15f;
+    Vector3 offset= Vector3.up*0.2f;
 
     private void Awake()
     {
