@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Tutorials.Core.Editor;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -38,7 +37,7 @@ public class ChecklistItem : MonoBehaviour
         _warning.SetActive(false); 
         _caution.SetActive(false);
 
-        if (_text.text.IsNullOrEmpty())
+        if (string.IsNullOrEmpty(_text.text))
             return;
 
 

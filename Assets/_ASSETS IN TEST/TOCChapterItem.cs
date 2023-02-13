@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Tutorials.Core.Editor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -34,7 +33,8 @@ public class TOCChapterItem : MonoBehaviour
         colors.normalColor = Color.clear;
         _button.colors = colors;
 
-        if (_chapterNameText.text.IsNullOrEmpty())
+        
+        if (string.IsNullOrEmpty(_chapterNameText.text))
             return;
 
 
@@ -59,7 +59,7 @@ public class TOCChapterItem : MonoBehaviour
     {
         _chapterNameText.text = textString;
         _chapterProgressText.text = "";
-        if(textString.IsNotNullOrEmpty())
+        if(string.IsNullOrEmpty(textString))
         {
             ColorBlock colors = _button.colors;
             colors.normalColor = Color.white;
