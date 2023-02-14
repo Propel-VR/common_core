@@ -12,8 +12,6 @@ public class Tablet : MonoBehaviour
     [SerializeField]
     TabletScreen[] tabletScreens= null;
 
-   
-
     [SerializeField]
     List<TOCChapterData> tocChapterData= new List<TOCChapterData>();
 
@@ -117,7 +115,7 @@ public class Tablet : MonoBehaviour
         item.Fail = false;
         item.Current = false;
         item.HasWarning= warning;
-        item.HasCaution= caution;
+        item.HasCaution = caution;
         tocChapterData[chapterID].ChecklistItemData.Add(item);
 
         return item.ID;
@@ -125,7 +123,7 @@ public class Tablet : MonoBehaviour
     }
 
 
-    public int AddChapter(string chapterName, Sprite chapterImg)
+    public int AddChapter(string chapterName, Sprite chapterImg, Sprite background)
     {
         TOCChapterData chapter;
 
@@ -136,6 +134,7 @@ public class Tablet : MonoBehaviour
         chapter.Current = false;
         chapter.Image = chapterImg;
         chapter.ChecklistItemData = new List<ChecklistItemData>();
+        chapter.BackgroundSprite = background;
         tocChapterData.Add(chapter);
 
 
@@ -195,7 +194,7 @@ public class Tablet : MonoBehaviour
 
         }
 
-        progressText.text = GetNumTaskComplete(chapterID) + 1 + "/" + tocChapterData[chapterID].ChecklistItemData.Count + " complete";
+        progressText.text = GetNumTaskComplete(chapterID) + "/" + (tocChapterData[chapterID].ChecklistItemData.Count - 1) + " complete";
     }
 
     public void UpdateChapters()
@@ -216,7 +215,7 @@ public class Tablet : MonoBehaviour
             else
             {
                 Debug.Log("Setting chapter item #" + i + ", using ID #" + id);
-                tocChapterItems[i].SetTextAndImage(tocChapterData[id].ChapterName, tocChapterData[id].Image);
+                tocChapterItems[i].SetTextAndImage(tocChapterData[id].ChapterName, tocChapterData[id].BackgroundSprite);
                 tocChapterItems[i].SetProgress(GetNumTaskComplete(id), tocChapterData[id].ChecklistItemData.Count);
                 if (tocChapterData[id].Complete)
                     tocChapterItems[i].Complete();
@@ -291,6 +290,7 @@ public class Tablet : MonoBehaviour
         public bool Complete;
         public bool Fail;
         public Sprite Image;
+        public Sprite BackgroundSprite;
 
         public List<ChecklistItemData> ChecklistItemData;
     }

@@ -10,7 +10,7 @@ public class ChapterTaskHelper : MonoBehaviour
 
     Task task;
     [SerializeField]
-    Sprite chapterSprite;
+    Sprite chapterSprite, backgroundSprite;
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class ChapterTaskHelper : MonoBehaviour
 
         Debug.Log("SET UP CHAPTER WITH ID: " + chapterID);
 
-        chapterID = Tablet.Instance.AddChapter(gameObject.name, chapterSprite);
+        chapterID = Tablet.Instance.AddChapter(gameObject.name, chapterSprite, backgroundSprite);
 
         AddTaskToTablet(transform);
 

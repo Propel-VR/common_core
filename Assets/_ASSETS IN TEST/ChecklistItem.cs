@@ -16,6 +16,8 @@ public class ChecklistItem : MonoBehaviour
     Button _button;
     [SerializeField]
     GameObject _warning, _caution;
+    [SerializeField]
+    TextMeshProUGUI _quantity,_smin;
 
     public UnityEvent OnCompleteItem, OnFailItem, OnUnCommpleteItem;
 
@@ -36,6 +38,9 @@ public class ChecklistItem : MonoBehaviour
 
         _warning.SetActive(false); 
         _caution.SetActive(false);
+
+        _quantity.gameObject.SetActive(false);
+        _smin.gameObject.SetActive(false);
 
         if (string.IsNullOrEmpty(_text.text))
             return;
@@ -62,6 +67,18 @@ public class ChecklistItem : MonoBehaviour
     {
         _text.text = textString;
 
+    }
+
+    public void SetSmin(string sminNum)
+    {
+        _smin.gameObject.SetActive(true);
+        _smin.text = sminNum;
+    }
+
+    public void SetQuantity(int complete, int total)
+    {
+        _quantity.gameObject.SetActive(true);
+        _quantity.text = complete+"/"+total;
     }
 
     public void SetWarningCaution(bool warn, bool caut)

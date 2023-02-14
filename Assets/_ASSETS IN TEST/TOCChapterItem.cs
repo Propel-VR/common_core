@@ -12,6 +12,8 @@ public class TOCChapterItem : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI _chapterProgressText;
     [SerializeField]
+    Image _chapterBackground;
+    [SerializeField]
     Color _currentTaskColour;
     [SerializeField]
     Button _button;
@@ -32,7 +34,7 @@ public class TOCChapterItem : MonoBehaviour
         ColorBlock colors = _button.colors;
         colors.normalColor = Color.clear;
         _button.colors = colors;
-
+        transform.GetChild(0).gameObject.SetActive(false);
         
         if (string.IsNullOrEmpty(_chapterNameText.text))
             return;
@@ -59,12 +61,16 @@ public class TOCChapterItem : MonoBehaviour
     {
         _chapterNameText.text = textString;
         _chapterProgressText.text = "";
-        if(string.IsNullOrEmpty(textString))
+        if(!string.IsNullOrEmpty(textString))
         {
             ColorBlock colors = _button.colors;
             colors.normalColor = Color.white;
+            _chapterBackground.sprite= img;
             _button.colors = colors;
+            transform.GetChild(0).gameObject.SetActive(true);
+
         }
+
 
     }
 
