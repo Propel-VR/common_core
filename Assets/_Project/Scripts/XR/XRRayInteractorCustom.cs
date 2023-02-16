@@ -11,6 +11,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 using Unity.XR.CoreUtils;
+using RootMotion.Demos;
+using Autohand;
 
 public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
 {
@@ -54,6 +56,7 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
         {
             targetLayerIndex = LayerMask.NameToLayer(targetLayer);
         }
+
     }
 
     private void LateUpdate()
@@ -239,6 +242,19 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
         m_InteractionManager = s_InteractionManagerCache;
     }
 
+
+    public void ShowRay()
+    {
+        if(!AutoHandPlayerHelper.Instance.GetRightHand().GetHeldGrabbable())
+            lineRenderer.enabled = true;
+    }
+
+    public void HideRay() 
+    {
+
+        lineRenderer.enabled = false;
+    
+    }
     #region XRUI Creation/Registering
     void FindOrCreateXRUIInputModule()
     {

@@ -104,7 +104,7 @@ public class Tablet : MonoBehaviour
         UpdateChapters();
     }
 
-    public int AddCheckListItem(string itemText, int chapterID, bool complete, bool warning, bool caution)
+    public int AddCheckListItem(string itemText, int chapterID, bool complete, bool warning, bool caution, int quantity, string smin)
     {
 
         ChecklistItemData item;
@@ -116,6 +116,8 @@ public class Tablet : MonoBehaviour
         item.Current = false;
         item.HasWarning= warning;
         item.HasCaution = caution;
+        item.Quantity= quantity;
+        item.SMIN = smin;
         tocChapterData[chapterID].ChecklistItemData.Add(item);
 
         return item.ID;
@@ -187,6 +189,8 @@ public class Tablet : MonoBehaviour
                     checklistItems[i].Fail();
                 if (tocChapterData[chapterID].ChecklistItemData[id].Current)
                     checklistItems[i].Current();
+                checklistItems[i].SetQuantity(0, tocChapterData[chapterID].ChecklistItemData[id].Quantity);
+                checklistItems[i].SetSmin(tocChapterData[chapterID].ChecklistItemData[id].SMIN);
                 checklistItems[i].SetWarningCaution(tocChapterData[chapterID].ChecklistItemData[id].HasWarning, tocChapterData[chapterID].ChecklistItemData[id].HasCaution);
                 
 
@@ -277,7 +281,8 @@ public class Tablet : MonoBehaviour
         public bool Current;
         public bool Complete;
         public bool Fail;
-
+        public int Quantity;
+        public string SMIN;
         public bool HasWarning, HasCaution;
     }
 

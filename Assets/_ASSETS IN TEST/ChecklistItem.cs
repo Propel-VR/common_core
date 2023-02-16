@@ -77,8 +77,13 @@ public class ChecklistItem : MonoBehaviour
 
     public void SetQuantity(int complete, int total)
     {
-        _quantity.gameObject.SetActive(true);
-        _quantity.text = complete+"/"+total;
+        if (total > 1)
+        {
+
+            _quantity.gameObject.SetActive(true);
+            _quantity.text = complete + "/" + total;
+
+        }
     }
 
     public void SetWarningCaution(bool warn, bool caut)

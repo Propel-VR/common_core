@@ -16,6 +16,11 @@ public class ChecklistTaskHelper : MonoBehaviour
     bool startComplete = false;
     [SerializeField]
     bool hasCaution = false, hasWarning = false;
+    [SerializeField]
+    int quantity = 1;
+    [SerializeField]
+    string smin = "";
+
 
     private void Awake()
     {
@@ -27,7 +32,7 @@ public class ChecklistTaskHelper : MonoBehaviour
     public void SetUp(int chapterID)
     {
         _chapterID = chapterID;
-        checkID = Tablet.Instance.AddCheckListItem(gameObject.name, chapterID, startComplete,hasWarning,hasCaution);
+        checkID = Tablet.Instance.AddCheckListItem(gameObject.name, chapterID, startComplete,hasWarning,hasCaution, quantity, smin);
 
         Debug.Log("SET UP TASK WITH ID: " + checkID);
 

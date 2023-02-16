@@ -10,7 +10,7 @@ public class LoxManager : MonoBehaviour
 
     private void Start()
     {
-        taskManager.StartPool();
+        //taskManager.StartPool();
     }
 
 }
