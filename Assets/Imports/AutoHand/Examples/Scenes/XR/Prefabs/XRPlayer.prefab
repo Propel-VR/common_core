@@ -21247,6 +21247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7942002210973373747}
   - component: {fileID: 7412725206770988215}
+  - component: {fileID: 841343869}
   m_Layer: 0
   m_Name: XRPlayer
   m_TagString: Untagged
@@ -21307,6 +21308,20 @@ MonoBehaviour:
     - Elite
     position: {x: 0.035, y: -0.022, z: -0.11}
     rotation: {x: 50, y: -2, z: -11}
+--- !u!114 &841343869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7942002210973373748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7ae190c8d064442a895d056a66e46b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 5823117661886934678}
+  rightHand: {fileID: 5823117661701342528}
 --- !u!1 &7942002211305997993
 GameObject:
   m_ObjectHideFlags: 0
@@ -23927,6 +23942,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 628585010789801601, guid: 393566584cd7aae4e92c16be3dd85bae,
+        type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 5823117661886934678}
     - target: {fileID: 819742473032708873, guid: 393566584cd7aae4e92c16be3dd85bae,
         type: 3}
       propertyPath: m_Layer
@@ -24400,6 +24420,11 @@ PrefabInstance:
     - target: {fileID: 3231403016657467200, guid: 035aaa70c735c164bbf1a8760fad9f76,
         type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231403016657467200, guid: 035aaa70c735c164bbf1a8760fad9f76,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6876478601354298033, guid: 035aaa70c735c164bbf1a8760fad9f76,
@@ -25435,6 +25460,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 628585010789801601, guid: 56ead9dc16628174989544076e2522d7,
         type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 5823117661701342528}
+    - target: {fileID: 628585010789801601, guid: 56ead9dc16628174989544076e2522d7,
+        type: 3}
+      propertyPath: OnRelease.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 628585010789801601, guid: 56ead9dc16628174989544076e2522d7,
+        type: 3}
       propertyPath: OnGrab.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -25456,7 +25491,7 @@ PrefabInstance:
     - target: {fileID: 628585010789801601, guid: 56ead9dc16628174989544076e2522d7,
         type: 3}
       propertyPath: OnGrab.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowRay
+      value: HideRay
       objectReference: {fileID: 0}
     - target: {fileID: 628585010789801601, guid: 56ead9dc16628174989544076e2522d7,
         type: 3}
@@ -25932,12 +25967,62 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 7942002211847628723}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5823117661701342529}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9413d460e98076241a1f46c91201217d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5823117661701342529 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4537506675607233266, guid: 56ead9dc16628174989544076e2522d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7942002211847628723}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &784003919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5823117661701342529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fbab967b03b78f4093d38ef2637575f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  link: {fileID: 7942002210679006964}
+  button: 0
+  Pressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7316544018567242181}
+        m_TargetAssemblyTypeName: XRRayInteractorCustom, Assembly-CSharp
+        m_MethodName: ShowRay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Released:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7316544018567242181}
+        m_TargetAssemblyTypeName: XRRayInteractorCustom, Assembly-CSharp
+        m_MethodName: HideRay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &5823117661701342531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4537506675607233264, guid: 56ead9dc16628174989544076e2522d7,
@@ -25950,7 +26035,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 7942002211847628723}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5823117661701342529}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 245bee9b113e7144cb3549484bae2a0c, type: 3}
@@ -26120,6 +26205,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828819849286420516, guid: 550b13c7ab5987948bb95292d813fbde,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 550b13c7ab5987948bb95292d813fbde, type: 3}
