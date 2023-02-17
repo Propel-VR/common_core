@@ -2,30 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// class that manages the task checklists
+/// </summary>
 public class ChecklistTaskManager : MonoBehaviour
 {
+    [SerializeField]
+    int forceStartChapter=3;
 
     private void Start()
     {
-        AddTaskToTablet(transform, false);
+        AddChapterToTablet(transform);
 
-        Tablet.Instance.StartTasks();
+        Tablet.Instance.UpdateChapters();
+
+        Tablet.Instance.StartChapter(forceStartChapter);
     }
 
 
 
-    private void AddTaskToTablet(Transform obj, bool printMe)
+   
+    /// <summary>
+    /// Cycles through all objects in tasks and adds chapters to the tablet
+    /// </summary>
+    /// <param name="obj"></param>
+    private void AddChapterToTablet(Transform obj)
     {
-        if (printMe)
-        {
-            ChecklistTaskHelper cth = obj.GetComponent<ChecklistTaskHelper>();
-            if (cth != null)
-                cth.SetUp();
+        ChapterTaskHelper cth = obj.GetComponent<ChapterTaskHelper>();
+        if (cth != null)
+        cth.SetUp();
 
-        }
-        
 
         for (int i = 0; i < obj.childCount; i++)
-            AddTaskToTablet(obj.GetChild(i), true);
+            AddChapterToTablet(obj.GetChild(i));
     }
 }

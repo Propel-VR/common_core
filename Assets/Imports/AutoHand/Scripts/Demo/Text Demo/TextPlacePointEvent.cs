@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Autohand;
-using Unity.Tutorials.Core.Editor;
 
 namespace Autohand.Demo{
     public class TextPlacePointEvent : MonoBehaviour{
@@ -22,12 +21,12 @@ namespace Autohand.Demo{
         }
         
         void OnGrab(PlacePoint hand, Grabbable grab) {
-            if(changer && placeMessage.IsNotNullOrEmpty())
+            if(changer && !string.IsNullOrEmpty(placeMessage))
                 changer.UpdateText(placeMessage);
         }
 
         void OnHighlight(PlacePoint hand, Grabbable grab) {
-            if (changer && highlightMessage.IsNotNullOrEmpty())
+            if (changer && !string.IsNullOrEmpty(highlightMessage))
                 changer.UpdateText(highlightMessage);
         }
         
