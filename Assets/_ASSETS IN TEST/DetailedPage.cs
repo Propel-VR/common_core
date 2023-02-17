@@ -47,4 +47,29 @@ public class DetailedPage : MonoBehaviour
 
     }
 
+    public void SetDetails(ChecklistTaskHelper.DetailsPageData data)
+    {
+
+        _smin.text = data.smin;
+        _zone.text = data.zone;
+        _duration.text = data.duration;
+        _typeOfCheck.text = data.checkType;
+        _rectification.text = data.rectification;
+
+        /*REQUIREMENT TEXT AND SPRITES*/
+        for (int i = 0; i < data.requireConditions.Length; i++)
+        {
+            _reqSprites[i].sprite = data.requireConditions[i].image;
+            _reqText[i].text = data.requireConditions[i].text;
+        }
+        for (int i = data.requireConditions.Length; i < _reqSprites.Length; i++)
+        {
+            //hide this one
+            _reqSprites[i].sprite = null;
+            _reqText[i].text = "";
+
+        }
+
+    }
+
 }

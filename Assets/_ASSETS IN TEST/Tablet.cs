@@ -29,6 +29,9 @@ public class Tablet : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI progressText;
 
+    [SerializeField]
+    DetailedPage detailedPage;
+
     int checklistPageNum = 0;
     int currentChapterID;
     int pageSize;
@@ -135,7 +138,7 @@ public class Tablet : MonoBehaviour
     /// <param name="quantity">quantity of the check</param>
     /// <param name="smin">SMIN of the item (empty if none)</param>
     /// <returns></returns>
-    public int AddCheckListItem(string itemText, int chapterID, bool complete, bool warning, bool caution, int quantity, string smin)
+    public int AddCheckListItem(string itemText, int chapterID, bool complete, bool warning, bool caution, int quantity, string smin, bool hasDetails, ChecklistTaskHelper.DetailsPageData details)
     {
 
         ChecklistItemData item;
@@ -149,10 +152,26 @@ public class Tablet : MonoBehaviour
         item.HasCaution = caution;
         item.Quantity= quantity;
         item.SMIN = smin;
+        item.HasDetails = hasDetails;
+        item.detailsPageData= details;
         tocChapterData[chapterID].ChecklistItemData.Add(item);
 
         return item.ID;
 
+    }
+
+    public void ClickChecklist(int checkBtn)
+    {
+        if (tocChapterData[currentChapterID].ChecklistItemData[checklistPageNum * pageSize + checkBtn].HasDetails)
+        {
+            UpdateDetailsPage(tocChapterData[currentChapterID].ChecklistItemData[checklistPageNum * pageSize + checkBtn].detailsPageData);
+            EnableScreen(2);
+        }
+    }
+
+    private void UpdateDetailsPage(ChecklistTaskHelper.DetailsPageData details)
+    {
+        detailedPage.SetDetails(details);
     }
 
     /// <summary>
@@ -349,6 +368,8 @@ public class Tablet : MonoBehaviour
         public int Quantity;
         public string SMIN;
         public bool HasWarning, HasCaution;
+        public bool HasDetails;
+        public ChecklistTaskHelper.DetailsPageData detailsPageData;
     }
 
     [System.Serializable]
