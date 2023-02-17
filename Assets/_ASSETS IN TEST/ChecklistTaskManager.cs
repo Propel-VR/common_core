@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// class that manages the task checklists
+/// </summary>
 public class ChecklistTaskManager : MonoBehaviour
 {
+    [SerializeField]
+    int forceStartChapter=3;
 
     private void Start()
     {
@@ -11,13 +16,16 @@ public class ChecklistTaskManager : MonoBehaviour
 
         Tablet.Instance.UpdateChapters();
 
-        Tablet.Instance.StartChapter(3);
+        Tablet.Instance.StartChapter(forceStartChapter);
     }
 
 
 
    
-
+    /// <summary>
+    /// Cycles through all objects in tasks and adds chapters to the tablet
+    /// </summary>
+    /// <param name="obj"></param>
     private void AddChapterToTablet(Transform obj)
     {
         ChapterTaskHelper cth = obj.GetComponent<ChapterTaskHelper>();

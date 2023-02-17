@@ -6,6 +6,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Device;
 
+/// <summary>
+/// Main script to control functionalitry and visuals of tablet
+/// </summary>
 public class Tablet : MonoBehaviour
 {
 
@@ -38,6 +41,10 @@ public class Tablet : MonoBehaviour
         Instance= this;
     }
 
+    /// <summary>
+    /// Called to start a chapter from the tablet
+    /// </summary>
+    /// <param name="chapterNum">chapter ID to start</param>
     public void StartChapter(int chapterNum)
     {
         currentChapterID= chapterNum;
@@ -52,6 +59,11 @@ public class Tablet : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// called to start the first checklist task in a chapter
+    /// sets task to current and updates checklist visuals
+    /// </summary>
+    /// <param name="chapterID"></param>
     public void StartTasks(int chapterID)
     {
         ChecklistItemData data = tocChapterData[chapterID].ChecklistItemData[0];
@@ -61,7 +73,11 @@ public class Tablet : MonoBehaviour
         UpdateChecklist(chapterID);
     }
 
-
+    /// <summary>
+    /// called when a checklist item is complete
+    /// </summary>
+    /// <param name="id">checklist item ID</param>
+    /// <param name="chapterID">chapter ID of the chapter the task is in</param>
     public void CompleteItem(int id, int chapterID)
     {
         if (id >= tocChapterData[chapterID].ChecklistItemData.Count)
@@ -88,6 +104,10 @@ public class Tablet : MonoBehaviour
         UpdateChecklist(chapterID);
     }
 
+    /// <summary>
+    /// called when a chapter is complete
+    /// </summary>
+    /// <param name="id"></param>
     public void CompleteChapterItem(int id)
     {
         if (id >= tocChapterData.Count)
@@ -104,6 +124,17 @@ public class Tablet : MonoBehaviour
         UpdateChapters();
     }
 
+    /// <summary>
+    /// adds a new checklist item to the tablet then updates the checklist
+    /// </summary>
+    /// <param name="itemText">name of item</param>
+    /// <param name="chapterID">id of chapter it belongs to</param>
+    /// <param name="complete">if the task has been complete</param>
+    /// <param name="warning">if the item has a warning</param>
+    /// <param name="caution">if the item has a caution</param>
+    /// <param name="quantity">quantity of the check</param>
+    /// <param name="smin">SMIN of the item (empty if none)</param>
+    /// <returns></returns>
     public int AddCheckListItem(string itemText, int chapterID, bool complete, bool warning, bool caution, int quantity, string smin)
     {
 
@@ -124,7 +155,13 @@ public class Tablet : MonoBehaviour
 
     }
 
-
+    /// <summary>
+    /// adds a new chapter to the tablet
+    /// </summary>
+    /// <param name="chapterName">name of chapter</param>
+    /// <param name="chapterImg">splash image for the chapter</param>
+    /// <param name="background">background image of chapter</param>
+    /// <returns></returns>
     public int AddChapter(string chapterName, Sprite chapterImg, Sprite background)
     {
         TOCChapterData chapter;
@@ -143,6 +180,9 @@ public class Tablet : MonoBehaviour
         return chapter.ID;
     }
 
+    /// <summary>
+    /// flips to the next page in checklist
+    /// </summary>
     public void NextChecklistPage()
     {
         if (checklistPageNum+1 * pageSize >= tocChapterData[currentChapterID].ChecklistItemData.Count)
@@ -154,6 +194,9 @@ public class Tablet : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// flips to previous checklist page
+    /// </summary>
     public void PreviousChecklistPage()
     {
         if (checklistPageNum == 0)
@@ -164,6 +207,10 @@ public class Tablet : MonoBehaviour
         UpdateChecklist(currentChapterID);
     }
 
+    /// <summary>
+    /// updates the checklist data
+    /// </summary>
+    /// <param name="chapterID">chapter to pull checklist items from</param>
     public void UpdateChecklist(int chapterID)
     {
         foreach(ChecklistItem item in checklistItems)
@@ -201,6 +248,9 @@ public class Tablet : MonoBehaviour
         progressText.text = GetNumTaskComplete(chapterID) + "/" + (tocChapterData[chapterID].ChecklistItemData.Count - 1) + " complete";
     }
 
+    /// <summary>
+    /// updates chapter page with newest chapter data
+    /// </summary>
     public void UpdateChapters()
     {
         foreach (TOCChapterItem item in tocChapterItems)
@@ -233,13 +283,20 @@ public class Tablet : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// changes to a screen
+    /// </summary>
+    /// <param name="screenID">ID of screen to change to</param>
     public void ChangeToScreen(int screenID)
     {
         DisableScreens();
         EnableScreen(screenID);
     }
 
+    /// <summary>
+    /// enables a screen
+    /// </summary>
+    /// <param name="screenID"></param>
     private void EnableScreen(int screenID)
     {
         foreach (GameObject go in tabletScreens[screenID].gameObjects)
@@ -247,6 +304,9 @@ public class Tablet : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// disables all screens
+    /// </summary>
     private void DisableScreens()
     {
         foreach(TabletScreen screen in tabletScreens)
@@ -256,6 +316,11 @@ public class Tablet : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// returns number of tasks complete
+    /// </summary>
+    /// <param name="chapterNum">chapter to check</param>
+    /// <returns>number of complete tasks</returns>
     private int GetNumTaskComplete(int chapterNum)
     {
         int numTaskComplete = 0;

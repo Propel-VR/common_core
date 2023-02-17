@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// class to add task checklist items to the tablet
+/// </summary>
 [RequireComponent(typeof(Task))]
 public class ChecklistTaskHelper : MonoBehaviour
 {
@@ -29,6 +32,10 @@ public class ChecklistTaskHelper : MonoBehaviour
         task.OnTaskCompleted.AddListener(OnComplete);
     }
 
+    /// <summary>
+    /// funtion to add task to tablet called from chapter
+    /// </summary>
+    /// <param name="chapterID"></param>
     public void SetUp(int chapterID)
     {
         _chapterID = chapterID;
@@ -39,6 +46,9 @@ public class ChecklistTaskHelper : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// funtion called when task is complete to update the tablet
+    /// </summary>
     public void OnComplete()
     {
 

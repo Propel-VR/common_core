@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2353940362511691339}
   - component: {fileID: 2353940362511691337}
   - component: {fileID: 2353940362511691336}
-  m_Layer: 0
+  - component: {fileID: 690042726}
+  m_Layer: 7
   m_Name: Ladder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2353940362511691338}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -488.96, y: 37.14598, z: -492.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -78,6 +79,19 @@ MonoBehaviour:
         m_CallState: 2
   contextPoint: {fileID: 2819351450582419324}
   outlineColor: {r: 0, g: 1, b: 0.54901963, a: 1}
+--- !u!65 &690042726
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2353940362511691338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5978699, y: 1.5256462, z: 0.52752686}
+  m_Center: {x: 0.004470825, y: 0.7543087, z: 0.014312744}
 --- !u!1 &2353940362935102950
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2353940362935102951}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TeleportPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +122,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2353940362511691339}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &2353940361846448279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116,6 +130,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2353940362511691339}
     m_Modifications:
+    - target: {fileID: -9073152389012296807, guid: 33142cbddefd9c040a7ddcd2c28cb0e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33142cbddefd9c040a7ddcd2c28cb0e6,
         type: 3}
       propertyPath: m_RootOrder
@@ -176,11 +195,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ladder_LODs
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33142cbddefd9c040a7ddcd2c28cb0e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1976332299941346586, guid: 33142cbddefd9c040a7ddcd2c28cb0e6,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b8b97a86e3b81254688605baf41d2510, type: 2}
+    - target: {fileID: 3677169123734257218, guid: 33142cbddefd9c040a7ddcd2c28cb0e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185330555210107623, guid: 33142cbddefd9c040a7ddcd2c28cb0e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33142cbddefd9c040a7ddcd2c28cb0e6, type: 3}
 --- !u!4 &2819351450582419324 stripped
@@ -189,22 +223,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2353940361846448279}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3200803248088997318 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 33142cbddefd9c040a7ddcd2c28cb0e6,
-    type: 3}
-  m_PrefabInstance: {fileID: 2353940361846448279}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &2353940361846448274
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3200803248088997318}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5978699, y: 1.5256462, z: 0.52752686}
-  m_Center: {x: 0.004470825, y: 0.7543087, z: 0.014312744}
