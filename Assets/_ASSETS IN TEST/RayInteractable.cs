@@ -30,7 +30,6 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
 
         if (contextPoint == null)
         {
-            Debug.LogError("Context point missing for: " + this.name, this);
             contextPoint = GameObject.Instantiate(new GameObject(), this.transform).transform;
         }
     }

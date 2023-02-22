@@ -91,17 +91,22 @@ public class Tablet : MonoBehaviour
 
         ChecklistItemData item = tocChapterData[chapterID].ChecklistItemData[id];
 
-        item.Complete = true;
-        item.Current = false;
+        item.CurrentQuantity++;
 
-        tocChapterData[chapterID].ChecklistItemData[id] = item;
-
-        if(id< tocChapterData[chapterID].ChecklistItemData.Count-2) 
+        if(item.CurrentQuantity>=item.Quantity)
         {
-        
-            item = tocChapterData[chapterID].ChecklistItemData[id+1];
-            item.Current= true;
-            tocChapterData[chapterID].ChecklistItemData[id + 1] = item;
+            item.Complete = true;
+            item.Current = false;
+
+            tocChapterData[chapterID].ChecklistItemData[id] = item;
+
+            if (id < tocChapterData[chapterID].ChecklistItemData.Count - 2)
+            {
+
+                item = tocChapterData[chapterID].ChecklistItemData[id + 1];
+                item.Current = true;
+                tocChapterData[chapterID].ChecklistItemData[id + 1] = item;
+            }
         }
 
         UpdateChecklist(chapterID);
@@ -150,6 +155,7 @@ public class Tablet : MonoBehaviour
         item.Current = false;
         item.HasWarning= warning;
         item.HasCaution = caution;
+        item.CurrentQuantity = 0;
         item.Quantity= quantity;
         item.SMIN = smin;
         item.HasDetails = hasDetails;
@@ -159,16 +165,23 @@ public class Tablet : MonoBehaviour
         return item.ID;
 
     }
-
+    /// <summary>
+    /// Called when a checklist item is clicked to show details page
+    /// </summary>
+    /// <param name="checkBtn">ID of the button pressed</param>
     public void ClickChecklist(int checkBtn)
     {
         if (tocChapterData[currentChapterID].ChecklistItemData[checklistPageNum * pageSize + checkBtn].HasDetails)
         {
             UpdateDetailsPage(tocChapterData[currentChapterID].ChecklistItemData[checklistPageNum * pageSize + checkBtn].detailsPageData);
-            EnableScreen(2);
+            ChangeToScreen(2);
         }
     }
 
+    /// <summary>
+    /// updates details page using details data
+    /// </summary>
+    /// <param name="details"></param>
     private void UpdateDetailsPage(ChecklistTaskHelper.DetailsPageData details)
     {
         detailedPage.SetDetails(details);
@@ -255,7 +268,7 @@ public class Tablet : MonoBehaviour
                     checklistItems[i].Fail();
                 if (tocChapterData[chapterID].ChecklistItemData[id].Current)
                     checklistItems[i].Current();
-                checklistItems[i].SetQuantity(0, tocChapterData[chapterID].ChecklistItemData[id].Quantity);
+                checklistItems[i].SetQuantity(tocChapterData[chapterID].ChecklistItemData[id].CurrentQuantity, tocChapterData[chapterID].ChecklistItemData[id].Quantity);
                 checklistItems[i].SetSmin(tocChapterData[chapterID].ChecklistItemData[id].SMIN);
                 checklistItems[i].SetWarningCaution(tocChapterData[chapterID].ChecklistItemData[id].HasWarning, tocChapterData[chapterID].ChecklistItemData[id].HasCaution);
                 
@@ -365,6 +378,7 @@ public class Tablet : MonoBehaviour
         public bool Current;
         public bool Complete;
         public bool Fail;
+        public int CurrentQuantity;
         public int Quantity;
         public string SMIN;
         public bool HasWarning, HasCaution;
