@@ -22,7 +22,10 @@ public class ChecklistTaskHelper : MonoBehaviour
     [SerializeField]
     int quantity = 1;
     [SerializeField]
+    string taskDesc;
+    [SerializeField]
     string smin = "";
+
 
     [SerializeField]
     bool hasDetails=false;
@@ -39,6 +42,11 @@ public class ChecklistTaskHelper : MonoBehaviour
             detailsData.smin = smin;
     }
 
+    public int GetID()
+    {
+        return checkID;
+    }
+
     /// <summary>
     /// funtion to add task to tablet called from chapter
     /// </summary>
@@ -46,7 +54,7 @@ public class ChecklistTaskHelper : MonoBehaviour
     public void SetUp(int chapterID)
     {
         _chapterID = chapterID;
-        checkID = Tablet.Instance.AddCheckListItem(gameObject.name, chapterID, startComplete,hasWarning,hasCaution, quantity, smin,hasDetails,detailsData);
+        checkID = Tablet.Instance.AddCheckListItem(gameObject.name, taskDesc, chapterID, startComplete,hasWarning,hasCaution, quantity, smin,hasDetails,detailsData);
 
         Debug.Log("SET UP TASK WITH ID: " + checkID);
 
@@ -60,7 +68,15 @@ public class ChecklistTaskHelper : MonoBehaviour
     {
 
         Debug.Log("TASK COMPLETE FOR \""+gameObject.name+"\"");
-        Tablet.Instance.CompleteItem(checkID,_chapterID);
+        Tablet.Instance.CompleteItem(checkID, _chapterID);
+    }
+
+    public void UpdateRectification(int id, string rectification)
+    {
+        detailsData.rectification = rectification;
+
+        //UPDATE CHECKLIST DATA
+        Tablet.Instance.UpdateDetails(_chapterID, id, rectification);
     }
 
 
@@ -69,7 +85,7 @@ public class ChecklistTaskHelper : MonoBehaviour
     {
         [HideInInspector]
         public string smin;
-        public string zone, duration, checkType, rectification;
+        public string zone, duration, checkType, rectification, warningText;
         public RequiredConditionsData[] requireConditions;
     }
 

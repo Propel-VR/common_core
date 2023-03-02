@@ -174,6 +174,8 @@ namespace Autohand
                 for(int i = 0; i < lineSegements; i++) {
                     lineRenderer.SetPosition(i, Vector3.Lerp(transform.position, endPosition, i/ lineSegements));
                 }
+
+               
             }
         }
 
@@ -190,6 +192,8 @@ namespace Autohand
         {
             hitPointMarker.SetActive(show);
             lineRenderer.enabled = show;
+
+            Tablet.Instance.IsHovered(show);
         }
 
     }

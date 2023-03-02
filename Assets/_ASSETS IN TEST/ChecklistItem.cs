@@ -11,6 +11,8 @@ public class ChecklistItem : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI _text;
     [SerializeField]
+    TextMeshProUGUI _descText;
+    [SerializeField]
     Color _currentTaskColour;
     [SerializeField]
     Button _button;
@@ -18,6 +20,8 @@ public class ChecklistItem : MonoBehaviour
     GameObject _warning, _caution;
     [SerializeField]
     TextMeshProUGUI _quantity,_smin;
+    [SerializeField]
+    GameObject cmpltObj; 
 
     public UnityEvent OnCompleteItem, OnFailItem, OnUnCommpleteItem;
 
@@ -27,6 +31,8 @@ public class ChecklistItem : MonoBehaviour
     {
 
         _text.text = "<s>" + _text.text + "<s>";
+        _quantity.gameObject.SetActive(false);
+        cmpltObj.SetActive(true);
         OnCompleteItem?.Invoke();
     }
 
@@ -40,7 +46,9 @@ public class ChecklistItem : MonoBehaviour
         _caution.SetActive(false);
 
         _quantity.gameObject.SetActive(false);
+        cmpltObj.SetActive(false);
         _smin.gameObject.SetActive(false);
+
 
         if (string.IsNullOrEmpty(_text.text))
             return;
@@ -49,6 +57,12 @@ public class ChecklistItem : MonoBehaviour
         if (_text.text.Substring(0, 3).Equals("<s>"))
             _text.text = _text.text.Substring(3, _text.text.Length - 6);
         OnUnCommpleteItem?.Invoke();
+    }
+
+    public void SetButtonValue(int num)
+    {
+        Debug.Log("ADDED LISTENER TO BUTTON WITH ID: " + num);
+        _button.onClick.AddListener(() => Tablet.Instance.ClickChecklist(num));
     }
 
     public void Fail()
@@ -63,9 +77,10 @@ public class ChecklistItem : MonoBehaviour
         _button.colors = colors;
     }
 
-    public void SetText(string textString)
+    public void SetText(string textString, string descText)
     {
         _text.text = textString;
+        _descText.text = descText;
 
     }
 
@@ -77,7 +92,7 @@ public class ChecklistItem : MonoBehaviour
 
     public void SetQuantity(int complete, int total)
     {
-        if (total > 1)
+        if (total > 1 && !cmpltObj.activeSelf)
         {
 
             _quantity.gameObject.SetActive(true);

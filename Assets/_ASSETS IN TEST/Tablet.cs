@@ -1,10 +1,14 @@
+using RootMotion;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Device;
+using UnityEngine.UI;
+using static UnityEngine.Rendering.PostProcessing.SubpixelMorphologicalAntialiasing;
 
 /// <summary>
 /// Main script to control functionalitry and visuals of tablet
@@ -19,7 +23,7 @@ public class Tablet : MonoBehaviour
     List<TOCChapterData> tocChapterData= new List<TOCChapterData>();
 
     [SerializeField]
-    ChecklistItem[] checklistItems;
+    List<ChecklistItem> checklistItems;
 
     [SerializeField]
     TOCChapterItem[] tocChapterItems;
@@ -32,16 +36,38 @@ public class Tablet : MonoBehaviour
     [SerializeField]
     DetailedPage detailedPage;
 
-    int checklistPageNum = 0;
+    [SerializeField]
+    GameObject checklistItem;
+    [SerializeField]
+    Transform scrollContent;
+
+    [SerializeField]
+    AnalogStickSlider analogSlider;
+    //int checklistPageNum = 0;
     int currentChapterID;
-    int pageSize;
+    //int pageSize;
+
+
+    bool blockerActive = false;
+
+    [SerializeField]
+    ScrollRect scrollRect;
+    [SerializeField]
+    GameObject scrollClickBlocker;
+
 
     public static Tablet Instance { get; private set; }
 
     private void Awake()
     {
-        pageSize=checklistItems.Length;
+        //pageSize=checklistItems.Count;
         Instance= this;
+    }
+
+
+    public void IsHovered(bool hovering)
+    {
+        analogSlider.EnableScroll = hovering;
     }
 
     /// <summary>
@@ -89,12 +115,19 @@ public class Tablet : MonoBehaviour
                 return;
         }
 
+
         ChecklistItemData item = tocChapterData[chapterID].ChecklistItemData[id];
 
-        item.CurrentQuantity++;
+        item.CurrentQuantity = item.CurrentQuantity+1;
+        Debug.Log("NEW QTY"+item.CurrentQuantity);
 
-        if(item.CurrentQuantity>=item.Quantity)
+        tocChapterData[chapterID].ChecklistItemData[id] = item;
+
+        if (item.CurrentQuantity>=item.Quantity)
         {
+            if (id == GetNextComplete())
+                analogSlider.AutoScroll(1.0f / tocChapterData[chapterID].ChecklistItemData.Count);
+
             item.Complete = true;
             item.Current = false;
 
@@ -146,9 +179,16 @@ public class Tablet : MonoBehaviour
     public int AddCheckListItem(string itemText, int chapterID, bool complete, bool warning, bool caution, int quantity, string smin, bool hasDetails, ChecklistTaskHelper.DetailsPageData details)
     {
 
+        GameObject newGO = GameObject.Instantiate(checklistItem, scrollContent);
+        checklistItems.Add(newGO.GetComponent<ChecklistItem>());
+
+        checklistItems[checklistItems.Count - 1].SetButtonValue(checklistItems.Count - 1);
+        newGO.SetActive(true);
+
         ChecklistItemData item;
 
         item.ItemText = itemText;
+        item.ItemDesc = "";
         item.ID =tocChapterData[chapterID].ChecklistItemData.Count;
         item.Complete= complete;
         item.Fail = false;
@@ -165,16 +205,47 @@ public class Tablet : MonoBehaviour
         return item.ID;
 
     }
+
+    public int AddCheckListItem(string itemText, string itemDesc, int chapterID, bool complete, bool warning, bool caution, int quantity, string smin, bool hasDetails, ChecklistTaskHelper.DetailsPageData details)
+    {
+
+        GameObject newGO = GameObject.Instantiate(checklistItem, scrollContent);
+        checklistItems.Add(newGO.GetComponent<ChecklistItem>());
+
+        checklistItems[checklistItems.Count - 1].SetButtonValue(checklistItems.Count - 1);
+        newGO.SetActive(true);
+
+        ChecklistItemData item;
+
+        item.ItemText = itemText;
+        item.ItemDesc = itemDesc;
+        item.ID = tocChapterData[chapterID].ChecklistItemData.Count;
+        item.Complete = complete;
+        item.Fail = false;
+        item.Current = false;
+        item.HasWarning = warning;
+        item.HasCaution = caution;
+        item.CurrentQuantity = 0;
+        item.Quantity = quantity;
+        item.SMIN = smin;
+        item.HasDetails = hasDetails;
+        item.detailsPageData = details;
+        tocChapterData[chapterID].ChecklistItemData.Add(item);
+
+        return item.ID;
+
+    }
     /// <summary>
     /// Called when a checklist item is clicked to show details page
     /// </summary>
     /// <param name="checkBtn">ID of the button pressed</param>
     public void ClickChecklist(int checkBtn)
     {
-        if (tocChapterData[currentChapterID].ChecklistItemData[checklistPageNum * pageSize + checkBtn].HasDetails)
+        if (tocChapterData[currentChapterID].ChecklistItemData[checkBtn].HasDetails)
         {
-            UpdateDetailsPage(tocChapterData[currentChapterID].ChecklistItemData[checklistPageNum * pageSize + checkBtn].detailsPageData);
             ChangeToScreen(2);
+            UpdateDetailsPage(tocChapterData[currentChapterID].ChecklistItemData[checkBtn].detailsPageData);
+            
         }
     }
 
@@ -185,6 +256,46 @@ public class Tablet : MonoBehaviour
     private void UpdateDetailsPage(ChecklistTaskHelper.DetailsPageData details)
     {
         detailedPage.SetDetails(details);
+    }
+
+    public void UpdateDetails(int chapterID, int checkID, string rectification)
+    {
+        
+        ChecklistItemData item;
+
+        item.ItemText = tocChapterData[chapterID].ChecklistItemData[checkID].ItemText;
+        item.ItemDesc = tocChapterData[chapterID].ChecklistItemData[checkID].ItemDesc;
+        item.ID = tocChapterData[chapterID].ChecklistItemData[checkID].ID;
+        item.Complete = tocChapterData[chapterID].ChecklistItemData[checkID].Complete;
+        item.Fail = tocChapterData[chapterID].ChecklistItemData[checkID].Fail;
+        item.Current = tocChapterData[chapterID].ChecklistItemData[checkID].Current;
+        item.HasWarning = tocChapterData[chapterID].ChecklistItemData[checkID].HasWarning;
+        item.HasCaution = tocChapterData[chapterID].ChecklistItemData[checkID].HasCaution;
+        item.CurrentQuantity = tocChapterData[chapterID].ChecklistItemData[checkID].CurrentQuantity;
+        item.Quantity = tocChapterData[chapterID].ChecklistItemData[checkID].Quantity;
+        item.SMIN = tocChapterData[chapterID].ChecklistItemData[checkID].SMIN;
+        item.HasDetails = tocChapterData[chapterID].ChecklistItemData[checkID].HasDetails;
+        item.detailsPageData = tocChapterData[chapterID].ChecklistItemData[checkID].detailsPageData;
+        item.detailsPageData.rectification = rectification;
+
+        tocChapterData[chapterID].ChecklistItemData[checkID]=item;
+        
+    }
+
+    private void Update()
+    {
+        if (blockerActive == false && Mathf.Abs(scrollRect.velocity.y) > 40f)
+        {
+            blockerActive = true;
+            scrollClickBlocker.SetActive(true);
+        }
+        else if (
+            blockerActive == true && Mathf.Abs(scrollRect.velocity.y) <= 40f
+        )
+        {
+            blockerActive = false;
+            scrollClickBlocker.SetActive(false);
+        }
     }
 
     /// <summary>
@@ -215,7 +326,7 @@ public class Tablet : MonoBehaviour
     /// <summary>
     /// flips to the next page in checklist
     /// </summary>
-    public void NextChecklistPage()
+    /*public void NextChecklistPage()
     {
         if (checklistPageNum+1 * pageSize >= tocChapterData[currentChapterID].ChecklistItemData.Count)
             return;
@@ -225,11 +336,13 @@ public class Tablet : MonoBehaviour
         UpdateChecklist(currentChapterID);
 
     }
+    */
+
 
     /// <summary>
     /// flips to previous checklist page
     /// </summary>
-    public void PreviousChecklistPage()
+    /*public void PreviousChecklistPage()
     {
         if (checklistPageNum == 0)
             return;
@@ -238,6 +351,8 @@ public class Tablet : MonoBehaviour
 
         UpdateChecklist(currentChapterID);
     }
+    */
+
 
     /// <summary>
     /// updates the checklist data
@@ -250,18 +365,18 @@ public class Tablet : MonoBehaviour
             item.UnComplete();
         }
 
-        for(int i=0; i<pageSize; i++)
+        for(int i=0; i<checklistItems.Count; i++)
         {
-            int id = pageSize * checklistPageNum + i;
+            int id = i;
             if (id >= tocChapterData[chapterID].ChecklistItemData.Count || id < 0)
             {
                 Debug.Log("failed to set item, out of bounds ID #" + id);
-                checklistItems[i].SetText("");
+                checklistItems[i].SetText("","");
             }
             else
             {
                 Debug.Log("Setting item #" + i + ", using ID #" + id);
-                checklistItems[i].SetText(tocChapterData[chapterID].ChecklistItemData[id].ItemText);
+                checklistItems[i].SetText(tocChapterData[chapterID].ChecklistItemData[id].ItemText, tocChapterData[chapterID].ChecklistItemData[id].ItemDesc);
                 if (tocChapterData[chapterID].ChecklistItemData[id].Complete)
                     checklistItems[i].Complete();
                 if (tocChapterData[chapterID].ChecklistItemData[id].Fail)
@@ -277,7 +392,18 @@ public class Tablet : MonoBehaviour
 
         }
 
-        progressText.text = GetNumTaskComplete(chapterID) + "/" + (tocChapterData[chapterID].ChecklistItemData.Count - 1) + " complete";
+        progressText.text = GetNumTaskComplete(chapterID) + " of " + (tocChapterData[chapterID].ChecklistItemData.Count - 1) + " complete";
+    }
+
+    public int GetNextComplete()
+    {
+        for(int i=0; i < tocChapterData[currentChapterID].ChecklistItemData.Count; i++)
+        {
+            if (!tocChapterData[currentChapterID].ChecklistItemData[i].Complete)
+                return i;
+        }
+
+        return-1;
     }
 
     /// <summary>
@@ -375,6 +501,7 @@ public class Tablet : MonoBehaviour
     {
         public int ID;
         public string ItemText;
+        public string ItemDesc;
         public bool Current;
         public bool Complete;
         public bool Fail;
