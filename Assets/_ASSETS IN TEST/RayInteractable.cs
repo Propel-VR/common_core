@@ -20,17 +20,25 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
     [SerializeField] Color outlineColor = new(0f, 1f, 140f / 255f);
 
     private Outline outline;
+    bool stopInteracting = false;
+    [HideInInspector]
+    public bool forceHighlight = false;
+
+    private void Awake()
+    {
+
+        outline = gameObject.AddComponent<Outline>();
+    }
 
     private void Start()
     {
-        outline = gameObject.AddComponent<Outline>();
+
         outline.OutlineWidth = outlineWidth;
         outline.OutlineColor = outlineColor;
         outline.OutlineMode = Outline.Mode.None;
 
         if (contextPoint == null)
         {
-            Debug.LogError("Context point missing for: " + this.name, this);
             contextPoint = GameObject.Instantiate(new GameObject(), this.transform).transform;
         }
     }
@@ -60,6 +68,13 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
                 outline.OutlineMode = Outline.Mode.None;
             }
         }
+
+        if (forceHighlight)
+        {
+            fadeInValue = 1;
+            outline.OutlineMode = Outline.Mode.OutlineAll;
+
+        }
         outline.OutlineColor = new Color(outline.OutlineColor.r, outline.OutlineColor.g, outline.OutlineColor.b, fadeInValue);
     }
 
@@ -67,20 +82,29 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
     public void OnInteract()
     {
         Debug.Log("IM BEING INTERACTED");
-        if (Time.unscaledTime - initHoverTime > minTimeBeforeFadeIn)
+        if (!stopInteracting && Time.unscaledTime - initHoverTime > minTimeBeforeFadeIn)
         {
             onInteract?.Invoke();
         }
     }
 
+    public void ClearInteractions()
+    {
+        onInteract.RemoveAllListeners();
+        stopInteracting = true;
+    }
+
     public void OnBeginHover()
     {
-        isHovering = true;
-        if (fadeInValue == 0f)
-            initHoverTime = Time.unscaledTime;
-        outline.OutlineMode = Outline.Mode.OutlineAll;
+        if (!stopInteracting)
+        {
+            isHovering = true;
+            if (fadeInValue == 0f)
+                initHoverTime = Time.unscaledTime;
+            outline.OutlineMode = Outline.Mode.OutlineAll;
 
-        outline.OutlineColor = outlineColor;
+            outline.OutlineColor = outlineColor;
+        }
     }
 
     public void OnEndHover()

@@ -20,6 +20,8 @@ namespace CamhOO
         [SerializeField]
         [Tooltip("Keep this task from starting until all the prerequisite tasks have completed")]
         List<Task> _prerequisites = new();
+        [SerializeField]
+        bool _repeatable = false;
 
         [Header("Events")]
 
@@ -72,7 +74,7 @@ namespace CamhOO
         /// A task can be completed only if it has been started, is active in the hierarchy,
         /// and has not yet been completed.
         /// </summary>
-        public bool CanBeCompleted => _isStarted && !_isCompleted && gameObject.activeInHierarchy;
+        public bool CanBeCompleted => _isStarted && (!_isCompleted || _repeatable) && gameObject.activeInHierarchy;
 
         /// <summary>
         /// Is this task completed?

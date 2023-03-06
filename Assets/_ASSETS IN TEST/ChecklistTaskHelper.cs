@@ -22,14 +22,29 @@ public class ChecklistTaskHelper : MonoBehaviour
     [SerializeField]
     int quantity = 1;
     [SerializeField]
+    string taskDesc;
+    [SerializeField]
     string smin = "";
 
+
+    [SerializeField]
+    bool hasDetails=false;
+    [SerializeField]
+    DetailsPageData detailsData;
 
     private void Awake()
     {
         task=GetComponent<Task>();
 
         task.OnTaskCompleted.AddListener(OnComplete);
+
+        if (hasDetails)
+            detailsData.smin = smin;
+    }
+
+    public int GetID()
+    {
+        return checkID;
     }
 
     /// <summary>
@@ -39,7 +54,7 @@ public class ChecklistTaskHelper : MonoBehaviour
     public void SetUp(int chapterID)
     {
         _chapterID = chapterID;
-        checkID = Tablet.Instance.AddCheckListItem(gameObject.name, chapterID, startComplete,hasWarning,hasCaution, quantity, smin);
+        checkID = Tablet.Instance.AddCheckListItem(gameObject.name, taskDesc, chapterID, startComplete,hasWarning,hasCaution, quantity, smin,hasDetails,detailsData);
 
         Debug.Log("SET UP TASK WITH ID: " + checkID);
 
@@ -53,7 +68,32 @@ public class ChecklistTaskHelper : MonoBehaviour
     {
 
         Debug.Log("TASK COMPLETE FOR \""+gameObject.name+"\"");
-        Tablet.Instance.CompleteItem(checkID,_chapterID);
+        Tablet.Instance.CompleteItem(checkID, _chapterID);
+    }
+
+    public void UpdateRectification(int id, string rectification)
+    {
+        detailsData.rectification = rectification;
+
+        //UPDATE CHECKLIST DATA
+        Tablet.Instance.UpdateDetails(_chapterID, id, rectification);
+    }
+
+
+    [System.Serializable]
+    public struct DetailsPageData
+    {
+        [HideInInspector]
+        public string smin;
+        public string zone, duration, checkType, rectification, warningText;
+        public RequiredConditionsData[] requireConditions;
+    }
+
+    [System.Serializable]
+    public struct RequiredConditionsData
+    {
+        public Sprite image;
+        public string text;
     }
 
 }

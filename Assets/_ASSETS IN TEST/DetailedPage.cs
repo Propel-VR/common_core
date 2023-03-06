@@ -9,13 +9,30 @@ public class DetailedPage : MonoBehaviour
 {
     [SerializeField]
     TextMeshProUGUI _smin, _zone, _duration, _typeOfCheck, _rectification;
+   
     [SerializeField]
-    Image[] _reqSprites;
+    GameObject ReqContent;
     [SerializeField]
-    TextMeshProUGUI[] _reqText;
+    Transform ReqParent;
+    [SerializeField]
+    GameObject _warningGo;
+    [SerializeField]
+    TextMeshProUGUI _warningText;
+
+    [SerializeField]
+    List<GameObject> _reqGOs;
 
     public void SetDetails(string smin, string zone, string  duration, string checkType, string rectification, Sprite[] rqSprites, string[] rqTxts)
     {
+
+        
+        foreach(GameObject go in _reqGOs)
+        {
+            GameObject.Destroy(go);
+        }
+        _reqGOs.Clear();
+
+        Debug.Log("SHOWING DETAILS");
 
         _smin.text = smin;
         _zone.text = zone;
@@ -24,25 +41,63 @@ public class DetailedPage : MonoBehaviour
         _rectification.text = rectification;
 
         /*REQUIREMENT SPRITES*/
-        for(int i=0; i<rqSprites.Length; i++)
-        {
-            _reqSprites[i].sprite= rqSprites[i];
-        }
-        for(int i=rqSprites.Length; i<_reqSprites.Length; i++)
-        {
-            //hide this one
-            _reqSprites[i].sprite = null;
-        }
 
-        /*REQUIREMENT TEXT*/
-        for (int i = 0; i < rqTxts.Length; i++)
+        for (int i = 0; i < rqSprites.Length; i++)
         {
-            _reqText[i].text= rqTxts[i];
+            GameObject newGO = GameObject.Instantiate(ReqContent, ReqParent);
+
+            newGO.GetComponentInChildren<Image>().sprite = rqSprites[i];
+            newGO.GetComponentInChildren<TextMeshProUGUI>().text = rqTxts[i];
+
+            newGO.SetActive(true);
+
+            _reqGOs.Add(newGO);
+
         }
-        for (int i = rqTxts.Length; i < _reqText.Length; i++)
+    }
+
+    public void SetDetails(ChecklistTaskHelper.DetailsPageData data)
+    {
+        
+        foreach (GameObject go in _reqGOs)
         {
-            //hide this one
-            _reqText[i].text = "";
+            GameObject.Destroy(go);
+        }
+        _reqGOs.Clear();
+
+
+        Debug.Log("SHOWING DETAILS");
+
+        _smin.text = data.smin;
+        _zone.text = data.zone;
+        _duration.text = data.duration;
+        _typeOfCheck.text = data.checkType;
+        _rectification.text = data.rectification;
+        if (string.IsNullOrEmpty(data.warningText))
+        {
+            _warningGo.SetActive(false);
+        }
+        else
+        {
+            _warningGo.SetActive(true);
+            _warningText.text = data.warningText;
+        }
+        
+
+        /*REQUIREMENT TEXT AND SPRITES*/
+
+        for (int i = 0; i < data.requireConditions.Length; i++)
+        {
+
+            GameObject newGO = GameObject.Instantiate(ReqContent, ReqParent);
+
+            newGO.GetComponentInChildren<Image>().sprite = data.requireConditions[i].image;
+            newGO.GetComponentInChildren<TextMeshProUGUI>().text = data.requireConditions[i].text;
+
+            newGO.SetActive(true);
+
+            _reqGOs.Add(newGO);
+
         }
 
     }

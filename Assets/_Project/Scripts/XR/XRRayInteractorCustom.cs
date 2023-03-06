@@ -102,7 +102,16 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
             {
                 newCollider = hitInfo.collider;
                 Debug.Log("HIT OBJ: "+hitInfo.collider.gameObject.name);
+                ShowRay();
             }
+            else
+            {
+                HideRay();
+            }
+        }
+        else
+        {
+            HideRay();
         }
 
         // Raycasting UI
@@ -249,16 +258,14 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
 
     public void ShowRay()
     {
-        if(!AutoHandPlayerHelper.Instance.GetRightHand().GetHeldGrabbable())
-            lineRenderer.enabled = true;
+        lineRenderer.enabled = true;
     }
 
     public void HideRay() 
     {
-
         lineRenderer.enabled = false;
-    
     }
+
     #region XRUI Creation/Registering
     void FindOrCreateXRUIInputModule()
     {

@@ -37,7 +37,7 @@ public class LOXInteractable : MonoBehaviour
             grabUI.transform.rotation = Quaternion.LookRotation(lookPos);
             //grabUI.transform.rotation = Quaternion.Slerp(grabUI.transform.rotation, rotation, Time.deltaTime/* x damping */);
         }
-        if(completeUI.activeInHierarchy)
+        if(completeUI && completeUI.activeInHierarchy)
         {
 
             var lookPos = Camera.main.transform.position - completeUI.transform.position;
