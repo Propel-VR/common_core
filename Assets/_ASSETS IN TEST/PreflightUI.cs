@@ -104,10 +104,19 @@ public class PreflightUI : MonoBehaviour
 
     public void TryWriteUp()
     {
-        _writeUpButton.SetActive(false);
-        badSound.Play();
+        if (_preflightInteractable is WriteUpInteractable)
+        {
+            _preflightInteractable.MakeReadyForInteract();
+            goodSound.Play();
+            gameObject.SetActive(false);
 
-
+        }
+        else
+        {
+            //SET TEXT TO INCORRECT
+            _cleanButton.SetActive(false);
+            badSound.Play();
+        }
     }
 
 }

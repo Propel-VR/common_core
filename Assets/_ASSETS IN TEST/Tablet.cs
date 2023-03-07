@@ -392,7 +392,7 @@ public class Tablet : MonoBehaviour
 
         }
 
-        progressText.text = GetNumTaskComplete(chapterID) + " of " + (tocChapterData[chapterID].ChecklistItemData.Count - 1) + " complete";
+        progressText.text = GetNumTaskComplete(chapterID) + " of " + (tocChapterData[chapterID].ChecklistItemData.Count) + " complete";
     }
 
     public int GetNextComplete()

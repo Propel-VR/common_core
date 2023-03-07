@@ -73,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fed8d542bb1f1743b8fe7865ad08a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceStartChapter: 0
 --- !u!1 &522676753752148771
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +86,7 @@ GameObject:
   - component: {fileID: 6776780531879060556}
   - component: {fileID: 596192868784009721}
   m_Layer: 0
-  m_Name: Engine (QEC)
+  m_Name: '#3 Power Plant - Engine. (QEC). '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,12 +120,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prerequisites: []
+  _repeatable: 0
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PreFlightInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -146,6 +172,26 @@ MonoBehaviour:
   startComplete: 0
   hasCaution: 0
   hasWarning: 0
+  quantity: 1
+  taskDesc: "Inspect for damage and leaks. \_"
+  smin: 72-00-01
+  hasDetails: 1
+  detailsData:
+    smin: 
+    zone: 412
+    duration: 1 min
+    checkType: Visual
+    rectification: 
+    warningText: 'Fuel: Fuel is flammable and is an irritant to skin, eyes, and respiratory
+      tract. Use gloves and eye protection while working with the fuel system. Avoid
+      repeated or prolonged skin contact. Fuel also contains benzene, a cancer-causing
+      agent. Handle only in well-ventilated areas. Keep away from sparks, open flames,
+      or other sources of ignition'
+    requireConditions:
+    - image: {fileID: 21300000, guid: 34fbed79c0264c7409cdc9d59cd885a0, type: 3}
+      text: use glove and eye protection as needed
+    - image: {fileID: 21300000, guid: 56d1b87788e8e334885045fcc6d9cd08, type: 3}
+      text: Ensure adequate continuous ventilation
 --- !u!1 &1158771494463206486
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +204,7 @@ GameObject:
   - component: {fileID: 800853526087766136}
   - component: {fileID: 5033557077199334568}
   m_Layer: 0
-  m_Name: Compressor Air Inlet
+  m_Name: '#3 Power Plant - Compressor air inlet. '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -192,12 +238,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prerequisites: []
+  _repeatable: 0
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PreFlightInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -219,6 +290,23 @@ MonoBehaviour:
   startComplete: 0
   hasCaution: 0
   hasWarning: 0
+  quantity: 1
+  taskDesc: "Inspect for damage and evidence of contamination and/or salt deposits.
+    \_"
+  smin: 72-20-01
+  hasDetails: 1
+  detailsData:
+    smin: 
+    zone: 412
+    duration: 1 min
+    checkType: Visual
+    rectification: 
+    warningText: 'Fuel: Fuel is flammable and is an irritant to skin, eyes, and respiratory
+      tract. Use gloves and eye protection while working with the fuel system. Avoid
+      repeated or prolonged skin contact. Fuel also contains benzene, a cancer-causing
+      agent. Handle only in well-ventilated areas. Keep away from sparks, open flames,
+      or other sources of ignition'
+    requireConditions: []
 --- !u!1 &1277242807553083206
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,12 +361,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prerequisites: []
+  _repeatable: 0
   OnTaskStarted:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2503102777072921169}
         m_TargetAssemblyTypeName: CamhOO.TaskPool, Assembly-CSharp
         m_MethodName: StartPool
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DoOnceEvent, Assembly-CSharp
+        m_MethodName: Invoke
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -368,7 +469,7 @@ GameObject:
   - component: {fileID: 3291158313281852933}
   - component: {fileID: 3857159358052256964}
   m_Layer: 0
-  m_Name: Nacelle Drain Mast
+  m_Name: '#3 Power Plant - Nacelle drain mast. '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,12 +503,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prerequisites: []
+  _repeatable: 0
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PreFlightInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -429,6 +555,22 @@ MonoBehaviour:
   startComplete: 0
   hasCaution: 0
   hasWarning: 0
+  quantity: 1
+  taskDesc: "Inspect for leaks. \_"
+  smin: 71-70-01
+  hasDetails: 1
+  detailsData:
+    smin: 
+    zone: 410
+    duration: 1 min
+    checkType: Visual
+    rectification: 
+    warningText: 'Fuel: Fuel is flammable and is an irritant to skin, eyes, and respiratory
+      tract. Use gloves and eye protection while working with the fuel system. Avoid
+      repeated or prolonged skin contact. Fuel also contains benzene, a cancer-causing
+      agent. Handle only in well-ventilated areas. Keep away from sparks, open flames,
+      or other sources of ignition'
+    requireConditions: []
 --- !u!1 &3798231519907360104
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +583,7 @@ GameObject:
   - component: {fileID: 3132935429246659142}
   - component: {fileID: 2581293551653268754}
   m_Layer: 0
-  m_Name: Propeller Blades
+  m_Name: '#3 Power Plant - Propeller blades. '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -475,12 +617,97 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prerequisites: []
+  _repeatable: 1
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PreFlightInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PreFlightInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PreFlightInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PreFlightInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PreFlightInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PreFlightInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -502,6 +729,31 @@ MonoBehaviour:
   startComplete: 0
   hasCaution: 0
   hasWarning: 0
+  quantity: 6
+  taskDesc: Detailed inspection.
+  smin: 61-10-02
+  hasDetails: 1
+  detailsData:
+    smin: 
+    zone: 411
+    duration: 2 min
+    checkType: Visual
+    rectification: 
+    warningText: '1 - Working at Heights: Falling can cause serious injury or death,
+      a hard hat must be worn at all times. On a Ladder, do not overreach or overextend,
+      maintain points of contact on the ladder and make sure the ladder is placed
+      on even ground.   2 - Spinning Props: Propeller windmilling can occur at any
+      time but especially when winds are 10 knots or greater. Exercise extreme caution
+      at all times while in the vicinity of the airplane propellers. Maintenance
+      shall never be accomplished in the vicinity of the propellers when wind speeds
+      are in excess of 30 knots.'
+    requireConditions:
+    - image: {fileID: 21300000, guid: 34fbed79c0264c7409cdc9d59cd885a0, type: 3}
+      text: Wear hard hat
+    - image: {fileID: 21300000, guid: 34fbed79c0264c7409cdc9d59cd885a0, type: 3}
+      text: Use ladder for access
+    - image: {fileID: 21300000, guid: 3a3e51fad5a300448bdd377f1e95b6f7, type: 3}
+      text: Ensure engine is shutdown
 --- !u!1 &6563309785454079633
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +766,7 @@ GameObject:
   - component: {fileID: 6915941318658479450}
   - component: {fileID: 2497240684465576663}
   m_Layer: 0
-  m_Name: Propeller Assembly
+  m_Name: '#3 Power Plant - Propeller assembly'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,12 +800,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prerequisites: []
+  _repeatable: 0
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PreFlightInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2497240684465576663}
+        m_TargetAssemblyTypeName: ChecklistTaskHelper, Assembly-CSharp
+        m_MethodName: OnComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -575,6 +864,31 @@ MonoBehaviour:
   startComplete: 0
   hasCaution: 0
   hasWarning: 0
+  quantity: 1
+  taskDesc: "Look for damage and signs of leaks. \_"
+  smin: 61-10-01
+  hasDetails: 1
+  detailsData:
+    smin: 
+    zone: 411
+    duration: 1 min
+    checkType: Visual
+    rectification: 
+    warningText: '1 - Working at Heights: Falling can cause serious injury or death,
+      a hard hat must be worn at all times. On a Ladder, do not overreach or overextend,
+      maintain points of contact on the ladder and make sure the ladder is placed
+      on even ground.   2 - Spinning Props: Propeller windmilling can occur at any
+      time but especially when winds are 10 knots or greater. Exercise extreme caution
+      at all times while in the vicinity of the airplane propellers. Maintenance
+      shall never be accomplished in the vicinity of the propellers when wind speeds
+      are in excess of 30 knots.'
+    requireConditions:
+    - image: {fileID: 21300000, guid: 34fbed79c0264c7409cdc9d59cd885a0, type: 3}
+      text: Wear hard hat
+    - image: {fileID: 21300000, guid: 34fbed79c0264c7409cdc9d59cd885a0, type: 3}
+      text: Use ladder for access
+    - image: {fileID: 21300000, guid: 3a3e51fad5a300448bdd377f1e95b6f7, type: 3}
+      text: Ensure engine is shut down
 --- !u!1 &8700531223620791096
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +901,7 @@ GameObject:
   - component: {fileID: 8405900006433419587}
   - component: {fileID: 4686873206604267589}
   m_Layer: 0
-  m_Name: Variable Inlet Guide Vanes
+  m_Name: '#3 Power Plant - Variable inlet guide vanes. '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -621,12 +935,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prerequisites: []
+  _repeatable: 0
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PreFlightInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -648,6 +987,23 @@ MonoBehaviour:
   startComplete: 0
   hasCaution: 0
   hasWarning: 0
+  quantity: 1
+  taskDesc: "Inspect for damage and evidence of contamination and/or salt deposits.
+    \_"
+  smin: 72-20-02
+  hasDetails: 1
+  detailsData:
+    smin: 
+    zone: 412
+    duration: 1 min
+    checkType: Visual
+    rectification: 
+    warningText: 'Fuel: Fuel is flammable and is an irritant to skin, eyes, and respiratory
+      tract. Use gloves and eye protection while working with the fuel system. Avoid
+      repeated or prolonged skin contact. Fuel also contains benzene, a cancer-causing
+      agent. Handle only in well-ventilated areas. Keep away from sparks, open flames,
+      or other sources of ignition'
+    requireConditions: []
 --- !u!1 &8995358367365824789
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +1016,7 @@ GameObject:
   - component: {fileID: 7807302022386027108}
   - component: {fileID: 2783486248431699989}
   m_Layer: 0
-  m_Name: Turbine Assembly
+  m_Name: '#3 Power Plant - Turbine assembly. '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -694,12 +1050,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prerequisites: []
+  _repeatable: 0
   OnTaskStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PreFlightInteractable, Assembly-CSharp
+        m_MethodName: TaskStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -721,3 +1102,19 @@ MonoBehaviour:
   startComplete: 0
   hasCaution: 0
   hasWarning: 0
+  quantity: 1
+  taskDesc: "Inspect visible area for damage and security. \_"
+  smin: 72-50-01
+  hasDetails: 1
+  detailsData:
+    smin: 
+    zone: 410
+    duration: 1 min
+    checkType: Visual
+    rectification: 
+    warningText: 'Fuel: Fuel is flammable and is an irritant to skin, eyes, and respiratory
+      tract. Use gloves and eye protection while working with the fuel system. Avoid
+      repeated or prolonged skin contact. Fuel also contains benzene, a cancer-causing
+      agent. Handle only in well-ventilated areas. Keep away from sparks, open flames,
+      or other sources of ignition'
+    requireConditions: []

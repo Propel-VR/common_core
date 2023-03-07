@@ -6,23 +6,20 @@ using UnityEngine.Events;
 public class WipeAwayInteractable : PreFlightInteractable
 {
 
-    [SerializeField]
-    LOXInteractable cloth;
-
-    public UnityEvent OnWipedClean;
+    public UnityEvent OnWipedClean, OnMakeReadyForInteractable;
 
     private void OnTriggerEnter(Collider other)
     {
         if (readyForInteraction && other.CompareTag("Wiping"))
         {
             WipeClean();
+            OnMakeReadyForInteractable?.Invoke();
         }
     }
 
     public override void MakeReadyForInteract()
     {
         base.MakeReadyForInteract();
-        cloth.TaskStarted();
 
     }
 
