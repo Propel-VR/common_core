@@ -12,7 +12,7 @@ public class TutorialPane : MonoBehaviour
     TaskPool pool;
 
     [SerializeField]
-    TextMeshProUGUI _titleText, _bodyText;
+    TextMeshProUGUI _titleText, _bodyText, _subtitleText;
 
     [SerializeField]
     VideoPlayer videoPlayer;
@@ -43,6 +43,7 @@ public class TutorialPane : MonoBehaviour
 
     private void PlayTutorial()
     {
+        _subtitleText.text = tutorialContents[currentTutorial].subtext;
         videoPlayer.clip = tutorialContents[currentTutorial].video;
         _titleText.text = tutorialContents[currentTutorial].title;
         _bodyText.text = tutorialContents[currentTutorial].body;
@@ -51,6 +52,7 @@ public class TutorialPane : MonoBehaviour
     [System.Serializable]
     public struct TutorialContent
     {
+        public string subtext;
         public string title; 
         public string body;
         public VideoClip video;

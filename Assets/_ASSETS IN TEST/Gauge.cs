@@ -35,7 +35,7 @@ public class Gauge : MonoBehaviour
     #endregion
 
     #region events
-    public UnityEvent OnTargetReached,OnTargetExited;
+    public UnityEvent OnTargetReached,OnTargetExited, OnMaxValue;
     #endregion
 
     #region class enumerators
@@ -85,28 +85,33 @@ public class Gauge : MonoBehaviour
 
             case State.Increase:
                 //increase the gauge value
-                _value += _rateOfIncrease * Time.deltaTime;
-
-                if(_value> _maxValue) //limit at max value
-                    _value= _maxValue;
-
-                //detrermine if gauge just entered or exited the trarget
-                if (!_onTarget)
+                if (_value < _maxValue)
                 {
-                    //check if gague entered target
-                    if (_value > _target - _leniance && _value < _target + _leniance)
-                    {
-                        OnTargetReached?.Invoke();
+                    _value += _rateOfIncrease * Time.deltaTime;
 
+                    if (_value > _maxValue) //limit at max value
+                    {
+                        _value = _maxValue;
+                        OnMaxValue?.Invoke();
                     }
-                }
-                else
-                {
-                    //check if gauge exited target
-                    if (_value < _target - _leniance || _value > _target + _leniance)
+                    //detrermine if gauge just entered or exited the trarget
+                    if (!_onTarget)
                     {
-                        OnTargetExited?.Invoke();
+                        //check if gague entered target
+                        if (_value > _target - _leniance && _value < _target + _leniance)
+                        {
+                            OnTargetReached?.Invoke();
 
+                        }
+                    }
+                    else
+                    {
+                        //check if gauge exited target
+                        if (_value < _target - _leniance || _value > _target + _leniance)
+                        {
+                            OnTargetExited?.Invoke();
+
+                        }
                     }
                 }
                

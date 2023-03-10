@@ -1,4 +1,5 @@
 using RootMotion;
+using Sirenix.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,7 @@ public class Tablet : MonoBehaviour
     [SerializeField]
     GameObject checklistItem;
     [SerializeField]
-    Transform scrollContent;
+    RectTransform scrollContent;
 
     [SerializeField]
     AnalogStickSlider analogSlider;
@@ -391,6 +392,17 @@ public class Tablet : MonoBehaviour
             }
 
         }
+
+        //update content size
+        float h = 0;
+
+        foreach(RectTransform rt in scrollContent.GetComponentsInChildren<RectTransform>())
+        {
+            if(rt.gameObject.activeSelf)
+                h += rt.rect.height;
+        }
+
+        scrollContent.rect.SetHeight(h);
 
         progressText.text = GetNumTaskComplete(chapterID) + " of " + (tocChapterData[chapterID].ChecklistItemData.Count) + " complete";
     }
