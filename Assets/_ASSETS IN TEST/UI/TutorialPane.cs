@@ -47,6 +47,8 @@ public class TutorialPane : MonoBehaviour
         videoPlayer.clip = tutorialContents[currentTutorial].video;
         _titleText.text = tutorialContents[currentTutorial].title;
         _bodyText.text = tutorialContents[currentTutorial].body;
+        transform.position = tutorialContents[currentTutorial].anchor.position;
+        transform.rotation = tutorialContents[currentTutorial].anchor.rotation;
     }
 
     [System.Serializable]
@@ -56,5 +58,6 @@ public class TutorialPane : MonoBehaviour
         public string title; 
         public string body;
         public VideoClip video;
+        public Transform anchor;
     }
 }

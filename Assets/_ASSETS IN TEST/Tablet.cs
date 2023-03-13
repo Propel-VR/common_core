@@ -87,20 +87,24 @@ public class Tablet : MonoBehaviour
         UpdateChapters();
         UpdateChecklist(chapterNum);
 
+        StartTasks();
+
     }
 
     /// <summary>
     /// called to start the first checklist task in a chapter
     /// sets task to current and updates checklist visuals
     /// </summary>
-    /// <param name="chapterID"></param>
-    public void StartTasks(int chapterID)
+    public void StartTasks()
     {
-        ChecklistItemData data = tocChapterData[chapterID].ChecklistItemData[0];
+        ChecklistItemData data = tocChapterData[currentChapterID].ChecklistItemData[0];
         data.Current = true;
-        tocChapterData[chapterID].ChecklistItemData[0] = data;
+        tocChapterData[currentChapterID].ChecklistItemData[0] = data;
 
-        UpdateChecklist(chapterID);
+        foreach (ChecklistInteractable i in data.Interactables)
+            i.TaskStarted();
+
+        UpdateChecklist(currentChapterID);
     }
 
     /// <summary>
@@ -177,37 +181,7 @@ public class Tablet : MonoBehaviour
     /// <param name="quantity">quantity of the check</param>
     /// <param name="smin">SMIN of the item (empty if none)</param>
     /// <returns></returns>
-    public int AddCheckListItem(string itemText, int chapterID, bool complete, bool warning, bool caution, int quantity, string smin, bool hasDetails, ChecklistTaskHelper.DetailsPageData details)
-    {
-
-        GameObject newGO = GameObject.Instantiate(checklistItem, scrollContent);
-        checklistItems.Add(newGO.GetComponent<ChecklistItem>());
-
-        checklistItems[checklistItems.Count - 1].SetButtonValue(checklistItems.Count - 1);
-        newGO.SetActive(true);
-
-        ChecklistItemData item;
-
-        item.ItemText = itemText;
-        item.ItemDesc = "";
-        item.ID =tocChapterData[chapterID].ChecklistItemData.Count;
-        item.Complete= complete;
-        item.Fail = false;
-        item.Current = false;
-        item.HasWarning= warning;
-        item.HasCaution = caution;
-        item.CurrentQuantity = 0;
-        item.Quantity= quantity;
-        item.SMIN = smin;
-        item.HasDetails = hasDetails;
-        item.detailsPageData= details;
-        tocChapterData[chapterID].ChecklistItemData.Add(item);
-
-        return item.ID;
-
-    }
-
-    public int AddCheckListItem(string itemText, string itemDesc, int chapterID, bool complete, bool warning, bool caution, int quantity, string smin, bool hasDetails, ChecklistTaskHelper.DetailsPageData details)
+   public int AddCheckListItem(string itemText, string itemDesc, int chapterID, bool complete, bool warning, bool caution, int quantity, string smin, bool hasDetails, ChecklistTaskHelper.DetailsPageData details, List<ChecklistInteractable> interactables)
     {
 
         GameObject newGO = GameObject.Instantiate(checklistItem, scrollContent);
@@ -231,6 +205,7 @@ public class Tablet : MonoBehaviour
         item.SMIN = smin;
         item.HasDetails = hasDetails;
         item.detailsPageData = details;
+        item.Interactables = interactables;
         tocChapterData[chapterID].ChecklistItemData.Add(item);
 
         return item.ID;
@@ -278,6 +253,7 @@ public class Tablet : MonoBehaviour
         item.HasDetails = tocChapterData[chapterID].ChecklistItemData[checkID].HasDetails;
         item.detailsPageData = tocChapterData[chapterID].ChecklistItemData[checkID].detailsPageData;
         item.detailsPageData.rectification = rectification;
+        item.Interactables = tocChapterData[chapterID].ChecklistItemData[checkID].Interactables;
 
         tocChapterData[chapterID].ChecklistItemData[checkID]=item;
         
@@ -522,6 +498,7 @@ public class Tablet : MonoBehaviour
         public string SMIN;
         public bool HasWarning, HasCaution;
         public bool HasDetails;
+        public List<ChecklistInteractable> Interactables;
         public ChecklistTaskHelper.DetailsPageData detailsPageData;
     }
 
