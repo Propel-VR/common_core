@@ -172,9 +172,13 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
             lineRenderer.colorGradient = isValidHit ? validGradient : invalidGradient;
             lineRenderer.SetPosition(0, ray.origin);
             if (didHitSomething)
+            {
+                lineRenderer.enabled = true;
                 lineRenderer.SetPosition(1, hitPoint - ray.direction * 0.02f);
+            }
             else
-                lineRenderer.SetPosition(1, ray.origin + ray.direction * maxDistance);
+                lineRenderer.enabled = false;
+                //lineRenderer.SetPosition(1, ray.origin + ray.direction * maxDistance);
         }
 
         // Selection
