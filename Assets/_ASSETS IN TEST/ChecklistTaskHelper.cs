@@ -82,12 +82,6 @@ public class ChecklistTaskHelper : MonoBehaviour
         Tablet.Instance.UpdateDetails(_chapterID, id, rectification);
     }
 
-    public void MakeActive()
-    {
-        foreach (ChecklistInteractable i in interactables)
-            i.TaskStarted();
-    }
-
     [System.Serializable]
     public struct DetailsPageData
     {

@@ -16,6 +16,13 @@ public class PreFlightInteractable : ChecklistInteractable
     private RayInteractable _rayInteractable;
     protected ChecklistTaskHelper cth;
 
+    [SerializeField]
+    private Transform uiPos;
+    public Transform UIPos
+    {
+        get { return uiPos; }
+    }
+
 
     private void Awake()
     {

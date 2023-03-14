@@ -37,6 +37,9 @@ public class PreflightUI : MonoBehaviour
         _interactableSelected.SetActive(true);
         _preflightInteractable= preflightInteractable;
 
+        transform.position = _preflightInteractable.UIPos.position;
+        transform.rotation = _preflightInteractable.UIPos.rotation;
+
     }
 
     public void CheckComplete()
