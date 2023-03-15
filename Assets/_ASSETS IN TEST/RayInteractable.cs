@@ -31,7 +31,7 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
             float dist = Vector3.Distance(Player.position, transform.position);
             print("Distance to other: " + dist);
             
-            if(dist <= 10.0f) { outlineWidth = 2; } else if ( dist >= 30.0f) { outlineWidth = 7; } else { outlineWidth = 4; }
+            if(dist <= 10.0f) { outlineWidth = 1; } else if ( dist >= 30.0f) { outlineWidth = 7; } else { outlineWidth = 3; }
             outline.OutlineWidth = outlineWidth;
         }
     }
@@ -86,7 +86,7 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
         {
             SetOutlineWidth();
             fadeInValue = 1;
-            outline.OutlineMode = Outline.Mode.OutlineAll;
+           // outline.OutlineMode = Outline.Mode.OutlineAll;
 
         }
         outline.OutlineColor = new Color(outline.OutlineColor.r, outline.OutlineColor.g, outline.OutlineColor.b, fadeInValue);
@@ -115,7 +115,7 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
             isHovering = true;
             if (fadeInValue == 0f)
                 initHoverTime = Time.unscaledTime;
-            outline.OutlineMode = Outline.Mode.OutlineAll;
+         //   outline.OutlineMode = Outline.Mode.OutlineAll;
 
             outline.OutlineColor = outlineColor;
         }
