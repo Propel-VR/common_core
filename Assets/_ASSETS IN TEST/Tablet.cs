@@ -142,12 +142,15 @@ public class Tablet : MonoBehaviour
             {
 
                 item = tocChapterData[chapterID].ChecklistItemData[id + 1];
-                item.Current = true;
+                if (!item.Complete)
+                {
+                    item.Current = true;
 
-                foreach (ChecklistInteractable i in item.Interactables)
-                    i.TaskStarted();
+                    foreach (ChecklistInteractable i in item.Interactables)
+                        i.TaskStarted();
 
-                tocChapterData[chapterID].ChecklistItemData[id + 1] = item;
+                    tocChapterData[chapterID].ChecklistItemData[id + 1] = item;
+                }
             }
         }
 

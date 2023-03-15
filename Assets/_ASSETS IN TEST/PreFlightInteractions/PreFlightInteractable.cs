@@ -41,7 +41,6 @@ public class PreFlightInteractable : ChecklistInteractable
     {
         Task.CompleteTask();
         HasBeenChecked();
-        cth.UpdateRectification(cth.GetID(), "N/A");
         OnInteracted.Invoke();
         
     }
@@ -59,7 +58,11 @@ public class PreFlightInteractable : ChecklistInteractable
         _rayInteractable.forceHighlight = false;
         identifierUI.SetActive(false);
         if (completeUI != null)
+        {
+            completeUI.transform.position = UIPos.position;
+            completeUI.transform.rotation = UIPos.rotation;
             completeUI.SetActive(true);
+        }
     }
 
 

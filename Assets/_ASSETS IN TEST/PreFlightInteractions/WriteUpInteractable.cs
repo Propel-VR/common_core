@@ -34,7 +34,7 @@ public class WriteUpInteractable : PreFlightInteractable
 
     public override void UpdateRectification()
     {
-        cth.UpdateRectification(cth.GetID(),"Cleaned");
+        cth.UpdateRectification(cth.GetID(),"Written Up");
     }
 
 }

@@ -117,7 +117,7 @@ public class PreflightUI : MonoBehaviour
         else
         {
             //SET TEXT TO INCORRECT
-            _cleanButton.SetActive(false);
+            _writeUpButton.SetActive(false);
             badSound.Play();
         }
     }
