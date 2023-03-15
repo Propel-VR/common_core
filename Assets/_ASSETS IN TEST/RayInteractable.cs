@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class RayInteractable : MonoBehaviour, IInteractableObject
 {
-    static readonly int outlineWidth = 10;
+    public int outlineWidth = 5;
     static readonly float minTimeBeforeFadeIn = 0.4f;
     static readonly float fadeInTime = 0.6f;
 
@@ -14,7 +14,7 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
     private float fadeInValue;
 
 
-
+    public Transform Player; // mike add for checking distance
     [SerializeField] UnityEvent onInteract;
     [SerializeField] Transform contextPoint;
     [SerializeField] Color outlineColor = new(0f, 1f, 140f / 255f);
@@ -23,6 +23,18 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
     bool stopInteracting = false;
     [HideInInspector]
     public bool forceHighlight = false;
+
+    public void SetOutlineWidth() // mike added function to check distance from player, and set outline width based on it
+    {
+        if(Player)
+        {
+            float dist = Vector3.Distance(Player.position, transform.position);
+            print("Distance to other: " + dist);
+            
+            if(dist <= 10.0f) { outlineWidth = 2; } else if ( dist >= 30.0f) { outlineWidth = 7; } else { outlineWidth = 4; }
+            outline.OutlineWidth = outlineWidth;
+        }
+    }
 
     private void Awake()
     {
@@ -47,6 +59,7 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
     {
         if (isHovering)
         {
+            SetOutlineWidth();
             Debug.Log("IM BEING HOVERED");
             float hoverDelayValue = Mathf.Clamp01((Time.unscaledTime - initHoverTime) / minTimeBeforeFadeIn);
 
@@ -71,6 +84,7 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
 
         if (forceHighlight)
         {
+            SetOutlineWidth();
             fadeInValue = 1;
             outline.OutlineMode = Outline.Mode.OutlineAll;
 
