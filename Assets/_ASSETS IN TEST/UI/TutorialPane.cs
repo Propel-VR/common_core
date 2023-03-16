@@ -12,13 +12,16 @@ public class TutorialPane : MonoBehaviour
     TaskPool pool;
 
     [SerializeField]
-    TextMeshProUGUI _titleText, _bodyText, _subtitleText;
+    TextMeshProUGUI _titleText, _bodyText, _subtitleText, _panelNum;
 
     [SerializeField]
     VideoPlayer videoPlayer;
 
     [SerializeField]
     TutorialContent[] tutorialContents;
+
+    [SerializeField]
+    GameObject skipBtn;
 
     int currentTutorial = 0;
 
@@ -29,7 +32,9 @@ public class TutorialPane : MonoBehaviour
 
     public void NextTutorial()
     {
+        skipBtn.SetActive(false);
         currentTutorial++;
+
         if(currentTutorial>= tutorialContents.Length)
         {
             gameObject.SetActive(false);
@@ -47,8 +52,15 @@ public class TutorialPane : MonoBehaviour
         videoPlayer.clip = tutorialContents[currentTutorial].video;
         _titleText.text = tutorialContents[currentTutorial].title;
         _bodyText.text = tutorialContents[currentTutorial].body;
+        _panelNum.text = (currentTutorial + 1) + " / " + tutorialContents.Length;
         transform.position = tutorialContents[currentTutorial].anchor.position;
         transform.rotation = tutorialContents[currentTutorial].anchor.rotation;
+    }
+
+    public void SkipTutorial()
+    {
+        gameObject.SetActive(false);
+        pool.StartPool();
     }
 
     [System.Serializable]

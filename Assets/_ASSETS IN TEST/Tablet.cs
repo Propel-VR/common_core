@@ -138,7 +138,7 @@ public class Tablet : MonoBehaviour
 
             tocChapterData[chapterID].ChecklistItemData[id] = item;
 
-            if (id < tocChapterData[chapterID].ChecklistItemData.Count - 2)
+            if (id <= tocChapterData[chapterID].ChecklistItemData.Count - 2)
             {
 
                 item = tocChapterData[chapterID].ChecklistItemData[id + 1];
