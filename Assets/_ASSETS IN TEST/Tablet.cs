@@ -188,17 +188,18 @@ public class Tablet : MonoBehaviour
     /// <param name="quantity">quantity of the check</param>
     /// <param name="smin">SMIN of the item (empty if none)</param>
     /// <returns></returns>
-   public int AddCheckListItem(string itemText, string itemDesc, int chapterID, bool complete, bool warning, bool caution, int quantity, string smin, bool hasDetails, ChecklistTaskHelper.DetailsPageData details, List<ChecklistInteractable> interactables)
+   public int AddCheckListItem(bool isHeader, string itemText, string itemDesc, int chapterID, bool complete, bool warning, bool caution, int quantity, string smin, bool hasDetails, ChecklistTaskHelper.DetailsPageData details, List<ChecklistInteractable> interactables)
     {
 
         GameObject newGO = GameObject.Instantiate(checklistItem, scrollContent);
         checklistItems.Add(newGO.GetComponent<ChecklistItem>());
 
-        checklistItems[checklistItems.Count - 1].SetButtonValue(checklistItems.Count - 1);
+        checklistItems[checklistItems.Count - 1].SetButtonValue(checklistItems.Count - 1, isHeader);
         newGO.SetActive(true);
 
         ChecklistItemData item;
 
+        item.IsHeader = isHeader;
         item.ItemText = itemText;
         item.ItemDesc = itemDesc;
         item.ID = tocChapterData[chapterID].ChecklistItemData.Count;
@@ -246,6 +247,7 @@ public class Tablet : MonoBehaviour
         
         ChecklistItemData item;
 
+        item.IsHeader = tocChapterData[chapterID].ChecklistItemData[checkID].IsHeader;
         item.ItemText = tocChapterData[chapterID].ChecklistItemData[checkID].ItemText;
         item.ItemDesc = tocChapterData[chapterID].ChecklistItemData[checkID].ItemDesc;
         item.ID = tocChapterData[chapterID].ChecklistItemData[checkID].ID;
@@ -495,6 +497,7 @@ public class Tablet : MonoBehaviour
     public struct ChecklistItemData
     {
         public int ID;
+        public bool IsHeader;
         public string ItemText;
         public string ItemDesc;
         public bool Current;

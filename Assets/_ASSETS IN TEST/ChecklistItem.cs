@@ -59,10 +59,21 @@ public class ChecklistItem : MonoBehaviour
         OnUnCommpleteItem?.Invoke();
     }
 
-    public void SetButtonValue(int num)
+    public void SetButtonValue(int num, bool isHeader)
     {
         Debug.Log("ADDED LISTENER TO BUTTON WITH ID: " + num);
-        _button.onClick.AddListener(() => Tablet.Instance.ClickChecklist(num));
+        if(isHeader)
+        {
+            _button.interactable=false;
+
+
+        }
+        else
+        {
+            _button.onClick.AddListener(() => Tablet.Instance.ClickChecklist(num));
+
+        }
+
     }
 
     public void Fail()

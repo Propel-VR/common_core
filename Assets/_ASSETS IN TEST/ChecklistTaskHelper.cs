@@ -17,7 +17,8 @@ public class ChecklistTaskHelper : MonoBehaviour
 
     [SerializeField]
     List<ChecklistInteractable> interactables;
-
+    [SerializeField]
+    bool isHeader;
     [SerializeField]
     bool startComplete = false;
     [SerializeField]
@@ -57,7 +58,7 @@ public class ChecklistTaskHelper : MonoBehaviour
     public void SetUp(int chapterID)
     {
         _chapterID = chapterID;
-        checkID = Tablet.Instance.AddCheckListItem(gameObject.name, taskDesc, chapterID, startComplete,hasWarning,hasCaution, quantity, smin,hasDetails,detailsData, interactables);
+        checkID = Tablet.Instance.AddCheckListItem(isHeader, gameObject.name, taskDesc, chapterID, startComplete,hasWarning,hasCaution, quantity, smin,hasDetails,detailsData, interactables);
 
         Debug.Log("SET UP TASK WITH ID: " + checkID);
 
