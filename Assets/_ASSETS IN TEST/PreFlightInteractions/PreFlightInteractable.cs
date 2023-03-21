@@ -9,32 +9,32 @@ using UnityEngine.Events;
 public class PreFlightInteractable : ChecklistInteractable
 {
     public Task Task;
-    protected bool readyForInteraction;
+    protected bool _readyForInteraction;
 
     public UnityEvent OnInteracted;
 
     private RayInteractable _rayInteractable;
-    protected ChecklistTaskHelper cth;
+    protected ChecklistTaskHelper _cth;
 
     [SerializeField]
-    private Transform uiPos;
-    public Transform UIPos
+    private Transform _uiPos;
+    public Transform _UIPos
     {
-        get { return uiPos; }
+        get { return _uiPos; }
     }
 
 
     private void Awake()
     {
         _rayInteractable = GetComponent<RayInteractable>();
-        cth = Task.GetComponent<ChecklistTaskHelper>();
+        _cth = Task.GetComponent<ChecklistTaskHelper>();
 
     }
 
 
     public virtual void MakeReadyForInteract()
     {
-        readyForInteraction = true;
+        _readyForInteraction = true;
     }
 
     public void CheckComplete()
@@ -50,18 +50,18 @@ public class PreFlightInteractable : ChecklistInteractable
     public override void TaskStarted()
     {
         _rayInteractable.forceHighlight = true;
-        identifierUI.SetActive(true);
+        _identifierUI.SetActive(true);
     }
 
     public override void TaskComplete()
     {
         _rayInteractable.forceHighlight = false;
-        identifierUI.SetActive(false);
-        if (completeUI != null)
+        _identifierUI.SetActive(false);
+        if (_completeUI != null)
         {
-            completeUI.transform.position = UIPos.position;
-            completeUI.transform.rotation = UIPos.rotation;
-            completeUI.SetActive(true);
+            _completeUI.transform.position = _UIPos.position;
+            _completeUI.transform.rotation = _UIPos.rotation;
+            _completeUI.SetActive(true);
         }
     }
 

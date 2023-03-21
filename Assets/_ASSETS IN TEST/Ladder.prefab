@@ -479,9 +479,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b167d86f8d31c0c4aaee4a9d189e022a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  teleportPos: {fileID: 2353940362935102951}
-  offPos: {fileID: 140374723}
+  _playerController: {fileID: 0}
+  _teleportPos: {fileID: 2353940362935102951}
+  _offPos: {fileID: 140374723}
 --- !u!114 &2353940362511691336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,8 +562,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.58
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.8
+  m_Center: {x: 0.2, y: 0, z: 0.85}
 --- !u!114 &945709495
 MonoBehaviour:
   m_ObjectHideFlags: 0

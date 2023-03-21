@@ -10,7 +10,7 @@ using UnityEngine;
 public class ChecklistTaskHelper : MonoBehaviour
 {
 
-    int checkID;
+    int _checkID;
     int _chapterID;
 
     Task task;
@@ -18,23 +18,23 @@ public class ChecklistTaskHelper : MonoBehaviour
     [SerializeField]
     List<ChecklistInteractable> interactables;
     [SerializeField]
-    bool isHeader;
+    bool _isHeader;
     [SerializeField]
-    bool startComplete = false;
+    bool _startComplete = false;
     [SerializeField]
-    bool hasCaution = false, hasWarning = false;
+    bool _hasCaution = false, _hasWarning = false;
     [SerializeField]
-    int quantity = 1;
+    int _quantity = 1;
     [SerializeField]
-    string taskDesc;
+    string _taskDesc;
     [SerializeField]
-    string smin = "";
+    string _smin = "";
 
 
     [SerializeField]
-    bool hasDetails=false;
+    bool _hasDetails=false;
     [SerializeField]
-    DetailsPageData detailsData;
+    DetailsPageData _detailsData;
 
     private void Awake()
     {
@@ -42,13 +42,13 @@ public class ChecklistTaskHelper : MonoBehaviour
 
         task.OnTaskCompleted.AddListener(OnComplete);
 
-        if (hasDetails)
-            detailsData.smin = smin;
+        if (_hasDetails)
+            _detailsData.smin = _smin;
     }
 
     public int GetID()
     {
-        return checkID;
+        return _checkID;
     }
 
     /// <summary>
@@ -58,9 +58,9 @@ public class ChecklistTaskHelper : MonoBehaviour
     public void SetUp(int chapterID)
     {
         _chapterID = chapterID;
-        checkID = Tablet.Instance.AddCheckListItem(isHeader, gameObject.name, taskDesc, chapterID, startComplete,hasWarning,hasCaution, quantity, smin,hasDetails,detailsData, interactables);
+        _checkID = Tablet.Instance.AddCheckListItem(_isHeader, gameObject.name, _taskDesc, chapterID, _startComplete,_hasWarning,_hasCaution, _quantity, _smin,_hasDetails,_detailsData, interactables);
 
-        Debug.Log("SET UP TASK WITH ID: " + checkID);
+        Debug.Log("SET UP TASK WITH ID: " + _checkID);
 
 
     }
@@ -72,12 +72,12 @@ public class ChecklistTaskHelper : MonoBehaviour
     {
 
         Debug.Log("TASK COMPLETE FOR \""+gameObject.name+"\"");
-        Tablet.Instance.CompleteItem(checkID, _chapterID);
+        Tablet.Instance.CompleteItem(_checkID, _chapterID);
     }
 
     public void UpdateRectification(int id, string rectification)
     {
-        detailsData.rectification = rectification;
+        _detailsData.rectification = rectification;
 
         //UPDATE CHECKLIST DATA
         Tablet.Instance.UpdateDetails(_chapterID, id, rectification);

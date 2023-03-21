@@ -8,46 +8,46 @@ public class ChecklistInteractable : MonoBehaviour
 {
 
     [SerializeField]
-    protected GameObject identifierUI, completeUI;
+    protected GameObject _identifierUI, _completeUI;
 
     [SerializeField]
-    protected Transform anchoredTo;
+    protected Transform _anchoredTo;
 
     [SerializeField]
-    protected Vector3 offset = Vector3.up * 0.2f;
+    protected Vector3 _offset = Vector3.up * 0.2f;
 
-    protected Outline outline;
+    protected Outline _outline;
 
 
     private void Awake()
     {
-        outline = GetComponent<Outline>();
+        _outline = GetComponent<Outline>();
 
-        if (!outline)
+        if (!_outline)
             Debug.LogError(gameObject + " CONTAINS NO OUTLINE");
     }
 
 
     protected void Update()
     {
-        if (anchoredTo)
+        if (_anchoredTo)
         {
-            identifierUI.transform.position = anchoredTo.position + offset;
-            completeUI.transform.position = anchoredTo.position + offset;
+            _identifierUI.transform.position = _anchoredTo.position + _offset;
+            _completeUI.transform.position = _anchoredTo.position + _offset;
         }
-        if (identifierUI.activeInHierarchy)
+        if (_identifierUI.activeInHierarchy)
         {
-            var lookPos = Camera.main.transform.position - identifierUI.transform.position;
+            var lookPos = Camera.main.transform.position - _identifierUI.transform.position;
             lookPos.y = 0;
-            identifierUI.transform.rotation = Quaternion.LookRotation(lookPos);
+            _identifierUI.transform.rotation = Quaternion.LookRotation(lookPos);
 
         }
-        if (completeUI && completeUI.activeInHierarchy)
+        if (_completeUI && _completeUI.activeInHierarchy)
         {
 
-            var lookPos = Camera.main.transform.position - completeUI.transform.position;
+            var lookPos = Camera.main.transform.position - _completeUI.transform.position;
             //lookPos.y = 0;
-            completeUI.transform.rotation = Quaternion.LookRotation(lookPos);
+            _completeUI.transform.rotation = Quaternion.LookRotation(lookPos);
             //completeUI.transform.rotation = Quaternion.Slerp(completeUI.transform.rotation, rotation, Time.deltaTime/* x damping */);
         }
 
@@ -56,22 +56,22 @@ public class ChecklistInteractable : MonoBehaviour
 
     public virtual void TaskStarted()
     {
-        outline.OutlineMode = Outline.Mode.OutlineVisible;
-        identifierUI.SetActive(true);
+        _outline.OutlineMode = Outline.Mode.OutlineVisible;
+        _identifierUI.SetActive(true);
     }
 
     public virtual void TaskComplete()
     {
-        outline.OutlineMode = Outline.Mode.None;
-        identifierUI.SetActive(false);
-        if (completeUI != null)
+        _outline.OutlineMode = Outline.Mode.None;
+        _identifierUI.SetActive(false);
+        if (_completeUI != null)
             StartCoroutine(DisplayCompleteUI());
     }
 
     protected IEnumerator DisplayCompleteUI()
     {
-        completeUI.SetActive(true);
+        _completeUI.SetActive(true);
         yield return new WaitForSeconds(1);
-        completeUI.SetActive(false);
+        _completeUI.SetActive(false);
     }
 }

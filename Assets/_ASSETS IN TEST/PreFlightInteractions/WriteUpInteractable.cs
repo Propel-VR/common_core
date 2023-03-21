@@ -9,7 +9,7 @@ public class WriteUpInteractable : PreFlightInteractable
     public UnityEvent OnWriteUpInteraction,OnMakeReadyForInteraction;
 
     [SerializeField]
-    float interactionDelay;
+    float _interactionDelay;
 
     public override void MakeReadyForInteract()
     {
@@ -26,7 +26,7 @@ public class WriteUpInteractable : PreFlightInteractable
 
     public IEnumerator Interact()
     {
-        yield return new WaitForSeconds(interactionDelay);
+        yield return new WaitForSeconds(_interactionDelay);
         OnInteracted?.Invoke();
         OnWriteUpInteraction?.Invoke();
         UpdateRectification();
@@ -34,7 +34,7 @@ public class WriteUpInteractable : PreFlightInteractable
 
     public override void UpdateRectification()
     {
-        cth.UpdateRectification(cth.GetID(),"Written Up");
+        _cth.UpdateRectification(_cth.GetID(),"Written Up");
     }
 
 }

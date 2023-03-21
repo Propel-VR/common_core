@@ -5,10 +5,10 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour
 {
     [SerializeField]
-    GameObject spotlightObj;
+    GameObject _spotlightObj;
 
     public void OnClick()
     {
-        spotlightObj.SetActive(!spotlightObj.active);
+        _spotlightObj.SetActive(!_spotlightObj.activeSelf);
     }
 }

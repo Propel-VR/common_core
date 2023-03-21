@@ -8,7 +8,7 @@ using UnityEngine;
 public class ChecklistTaskManager : MonoBehaviour
 {
     [SerializeField]
-    int forceStartChapter=3;
+    int _forceStartChapter=3;
 
     private void Start()
     {
@@ -16,7 +16,7 @@ public class ChecklistTaskManager : MonoBehaviour
 
         Tablet.Instance.UpdateChapters();
 
-        Tablet.Instance.StartChapter(forceStartChapter);
+        Tablet.Instance.StartChapter(_forceStartChapter);
     }
 
 

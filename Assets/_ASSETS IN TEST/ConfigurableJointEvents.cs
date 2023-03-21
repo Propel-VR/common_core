@@ -7,21 +7,21 @@ using UnityEngine.Events;
 public class ConfigurableJointEvents : MonoBehaviour
 {
     [SerializeField]
-    private float jointEventLimit;
-    private ConfigurableJoint joint;
+    private float _jointEventLimit;
+    private ConfigurableJoint _joint;
 
     public UnityEvent OnJointEventLimit;
 
 
     private void Awake()
     {
-        joint= GetComponent<ConfigurableJoint>();
+        _joint= GetComponent<ConfigurableJoint>();
     }
 
 
     private void Update()
     {
-        if(jointEventLimit > 0 && joint.currentForce.magnitude > jointEventLimit)
+        if(_jointEventLimit > 0 && _joint.currentForce.magnitude > _jointEventLimit)
         {
             OnJointEventLimit?.Invoke();
         }

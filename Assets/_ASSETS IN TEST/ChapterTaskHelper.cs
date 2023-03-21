@@ -9,17 +9,17 @@ using UnityEngine;
 public class ChapterTaskHelper : MonoBehaviour
 {
 
-    int chapterID;
+    int _chapterID;
 
-    Task task;
+    Task _task;
     [SerializeField]
-    Sprite chapterSprite, backgroundSprite;
+    Sprite _chapterSprite, _backgroundSprite;
 
     private void Awake()
     {
-        task = GetComponent<Task>();
+        _task = GetComponent<Task>();
 
-        task.OnTaskCompleted.AddListener(OnComplete);
+        _task.OnTaskCompleted.AddListener(OnComplete);
     }
 
     /// <summary>
@@ -28,9 +28,9 @@ public class ChapterTaskHelper : MonoBehaviour
     public void SetUp()
     {
 
-        Debug.Log("SET UP CHAPTER WITH ID: " + chapterID);
+        Debug.Log("SET UP CHAPTER WITH ID: " + _chapterID);
 
-        chapterID = Tablet.Instance.AddChapter(gameObject.name, chapterSprite, backgroundSprite);
+        _chapterID = Tablet.Instance.AddChapter(gameObject.name, _chapterSprite, _backgroundSprite);
 
         AddTaskToTablet(transform);
 
@@ -43,7 +43,7 @@ public class ChapterTaskHelper : MonoBehaviour
     {
 
         Debug.Log("CHAPTER COMPLETE FOR \"" + gameObject.name + "\"");
-        Tablet.Instance.CompleteChapterItem(chapterID);
+        Tablet.Instance.CompleteChapterItem(_chapterID);
     }
 
     /// <summary>
@@ -55,7 +55,7 @@ public class ChapterTaskHelper : MonoBehaviour
 
         ChecklistTaskHelper cth = obj.GetComponent<ChecklistTaskHelper>();
         if (cth != null)
-            cth.SetUp(chapterID);
+            cth.SetUp(_chapterID);
 
 
         for (int i = 0; i < obj.childCount; i++)

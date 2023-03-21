@@ -11,9 +11,9 @@ public class DetailedPage : MonoBehaviour
     TextMeshProUGUI _smin, _zone, _duration, _typeOfCheck, _rectification;
    
     [SerializeField]
-    GameObject ReqContent;
+    GameObject _ReqContent;
     [SerializeField]
-    Transform ReqParent;
+    Transform _ReqParent;
     [SerializeField]
     GameObject _warningGo;
     [SerializeField]
@@ -44,7 +44,7 @@ public class DetailedPage : MonoBehaviour
 
         for (int i = 0; i < rqSprites.Length; i++)
         {
-            GameObject newGO = GameObject.Instantiate(ReqContent, ReqParent);
+            GameObject newGO = GameObject.Instantiate(_ReqContent, _ReqParent);
 
             newGO.GetComponentInChildren<Image>().sprite = rqSprites[i];
             newGO.GetComponentInChildren<TextMeshProUGUI>().text = rqTxts[i];
@@ -89,7 +89,7 @@ public class DetailedPage : MonoBehaviour
         for (int i = 0; i < data.requireConditions.Length; i++)
         {
 
-            GameObject newGO = GameObject.Instantiate(ReqContent, ReqParent);
+            GameObject newGO = GameObject.Instantiate(_ReqContent, _ReqParent);
 
             newGO.GetComponentInChildren<Image>().sprite = data.requireConditions[i].image;
             newGO.GetComponentInChildren<TextMeshProUGUI>().text = data.requireConditions[i].text;

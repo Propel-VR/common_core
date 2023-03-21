@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// class for a ladder that allows a player to teleport on top 
+/// </summary>
 public class Ladder : MonoBehaviour
 {
     [SerializeField]
-    AutoHandPlayer playerController;
+    AutoHandPlayer _playerController;
     [SerializeField]
-    Transform teleportPos, offPos;
+    Transform _teleportPos, _offPos;
 
     bool hasPlayer = false;
 
@@ -17,14 +20,14 @@ public class Ladder : MonoBehaviour
     {
         if (!hasPlayer)
         {
-            playerController.SetPosition(teleportPos.position, teleportPos.rotation);
-            playerController.useMovement= false;
+            _playerController.SetPosition(_teleportPos.position, _teleportPos.rotation);
+            _playerController.useMovement= false;
             hasPlayer = true;
         }
         else
         {
-            playerController.SetPosition(offPos.position, offPos.rotation);
-            playerController.useMovement = true;
+            _playerController.SetPosition(_offPos.position, _offPos.rotation);
+            _playerController.useMovement = true;
             hasPlayer = false;
         }
     }

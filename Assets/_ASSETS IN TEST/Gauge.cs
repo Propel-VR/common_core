@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+/// <summary>
+/// class to control a turning gauge
+/// </summary>
 public class Gauge : MonoBehaviour
 {
 
@@ -24,7 +28,7 @@ public class Gauge : MonoBehaviour
 
     [SerializeField]
     [Tooltip("the gameobject to rotate as the pin")]
-    private GameObject gauguePin;
+    private GameObject _gauguePin;
     #endregion
 
     #region private
@@ -154,7 +158,7 @@ public class Gauge : MonoBehaviour
         }
 
 
-        gauguePin.transform.localRotation = Quaternion.Euler(0, 0, _value);
+        _gauguePin.transform.localRotation = Quaternion.Euler(0, 0, _value);
     }
 
 }

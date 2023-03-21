@@ -21,7 +21,7 @@ public class ChecklistItem : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI _quantity,_smin;
     [SerializeField]
-    GameObject cmpltObj; 
+    GameObject _cmpltObj; 
 
     public UnityEvent OnCompleteItem, OnFailItem, OnUnCommpleteItem;
 
@@ -32,7 +32,7 @@ public class ChecklistItem : MonoBehaviour
 
         _text.text = "<s>" + _text.text + "<s>";
         _quantity.gameObject.SetActive(false);
-        cmpltObj.SetActive(true);
+        _cmpltObj.SetActive(true);
         OnCompleteItem?.Invoke();
     }
 
@@ -46,7 +46,7 @@ public class ChecklistItem : MonoBehaviour
         _caution.SetActive(false);
 
         _quantity.gameObject.SetActive(false);
-        cmpltObj.SetActive(false);
+        _cmpltObj.SetActive(false);
         _smin.gameObject.SetActive(false);
 
 
@@ -103,7 +103,7 @@ public class ChecklistItem : MonoBehaviour
 
     public void SetQuantity(int complete, int total)
     {
-        if (total > 1 && !cmpltObj.activeSelf)
+        if (total > 1 && !_cmpltObj.activeSelf)
         {
 
             _quantity.gameObject.SetActive(true);

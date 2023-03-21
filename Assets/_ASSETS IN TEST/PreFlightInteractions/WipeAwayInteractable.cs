@@ -10,7 +10,7 @@ public class WipeAwayInteractable : PreFlightInteractable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (readyForInteraction && other.CompareTag("Wiping"))
+        if (_readyForInteraction && other.CompareTag("Wiping"))
         {
             WipeClean();
             OnMakeReadyForInteractable?.Invoke();
@@ -39,7 +39,7 @@ public class WipeAwayInteractable : PreFlightInteractable
 
     public override void UpdateRectification()
     {
-        cth.UpdateRectification(cth.GetID(),"Cleaned");
+        _cth.UpdateRectification(_cth.GetID(),"Cleaned");
     }
 
 }

@@ -20,9 +20,9 @@ public class PreflightUI : MonoBehaviour
 
     [Header("AUDIO REFERENCES")]
     [SerializeField]
-    AudioSource goodSound;
+    AudioSource _goodSound;
     [SerializeField]
-    AudioSource badSound;
+    AudioSource _badSound;
 
 
     private void Start()
@@ -37,8 +37,8 @@ public class PreflightUI : MonoBehaviour
         _interactableSelected.SetActive(true);
         _preflightInteractable= preflightInteractable;
 
-        transform.position = _preflightInteractable.UIPos.position;
-        transform.rotation = _preflightInteractable.UIPos.rotation;
+        transform.position = _preflightInteractable._UIPos.position;
+        transform.rotation = _preflightInteractable._UIPos.rotation;
 
     }
 
@@ -47,7 +47,7 @@ public class PreflightUI : MonoBehaviour
         if (_preflightInteractable.Task != null)
         {
             _preflightInteractable.CheckComplete();
-            goodSound.Play();
+            _goodSound.Play();
         }
         gameObject.SetActive(false);
     }
@@ -70,7 +70,7 @@ public class PreflightUI : MonoBehaviour
         if(_preflightInteractable is WipeAwayInteractable)
         {
             _preflightInteractable.MakeReadyForInteract();
-            goodSound.Play();
+            _goodSound.Play();
             gameObject.SetActive(false);
 
         }
@@ -78,21 +78,21 @@ public class PreflightUI : MonoBehaviour
         {
             //SET TEXT TO INCORRECT
             _cleanButton.SetActive(false);
-            badSound.Play();
+            _badSound.Play();
         }
     }
 
     public void TryReplace()
     {
         _replaceButton.SetActive(false);
-        badSound.Play();
+        _badSound.Play();
 
     }
 
     public void TryRepair()
     {
         _repairButton.SetActive(false);
-        badSound.Play();
+        _badSound.Play();
 
 
     }
@@ -100,7 +100,7 @@ public class PreflightUI : MonoBehaviour
     public void TryService()
     {
         _serviceButton.SetActive(false);
-        badSound.Play();
+        _badSound.Play();
 
 
     }
@@ -110,7 +110,7 @@ public class PreflightUI : MonoBehaviour
         if (_preflightInteractable is WriteUpInteractable)
         {
             _preflightInteractable.MakeReadyForInteract();
-            goodSound.Play();
+            _goodSound.Play();
             gameObject.SetActive(false);
 
         }
@@ -118,7 +118,7 @@ public class PreflightUI : MonoBehaviour
         {
             //SET TEXT TO INCORRECT
             _writeUpButton.SetActive(false);
-            badSound.Play();
+            _badSound.Play();
         }
     }
 

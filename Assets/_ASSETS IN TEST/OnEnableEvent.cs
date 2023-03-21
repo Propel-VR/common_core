@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// class that handles events for enable, start, etc
+/// </summary>
 public class OnEnableEvent : MonoBehaviour
 {
     [SerializeField] UnityEvent DoOnStart;

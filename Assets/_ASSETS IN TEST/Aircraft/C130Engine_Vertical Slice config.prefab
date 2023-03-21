@@ -145,10 +145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 2594403010687858442}
-  completeUI: {fileID: 0}
-  anchoredTo: {fileID: 7954002507377673794}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 2594403010687858442}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 0}
   OnInteracted:
     m_PersistentCalls:
@@ -177,7 +177,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 8790657289416496167}
+  _uiPos: {fileID: 8790657289416496167}
 --- !u!65 &6553682742878209026
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -297,10 +297,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94a91d9366d453241bb7a6e3027b86c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 2594403009783128252}
-  completeUI: {fileID: 0}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 2594403009783128252}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 0}
   OnInteracted:
     m_PersistentCalls:
@@ -317,7 +317,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 8790657289737051342}
+  _uiPos: {fileID: 8790657289737051342}
   OnWriteUpInteraction:
     m_PersistentCalls:
       m_Calls: []
@@ -348,7 +348,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactionDelay: 0.5
+  _interactionDelay: 0
 --- !u!1 &877898512699210358
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648035536209834418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -7}
+  m_LocalPosition: {x: 0, y: 0, z: 60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -692,10 +692,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 2594403010554402914}
-  completeUI: {fileID: 0}
-  anchoredTo: {fileID: 8362354017395325574}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 2594403010554402914}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 0}
   OnInteracted:
     m_PersistentCalls:
@@ -724,7 +724,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 8790657289416496167}
+  _uiPos: {fileID: 8790657289416496167}
 --- !u!65 &8131801153399319123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1140,10 +1140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 2594403010534686770}
-  completeUI: {fileID: 0}
-  anchoredTo: {fileID: 7860888444170677851}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 2594403010534686770}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 0}
   OnInteracted:
     m_PersistentCalls:
@@ -1172,7 +1172,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 8790657289416496167}
+  _uiPos: {fileID: 8790657289416496167}
 --- !u!65 &8765112130019687301
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1517,10 +1517,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 2594403010378194850}
-  completeUI: {fileID: 0}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 2594403010378194850}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 0}
   OnInteracted:
     m_PersistentCalls:
@@ -1537,7 +1537,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 8790657289416496167}
+  _uiPos: {fileID: 8790657289416496167}
 --- !u!65 &8790657289371996264
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1709,10 +1709,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 2594403010106105686}
-  completeUI: {fileID: 0}
-  anchoredTo: {fileID: 556199933404499414}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 2594403010106105686}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 0}
   OnInteracted:
     m_PersistentCalls:
@@ -1741,7 +1741,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 8790657289416496167}
+  _uiPos: {fileID: 8790657289416496167}
 --- !u!65 &5035964736704925868
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1900,10 +1900,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94a91d9366d453241bb7a6e3027b86c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 2594403010837085621}
-  completeUI: {fileID: 0}
-  anchoredTo: {fileID: 6144753644946219550}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 2594403010837085621}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 0}
   OnInteracted:
     m_PersistentCalls:
@@ -1932,7 +1932,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 8790657289416496167}
+  _uiPos: {fileID: 0}
   OnWriteUpInteraction:
     m_PersistentCalls:
       m_Calls: []
@@ -1963,7 +1963,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactionDelay: 0.5
+  _interactionDelay: 0
 --- !u!65 &3882220303346809254
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2069,10 +2069,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 2594403010377714183}
-  completeUI: {fileID: 0}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 2594403010377714183}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 0}
   OnInteracted:
     m_PersistentCalls:
@@ -2089,7 +2089,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 8790657289416496167}
+  _uiPos: {fileID: 8790657289416496167}
 --- !u!136 &7830545714733736587
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2352,10 +2352,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 2594403010258671147}
-  completeUI: {fileID: 0}
-  anchoredTo: {fileID: 1866544435541935094}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 2594403010258671147}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 0}
   OnInteracted:
     m_PersistentCalls:
@@ -2384,7 +2384,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 8790657289416496167}
+  _uiPos: {fileID: 8790657289416496167}
 --- !u!65 &5234613815544640901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2697,10 +2697,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 2594403010037100298}
-  completeUI: {fileID: 0}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 2594403010037100298}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 0}
   OnInteracted:
     m_PersistentCalls:
@@ -2717,7 +2717,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 8790657289416496167}
+  _uiPos: {fileID: 8790657289416496167}
 --- !u!1 &5676301931228750851
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,7 +2742,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5676301931228750851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -7}
+  m_LocalPosition: {x: 0, y: 0, z: 60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2855,10 +2855,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 2594403010997817380}
-  completeUI: {fileID: 0}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 2594403010997817380}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 0}
   OnInteracted:
     m_PersistentCalls:
@@ -2875,7 +2875,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 8790657288572912400}
+  _uiPos: {fileID: 8790657288572912400}
 --- !u!1 &5979511719458356683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3066,7 +3066,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6649272305407527704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -7}
+  m_LocalPosition: {x: 0, y: 0, z: 60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3097,7 +3097,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6777082012087348796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -7}
+  m_LocalPosition: {x: 0, y: 0, z: 60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3128,7 +3128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6976894203914989846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -7}
+  m_LocalPosition: {x: 0, y: 0, z: 60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3242,7 +3242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7174160670724647261}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -7}
+  m_LocalPosition: {x: 0, y: 0, z: 60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

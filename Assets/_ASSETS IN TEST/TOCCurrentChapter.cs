@@ -11,13 +11,13 @@ public class TOCCurrentChapter : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI _text;
     [SerializeField]
-    Image image;
+    Image _image;
     
 
     public void SetChapter(string chapterName, Sprite chapterImage)
     {
         _text.text = chapterName;
-        image.sprite= chapterImage;
+        _image.sprite= chapterImage;
     }
     
 

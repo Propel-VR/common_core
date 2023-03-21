@@ -3,32 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// A class used to controll the scrollbar of a UI using VR input actions
+/// </summary>
 [RequireComponent(typeof(Scrollbar))]
 public class AnalogStickSlider : MonoBehaviour
 {
 
     Scrollbar _scrollBar;
-    
-    private XRIDefaultInputActions inputActions;
-    float sensitivity = 1.5f;
+    private XRIDefaultInputActions _inputActions;
+    private float _sensitivity = 1.5f;
     public bool EnableScroll { get; set; }
 
 
 
     private void Awake()
     {
-        inputActions = new XRIDefaultInputActions();
+        _inputActions = new XRIDefaultInputActions();
         _scrollBar = GetComponent<Scrollbar>();
     }
 
     private void OnEnable()
     {
-        inputActions.Enable();
+        if(_inputActions!=null)
+            _inputActions.Enable();
     }
 
     private void OnDisable()
     {
-        inputActions.Disable();
+        _inputActions.Disable();
     }
 
     public void AutoScroll(float scrollAmt)
@@ -41,11 +44,11 @@ public class AnalogStickSlider : MonoBehaviour
         if (EnableScroll)
         {
 
-            Vector2 UINav = inputActions.XRIUI.Navigate.ReadValue<Vector2>();
+            Vector2 UINav = _inputActions.XRIUI.Navigate.ReadValue<Vector2>();
 
             float scroll = UINav.y;
             if (scroll != 0)
-                _scrollBar.value += scroll * sensitivity * Time.deltaTime;
+                _scrollBar.value += scroll * _sensitivity * Time.deltaTime;
         }
     }
 }

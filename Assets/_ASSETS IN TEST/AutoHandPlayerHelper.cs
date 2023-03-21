@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that allows for easy access of autohand hands through any script
+/// </summary>
 public class AutoHandPlayerHelper : MonoBehaviour
 {
     
@@ -10,7 +13,7 @@ public class AutoHandPlayerHelper : MonoBehaviour
     public static AutoHandPlayerHelper Instance { get; private set; }
 
     [SerializeField]
-    private Hand leftHand, rightHand;
+    private Hand _leftHand, _rightHand;
 
 
     private void Awake()
@@ -21,22 +24,29 @@ public class AutoHandPlayerHelper : MonoBehaviour
         Instance = this;
     }
 
-
+    /// <summary>
+    /// forces both hands to releaser what they are holding
+    /// </summary>
     public void ForceHandsRelease()
     {
-        leftHand.ForceReleaseGrab();
-        rightHand.ForceReleaseGrab();
+        _leftHand.ForceReleaseGrab();
+        _rightHand.ForceReleaseGrab();
     }
 
+    /// <summary>
+    /// gets the hand holding a specified object
+    /// </summary>
+    /// <param name="_grabbedObject"> the object being held </param>
+    /// <returns></returns>
     public Hand GetHandHoldingObject(Grabbable _grabbedObject)
     {
-        if (leftHand.GetHeldGrabbable() == _grabbedObject)
+        if (_leftHand.GetHeldGrabbable() == _grabbedObject)
         {
-            return leftHand;
+            return _leftHand;
         }
-        else if(rightHand.GetHeldGrabbable() == _grabbedObject)
+        else if(_rightHand.GetHeldGrabbable() == _grabbedObject)
         {
-            return rightHand;
+            return _rightHand;
         }
         else
         {
@@ -45,9 +55,14 @@ public class AutoHandPlayerHelper : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// returns true if the specified object is being grabbed with both hands
+    /// </summary>
+    /// <param name="_grabbedObject">object being held</param>
+    /// <returns></returns>
     public bool isBothHandGrab(Grabbable _grabbedObject)
     {
-        if (leftHand.GetHeldGrabbable() == _grabbedObject && rightHand.GetHeldGrabbable() == _grabbedObject)
+        if (_leftHand.GetHeldGrabbable() == _grabbedObject && _rightHand.GetHeldGrabbable() == _grabbedObject)
             return true;
 
         return false;
@@ -55,13 +70,13 @@ public class AutoHandPlayerHelper : MonoBehaviour
 
     public Hand GetLeftHand()
     {
-        return leftHand;
+        return _leftHand;
 
     }
 
     public Hand GetRightHand()
     {
-        return rightHand;
+        return _rightHand;
 
     }
 }

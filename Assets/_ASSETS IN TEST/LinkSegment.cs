@@ -17,7 +17,7 @@ public class LinkSegment : MonoBehaviour
     [SerializeField]
     SimpleCable _simpcab;
 
-    float breakAt=1000;
+    float _breakAt=1000;
 
     [SerializeField]
     Transform _bottomTransform, _topTransform;
@@ -40,7 +40,7 @@ public class LinkSegment : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_joint.currentForce.magnitude >= breakAt)
+        if (_joint.currentForce.magnitude >= _breakAt)
         {
             //break grab if too much tension occurs
             foreach(Hand h in _hands) { h.ForceReleaseGrab(); }
