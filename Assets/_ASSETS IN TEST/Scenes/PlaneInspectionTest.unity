@@ -2168,7 +2168,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 3
   registeredPaintableTexture: {fileID: 1262965184}
-  cooldown: -1445.965
+  cooldown: -1459.9419
   currentReader:
     dirty: 0
     requested: 0
@@ -3994,6 +3994,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 556705342, guid: 8ae29a088d1aeec48b394bb8c2c8e3cf, type: 3}
+      propertyPath: m_MaxValue
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725092082, guid: 8ae29a088d1aeec48b394bb8c2c8e3cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1949720998, guid: 8ae29a088d1aeec48b394bb8c2c8e3cf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
