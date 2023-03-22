@@ -2168,7 +2168,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 3
   registeredPaintableTexture: {fileID: 1262965184}
-  cooldown: -1287.872
+  cooldown: -1445.965
   currentReader:
     dirty: 0
     requested: 0
@@ -2352,7 +2352,7 @@ PrefabInstance:
     - target: {fileID: 2982367318787691600, guid: 58e5bc3ba691ec04da673a3136a8ca01,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5365175179038296933, guid: 58e5bc3ba691ec04da673a3136a8ca01,
         type: 3}
@@ -2363,6 +2363,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924108000542199337, guid: 58e5bc3ba691ec04da673a3136a8ca01,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7315252696255859278, guid: 58e5bc3ba691ec04da673a3136a8ca01,
         type: 3}
@@ -3816,6 +3821,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CleanPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 8660298876099732109, guid: 2fe680ab6614dee498c5c37d027da8b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fe680ab6614dee498c5c37d027da8b6, type: 3}
 --- !u!1001 &1902070638
@@ -3984,6 +3994,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1949720998, guid: 8ae29a088d1aeec48b394bb8c2c8e3cf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000420253, guid: 8ae29a088d1aeec48b394bb8c2c8e3cf, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1308285113}
+    - target: {fileID: 4705426031533938686, guid: 8ae29a088d1aeec48b394bb8c2c8e3cf,
+        type: 3}
+      propertyPath: onOutside.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1276783382}
+    - target: {fileID: 4705426031533938686, guid: 8ae29a088d1aeec48b394bb8c2c8e3cf,
+        type: 3}
+      propertyPath: onOutside.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 175483812}
     - target: {fileID: 6120377910762242327, guid: 8ae29a088d1aeec48b394bb8c2c8e3cf,
         type: 3}
       propertyPath: m_RootOrder
@@ -3997,7 +4025,7 @@ PrefabInstance:
     - target: {fileID: 6120377910762242327, guid: 8ae29a088d1aeec48b394bb8c2c8e3cf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.074
+      value: 1.287
       objectReference: {fileID: 0}
     - target: {fileID: 6120377910762242327, guid: 8ae29a088d1aeec48b394bb8c2c8e3cf,
         type: 3}
