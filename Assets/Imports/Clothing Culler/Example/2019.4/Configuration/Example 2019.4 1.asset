@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35571efb4364fd449882e3b7e4955ba2, type: 3}
+  m_Name: Example 2019.4 1
+  m_EditorClassIdentifier: 
+  <OccludeeCategories>k__BackingField:
+  - Name: Jackets
+    Occludees:
+    - {fileID: 11400000, guid: 1e44463c7e717464889a7252e1d36608, type: 2}
+    - {fileID: 11400000, guid: 41811a18dbd9e954298948376c8cffd9, type: 2}
+  - Name: Shirts
+    Occludees:
+    - {fileID: 11400000, guid: 6d27a4db55ed43545af7d25ecd4264bf, type: 2}
+    - {fileID: 11400000, guid: 9ea7d7a81c55f4a4389a13f32971dadf, type: 2}
+  - Name: Gloves
+    Occludees:
+    - {fileID: 11400000, guid: 57ac7f5bd7d01d641ad852a9929ef2a7, type: 2}
+    - {fileID: 11400000, guid: fec2cc47de2f07e4f899dfc23cc206ef, type: 2}
+  - Name: Bodies
+    Occludees:
+    - {fileID: 11400000, guid: 4fa4f16e55ece45498aea72f75b880e3, type: 2}
+    - {fileID: 11400000, guid: 8e8d5f8b2ec194e4581ed9c6d7c0547b, type: 2}
+  IsModularClothingWorkflowEnabled: 0

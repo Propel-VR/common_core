@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: Example 2019.4
   m_EditorClassIdentifier: 
   <OccludeeCategories>k__BackingField:
-  - Name: Bodies
+  - Name: Jackets
     Occludees:
-    - {fileID: 11400000, guid: e1eea5875ff23f84ebf7eb0cc1043794, type: 2}
-  - Name: Pants
-    Occludees:
-    - {fileID: 11400000, guid: 3b8874c246bc4f44db2f2eac0d1c78d2, type: 2}
+    - {fileID: 11400000, guid: 37dd36cb0404af8488b6d5704f819a2f, type: 2}
   - Name: Shirts
     Occludees:
-    - {fileID: 11400000, guid: e7bd56da9ce06ee4b880e142f7e92223, type: 2}
+    - {fileID: 11400000, guid: d35a5c8fa35951d4488efe6fe81b72ac, type: 2}
+  - Name: Gloves
+    Occludees:
+    - {fileID: 11400000, guid: e4ed29bac0396f945a4bf409e6d4f074, type: 2}
+  - Name: Bodies
+    Occludees:
+    - {fileID: 11400000, guid: 9b42fe3ea37d1194f93f2214a4056a77, type: 2}
   IsModularClothingWorkflowEnabled: 0
