@@ -193,7 +193,8 @@ namespace Autohand
             hitPointMarker.SetActive(show);
             lineRenderer.enabled = show;
 
-            Tablet.Instance.IsHovered(show);
+            if(Tablet.Instance)
+                Tablet.Instance.IsHovered(show);
         }
 
     }

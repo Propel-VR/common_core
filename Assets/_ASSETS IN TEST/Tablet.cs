@@ -18,6 +18,12 @@ public class Tablet : MonoBehaviour
 {
 
     [SerializeField]
+    TextMeshProUGUI _tabletTitle;
+
+    [SerializeField]
+    string _titleText;
+
+    [SerializeField]
     TabletScreen[] _tabletScreens= null;
 
     [SerializeField]
@@ -43,6 +49,9 @@ public class Tablet : MonoBehaviour
     RectTransform _scrollContent;
 
     [SerializeField]
+    TMP_FontAsset _headerFont;
+
+    [SerializeField]
     AnalogStickSlider _analogSlider;
     //int checklistPageNum = 0;
     int _currentChapterID;
@@ -63,6 +72,11 @@ public class Tablet : MonoBehaviour
     {
         //pageSize=checklistItems.Count;
         Instance= this;
+    }
+
+    private void Start()
+    {
+        _tabletTitle.text = _titleText;
     }
 
 
@@ -97,14 +111,21 @@ public class Tablet : MonoBehaviour
     /// </summary>
     public void StartTasks()
     {
-        ChecklistItemData data = _tocChapterData[_currentChapterID].ChecklistItemData[0];
-        data.Current = true;
-        _tocChapterData[_currentChapterID].ChecklistItemData[0] = data;
+        for (int i = 0; i < _tocChapterData[_currentChapterID].ChecklistItemData.Count; i++)
+        {
+            if (!_tocChapterData[_currentChapterID].ChecklistItemData[i].IsHeader)
+            {
+                ChecklistItemData data = _tocChapterData[_currentChapterID].ChecklistItemData[i];
+                data.Current = true;
+                _tocChapterData[_currentChapterID].ChecklistItemData[i] = data;
 
-        foreach (ChecklistInteractable i in data.Interactables)
-            i.TaskStarted();
+                foreach (ChecklistInteractable item in data.Interactables)
+                    item.TaskStarted();
 
-        UpdateChecklist(_currentChapterID);
+                UpdateChecklist(_currentChapterID);
+                break;
+            }
+        }
     }
 
     /// <summary>
@@ -147,23 +168,43 @@ public class Tablet : MonoBehaviour
                     {
                         item.Current = true;
 
-                        foreach (ChecklistInteractable i in item.Interactables)
-                            i.TaskStarted();
-
+                        for (int i = 0; i < item.Interactables.Count; i++)
+                        {
+                            if (!item.Interactables[i].IsComplete)
+                            {
+                                item.Interactables[i].TaskStarted();
+                                break;
+                            }
+                        }
                         _tocChapterData[chapterID].ChecklistItemData[id + 1] = item;
                     }
                 }
             }
-            else
-            {
-                item.Complete = true;
-                item.Current = false;
 
-                _tocChapterData[chapterID].ChecklistItemData[id] = item;
-            }
-           
+
+
+        }
+        else
+        {
+            /*
+            item.Complete = true;
+            item.Current = false;
+
+            _tocChapterData[chapterID].ChecklistItemData[id] = item;
+            */
 
             
+            for (int i=0; i < item.Interactables.Count; i++)
+            {
+                Debug.Log("CHECKING: " + i);
+                if (!item.Interactables[i].IsComplete)
+                {
+                    Debug.Log("GOTEM");
+                    item.Interactables[i].TaskStarted();
+                    break;
+                }
+
+            }
         }
 
         UpdateChecklist(chapterID);
@@ -227,6 +268,9 @@ public class Tablet : MonoBehaviour
         item.detailsPageData = details;
         item.Interactables = interactables;
         _tocChapterData[chapterID].ChecklistItemData.Add(item);
+
+        if (item.IsHeader)
+            _checklistItems[_checklistItems.Count - 1].SetTitleFont(_headerFont);
 
         return item.ID;
 

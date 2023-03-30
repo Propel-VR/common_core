@@ -10,7 +10,14 @@ public class LoxManager : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(StartPool());
+    }
+
+    private IEnumerator StartPool()
+    {
+        yield return new WaitForSeconds(1);
         taskManager.StartPool();
+
     }
 
 }

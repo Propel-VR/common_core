@@ -73,22 +73,27 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
             }
         }
         // Fade out
-        else if (fadeInValue > 0f)
+        else 
         {
-            fadeInValue = Mathf.Clamp01(fadeInValue - Time.deltaTime / fadeInTime);
-            if (fadeInValue == 0)
+            if (forceHighlight)
             {
-                outline.OutlineMode = Outline.Mode.None;
+                SetOutlineWidth();
+                fadeInValue = .1f;
+                outline.OutlineMode = Outline.Mode.OutlineAll;
+
             }
+            else if (fadeInValue > 0f)
+            {
+                fadeInValue = Mathf.Clamp01(fadeInValue - Time.deltaTime / fadeInTime);
+                if (fadeInValue == 0)
+                {
+                    outline.OutlineMode = Outline.Mode.None;
+                }
+            }
+
+                
         }
 
-        if (forceHighlight)
-        {
-            SetOutlineWidth();
-            fadeInValue = 1;
-            outline.OutlineMode = Outline.Mode.OutlineAll;
-
-        }
         outline.OutlineColor = new Color(outline.OutlineColor.r, outline.OutlineColor.g, outline.OutlineColor.b, fadeInValue);
     }
 

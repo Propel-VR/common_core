@@ -24,8 +24,9 @@ public class PreFlightInteractable : ChecklistInteractable
     }
 
 
-    private void Awake()
+    protected void Awake()
     {
+        base.Awake();
         _rayInteractable = GetComponent<RayInteractable>();
         _cth = Task.GetComponent<ChecklistTaskHelper>();
 
@@ -39,6 +40,8 @@ public class PreFlightInteractable : ChecklistInteractable
 
     public void CheckComplete()
     {
+        _complete = true;
+
         Task.CompleteTask();
         HasBeenChecked();
         OnInteracted.Invoke();

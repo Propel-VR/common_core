@@ -12,23 +12,46 @@ public class Ladder : MonoBehaviour
     AutoHandPlayer _playerController;
     [SerializeField]
     Transform _teleportPos, _offPos;
+    
+    //[SerializeField]
+    //GameObject _topLayer;
 
-    bool hasPlayer = false;
+    bool _hasPlayer = false;
+    bool _allowTeleport = false;
 
+
+    private void Start()
+    {
+        //_topLayer.SetActive(false);
+    }
 
     public void OnTeleport()
     {
-        if (!hasPlayer)
+        if (!_hasPlayer)
         {
+            //_topLayer.SetActive(true);
             _playerController.SetPosition(_teleportPos.position, _teleportPos.rotation);
             _playerController.useMovement= false;
-            hasPlayer = true;
+            _hasPlayer = true;
         }
         else
         {
+            //_topLayer.SetActive(false);
             _playerController.SetPosition(_offPos.position, _offPos.rotation);
             _playerController.useMovement = true;
-            hasPlayer = false;
+            _hasPlayer = false;
         }
+    }
+
+    public void OnPlace()
+    {
+        _allowTeleport = false;
+
+    }
+
+    public void OnRemove()
+    {
+        _allowTeleport = false;
+
     }
 }

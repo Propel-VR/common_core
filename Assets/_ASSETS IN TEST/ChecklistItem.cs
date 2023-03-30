@@ -40,6 +40,7 @@ public class ChecklistItem : MonoBehaviour
     {
         ColorBlock colors = _button.colors;
         colors.normalColor = Color.clear;
+        colors.highlightedColor = Color.clear;
         _button.colors = colors;
 
         _warning.SetActive(false); 
@@ -57,6 +58,11 @@ public class ChecklistItem : MonoBehaviour
         if (_text.text.Substring(0, 3).Equals("<s>"))
             _text.text = _text.text.Substring(3, _text.text.Length - 6);
         OnUnCommpleteItem?.Invoke();
+    }
+
+    public void SetTitleFont(TMP_FontAsset font)
+    {
+        _text.font = font;
     }
 
     public void SetButtonValue(int num, bool isHeader)
@@ -85,6 +91,7 @@ public class ChecklistItem : MonoBehaviour
     {
         ColorBlock colors = _button.colors;
         colors.normalColor = _currentTaskColour;
+        colors.highlightedColor= _currentTaskColour;
         _button.colors = colors;
     }
 

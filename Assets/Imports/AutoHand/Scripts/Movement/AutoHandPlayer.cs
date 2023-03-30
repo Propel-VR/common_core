@@ -401,39 +401,49 @@ namespace Autohand {
 
         Vector3 offset;
         void SyncBodyHead() {
-            var delta = 50f * Time.fixedDeltaTime;
+            var delta = 40f * Time.fixedDeltaTime;
             float scale = transform.lossyScale.x > transform.lossyScale.z ? transform.lossyScale.x : transform.lossyScale.z;
             bool found = false;
-            if((headCamera.transform.position - transform.position).magnitude > 0.15f) {
-                for(int i = 0; i < 5; i++) {
-                    var direction = headCamera.transform.position - transform.position; direction.y = 0;
-                    Debug.DrawLine(transform.position, transform.position + direction.normalized * 0.03f, Color.yellow);
+            if (moveDirection.sqrMagnitude != 0)
+            {
 
-                    if(!Physics.CapsuleCast(scale * transform.position + Vector3.up * scale * bodyCapsule.radius, transform.position - scale * Vector3.up * bodyCapsule.radius + scale * Vector3.up * bodyCapsule.height, scale * bodyCapsule.radius,
-                    direction, 0.03f * delta, handPlayerMask)) {
-                        offset = direction * 0.03f * delta;
-                        transform.position += offset;
-                        targetTrackedPos -= offset;
-                        found = true;
-                    }
-                    else {
-                        for(int y = -75; y <= 75; y += 15) {
-                            var newDirection = Quaternion.Euler(0, y, 0) * direction;
-                            Debug.DrawLine(transform.position, transform.position + newDirection.normalized * 0.1f, Color.yellow);
+                if ((headCamera.transform.position - transform.position).magnitude > 0.35f)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        var direction = headCamera.transform.position - transform.position; direction.y = 0;
+                        Debug.DrawLine(transform.position, transform.position + direction.normalized * 0.03f, Color.yellow);
 
-                            if(!Physics.CapsuleCast(scale * transform.position + Vector3.up * scale * bodyCapsule.radius, transform.position - scale * Vector3.up * bodyCapsule.radius + scale * Vector3.up * bodyCapsule.height, scale * bodyCapsule.radius,
-                            newDirection, 0.03f * delta, handPlayerMask)) {
-                                offset = newDirection * 0.03f * delta;
-                                transform.position += offset;
-                                targetTrackedPos -= offset;
-                                found = true;
-                                break;
+                        if (!Physics.CapsuleCast(scale * transform.position + Vector3.up * scale * bodyCapsule.radius, transform.position - scale * Vector3.up * bodyCapsule.radius + scale * Vector3.up * bodyCapsule.height, scale * bodyCapsule.radius,
+                        direction, 0.03f * delta, handPlayerMask))
+                        {
+                            offset = direction * 0.03f * delta;
+                            transform.position += offset;
+                            targetTrackedPos -= offset;
+                            found = true;
+                        }
+                        else
+                        {
+                            for (int y = -75; y <= 75; y += 15)
+                            {
+                                var newDirection = Quaternion.Euler(0, y, 0) * direction;
+                                Debug.DrawLine(transform.position, transform.position + newDirection.normalized * 0.1f, Color.yellow);
+
+                                if (!Physics.CapsuleCast(scale * transform.position + Vector3.up * scale * bodyCapsule.radius, transform.position - scale * Vector3.up * bodyCapsule.radius + scale * Vector3.up * bodyCapsule.height, scale * bodyCapsule.radius,
+                                newDirection, 0.03f * delta, handPlayerMask))
+                                {
+                                    offset = newDirection * 0.03f * delta;
+                                    transform.position += offset;
+                                    targetTrackedPos -= offset;
+                                    found = true;
+                                    break;
+                                }
                             }
                         }
-                    }
 
-                    if(!found)
-                        break;
+                        if (!found)
+                            break;
+                    }
                 }
             }
         }

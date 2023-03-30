@@ -855,10 +855,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94a91d9366d453241bb7a6e3027b86c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 1068666789}
-  completeUI: {fileID: 1472312354}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 0}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 239268273}
   OnInteracted:
     m_PersistentCalls:
@@ -887,7 +887,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 0}
+  _uiPos: {fileID: 0}
   OnWriteUpInteraction:
     m_PersistentCalls:
       m_Calls:
@@ -954,7 +954,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  interactionDelay: 1.5
+  _interactionDelay: 0
 --- !u!4 &47461886
 Transform:
   m_ObjectHideFlags: 0
@@ -1003,6 +1003,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollision:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &49050625
@@ -4929,6 +4932,9 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &366398451
 GameObject:
   m_ObjectHideFlags: 0
@@ -5249,12 +5255,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6773303820577081343, guid: b846a57c24d88f74089eb576eddbb15e,
     type: 3}
   m_PrefabInstance: {fileID: 376410300}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &393723971 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6773303820577081336, guid: b846a57c24d88f74089eb576eddbb15e,
-    type: 3}
-  m_PrefabInstance: {fileID: 309132904}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &395035810
 GameObject:
@@ -7917,10 +7917,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 0}
-  completeUI: {fileID: 1472312354}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 0}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 472780384}
   OnInteracted:
     m_PersistentCalls:
@@ -7937,7 +7937,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 0}
+  _uiPos: {fileID: 0}
 --- !u!1001 &554949597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8322,10 +8322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94a91d9366d453241bb7a6e3027b86c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 393723971}
-  completeUI: {fileID: 1472312354}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 0}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 239268273}
   OnInteracted:
     m_PersistentCalls:
@@ -8342,7 +8342,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 992720527}
+  _uiPos: {fileID: 0}
   OnWriteUpInteraction:
     m_PersistentCalls:
       m_Calls:
@@ -8421,7 +8421,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  interactionDelay: 1.5
+  _interactionDelay: 0
 --- !u!65 &599148724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9758,8 +9758,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724453455}
   m_LocalRotation: {x: -0, y: -0.49278614, z: -0, w: 0.87015045}
-  m_LocalPosition: {x: 0, y: 0, z: -487.22}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -487.271}
+  m_LocalScale: {x: 0.60223, y: 0.60223, z: 0.60223}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1402711078}
@@ -9768,7 +9768,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -9.048, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -484.6, y: 38.876}
+  m_AnchoredPosition: {x: -484.515, y: 38.876}
   m_SizeDelta: {x: 4.5, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &740042086
@@ -10997,8 +10997,8 @@ MonoBehaviour:
   _repairButton: {fileID: 1171843321}
   _serviceButton: {fileID: 1698589261}
   _writeUpButton: {fileID: 1042301601}
-  goodSound: {fileID: 246566635}
-  badSound: {fileID: 1409843440}
+  _goodSound: {fileID: 0}
+  _badSound: {fileID: 0}
 --- !u!114 &831891378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11220,10 +11220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 0}
-  completeUI: {fileID: 1472312354}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 0}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 472780388}
   OnInteracted:
     m_PersistentCalls:
@@ -11240,7 +11240,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 0}
+  _uiPos: {fileID: 0}
 --- !u!1001 &837813659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11694,10 +11694,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 0}
-  completeUI: {fileID: 1472312354}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 0}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 472780385}
   OnInteracted:
     m_PersistentCalls:
@@ -11714,7 +11714,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 0}
+  _uiPos: {fileID: 0}
 --- !u!20 &856202804 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 7942002211881670239, guid: a5226a72c9553294abfe172a458b5805,
@@ -14355,10 +14355,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 0}
-  completeUI: {fileID: 1472312354}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 0}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 472780384}
   OnInteracted:
     m_PersistentCalls:
@@ -14375,7 +14375,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 0}
+  _uiPos: {fileID: 0}
 --- !u!1 &1060444864
 GameObject:
   m_ObjectHideFlags: 0
@@ -14553,12 +14553,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b846a57c24d88f74089eb576eddbb15e, type: 3}
---- !u!1 &1068666789 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6773303820577081336, guid: b846a57c24d88f74089eb576eddbb15e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1068666788}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1068666790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6773303820577081343, guid: b846a57c24d88f74089eb576eddbb15e,
@@ -15332,10 +15326,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 0}
-  completeUI: {fileID: 1472312354}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 0}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 472780384}
   OnInteracted:
     m_PersistentCalls:
@@ -15352,7 +15346,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 0}
+  _uiPos: {fileID: 0}
 --- !u!1001 &1170968729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15717,10 +15711,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 0}
-  completeUI: {fileID: 1472312354}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 0}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 472780384}
   OnInteracted:
     m_PersistentCalls:
@@ -15737,7 +15731,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 0}
+  _uiPos: {fileID: 0}
 --- !u!1001 &1184393632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16046,10 +16040,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 0}
-  completeUI: {fileID: 1472312354}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 0}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 2071708499}
   OnInteracted:
     m_PersistentCalls:
@@ -16066,7 +16060,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 0}
+  _uiPos: {fileID: 0}
 --- !u!1001 &1236266721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16778,10 +16772,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 0}
-  completeUI: {fileID: 1472312354}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 0}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 472780384}
   OnInteracted:
     m_PersistentCalls:
@@ -16798,7 +16792,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 0}
+  _uiPos: {fileID: 0}
 --- !u!1 &1298999968
 GameObject:
   m_ObjectHideFlags: 0
@@ -18277,10 +18271,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 0}
-  completeUI: {fileID: 1472312354}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 0}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 472780384}
   OnInteracted:
     m_PersistentCalls:
@@ -18297,7 +18291,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 0}
+  _uiPos: {fileID: 0}
 --- !u!1 &1399703188
 GameObject:
   m_ObjectHideFlags: 0
@@ -19816,10 +19810,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 0}
-  completeUI: {fileID: 1472312354}
-  anchoredTo: {fileID: 0}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 0}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 472780387}
   OnInteracted:
     m_PersistentCalls:
@@ -19836,7 +19830,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 0}
+  _uiPos: {fileID: 0}
 --- !u!1 &1577927662 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8938905846470297733, guid: 985f981c5a1b5b04d8d817fbdabe4c85,
@@ -23266,10 +23260,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a1eb067747be84eaeb009a08d90fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifierUI: {fileID: 0}
-  completeUI: {fileID: 1472312354}
-  anchoredTo: {fileID: 1852521199}
-  offset: {x: 0, y: 0.2, z: 0}
+  _identifierUI: {fileID: 0}
+  _completeUI: {fileID: 0}
+  _anchoredTo: {fileID: 0}
+  _offset: {x: 0, y: 0.2, z: 0}
   Task: {fileID: 472780386}
   OnInteracted:
     m_PersistentCalls:
@@ -23286,7 +23280,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  uiPos: {fileID: 0}
+  _uiPos: {fileID: 0}
 --- !u!1 &1855662674
 GameObject:
   m_ObjectHideFlags: 0
@@ -25524,6 +25518,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 579722559053420622, guid: a5226a72c9553294abfe172a458b5805,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579722559053420622, guid: a5226a72c9553294abfe172a458b5805,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.129
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707951067419483808, guid: a5226a72c9553294abfe172a458b5805,
+        type: 3}
+      propertyPath: useMovement
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7316544018567242181, guid: a5226a72c9553294abfe172a458b5805,
         type: 3}
       propertyPath: maxDistance

@@ -44,7 +44,7 @@ public class PreflightUI : MonoBehaviour
 
     public void CheckComplete()
     {
-        if (_preflightInteractable.Task != null)
+        if (_preflightInteractable && _preflightInteractable.Task != null)
         {
             _preflightInteractable.CheckComplete();
             _goodSound.Play();
