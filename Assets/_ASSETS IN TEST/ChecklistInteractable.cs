@@ -54,20 +54,12 @@ public class ChecklistInteractable : MonoBehaviour
             _identifierUI.transform.rotation = Quaternion.LookRotation(lookPos);
 
 
-            _identifierUI.transform.localScale = _startSize * ((( Mathf.Clamp((_identifierUI.transform.position - Camera.main.transform.position).magnitude, _minDistance,_maxDistance)) - _minDistance) / (_maxDistance - _minDistance) ) * _maxMult;
+            _identifierUI.transform.localScale = _startSize * (((Mathf.Clamp((_identifierUI.transform.position - Camera.main.transform.position).magnitude, _minDistance, _maxDistance)) - _minDistance) / (_maxDistance - _minDistance)) * _maxMult;
 
             if (_identifierUI.transform.localScale.sqrMagnitude < _startSize.sqrMagnitude)
                 _identifierUI.transform.localScale = _startSize;
-
-        }
-        if (_completeUI && _completeUI.activeInHierarchy)
-        {
-
-            var lookPos = Camera.main.transform.position - _completeUI.transform.position;
-            //lookPos.y = 0;
-            _completeUI.transform.rotation = Quaternion.LookRotation(lookPos);
-            //completeUI.transform.rotation = Quaternion.Slerp(completeUI.transform.rotation, rotation, Time.deltaTime/* x damping */);
-        }
+            
+        } 
 
     }
 

@@ -29,7 +29,6 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
         if(Player)
         {
             float dist = Vector3.Distance(Player.position, transform.position);
-            print("Distance to other: " + dist);
             
             if(dist <= 10.0f) { outlineWidth = 2; } else if ( dist >= 30.0f) { outlineWidth = 7; } else { outlineWidth = 4; }
             outline.OutlineWidth = outlineWidth;

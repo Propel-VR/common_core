@@ -101,7 +101,6 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
             if (isValid)
             {
                 newCollider = hitInfo.collider;
-                Debug.Log("HIT OBJ: "+hitInfo.collider.gameObject.name);
                 ShowRay();
             }
             else
@@ -141,11 +140,7 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
 
         isValidHit = didHitUI || (currentObject != null && currentObject.IsInteractable());
 
-        if (isValidHit)
-        {
-            Debug.Log("VALID");
-            Debug.Log(currentObject);
-        }
+
 
             // Reticle
             if (mode == Mode.VisibleLine)
@@ -185,12 +180,7 @@ public class XRRayInteractorCustom : MonoBehaviour, IUIInteractor
         bool triggerValue = Input.GetAxisRaw("XRI_Right_Trigger") > 0.5f || Input.GetMouseButton(0);
         if (triggerValue && !lastTriggerValue && currentObject != null)
         {
-            Debug.Log("INTERACTED");
             currentObject.OnInteract();
-        }
-        else
-        {
-            Debug.Log("NO INTERACT");
         }
 
         lastTriggerValue = triggerValue;

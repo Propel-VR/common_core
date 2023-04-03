@@ -104,8 +104,8 @@ public class ChecklistItem : MonoBehaviour
 
     public void SetSmin(string sminNum)
     {
-        _smin.gameObject.SetActive(true);
-        _smin.text = sminNum;
+        //_smin.gameObject.SetActive(true);
+        _descText.text+= "\n<b>"+sminNum+"</b>";
     }
 
     public void SetQuantity(int complete, int total)

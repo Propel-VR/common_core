@@ -173,7 +173,7 @@ public class Tablet : MonoBehaviour
                             if (!item.Interactables[i].IsComplete)
                             {
                                 item.Interactables[i].TaskStarted();
-                                break;
+
                             }
                         }
                         _tocChapterData[chapterID].ChecklistItemData[id + 1] = item;
@@ -196,10 +196,10 @@ public class Tablet : MonoBehaviour
             
             for (int i=0; i < item.Interactables.Count; i++)
             {
-                Debug.Log("CHECKING: " + i);
+
                 if (!item.Interactables[i].IsComplete)
                 {
-                    Debug.Log("GOTEM");
+
                     item.Interactables[i].TaskStarted();
                     break;
                 }

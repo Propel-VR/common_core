@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 4039260856913672230}
   - component: {fileID: 4039260856913672231}
   - component: {fileID: 4039260856913672232}
+  - component: {fileID: 3216639494756591012}
   m_Layer: 5
   m_Name: Complete
   m_TagString: Untagged
@@ -178,6 +179,33 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4026536951
+--- !u!114 &3216639494756591012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4039260856913672234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1798769d140f0b4ba84086a3c875e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetCamera: {fileID: 0}
+  _autoUpdate: 1
+  _maxAngleBeforeSnap: 45
+  _minAngleAfterSnap: 10
+  _maxDistBeforeSnap: 0.25
+  _minDistAfterSnap: 0.1
+  _angleSmoothTime: 0.2
+  _posSmoothTime: 0.2
+  _hardSnapDistance: 5
+  _castRadius: 2
+  _castDistance: 5
+  _fadeDistance: 0.5
+  _collidingLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &4039260857527146454
 GameObject:
   m_ObjectHideFlags: 0
