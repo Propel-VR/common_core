@@ -110,15 +110,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7584087751525211928}
-  - component: {fileID: 7822944640259763286}
-  - component: {fileID: 3832103029533077764}
   m_Layer: 0
   m_Name: Remove Service Hose from Purge Adapter (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7584087751525211928
 Transform:
   m_ObjectHideFlags: 0
@@ -134,61 +132,6 @@ Transform:
   m_Father: {fileID: 3462190564229881846}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7822944640259763286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471674731023631714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &3832103029533077764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471674731023631714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &501648013431494995
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,15 +141,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6857517719162361183}
-  - component: {fileID: 6660332950968175768}
-  - component: {fileID: 7316756846275002902}
   m_Layer: 0
   m_Name: Close Service Line Drain Valve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6857517719162361183
 Transform:
   m_ObjectHideFlags: 0
@@ -222,61 +163,6 @@ Transform:
   m_Father: {fileID: 3462190564229881846}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6660332950968175768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501648013431494995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &7316756846275002902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501648013431494995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &521873891370523643
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,18 +214,6 @@ MonoBehaviour:
   OnTaskStarted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1394241374424414647}
-        m_TargetAssemblyTypeName: CamhOO.Task, Assembly-CSharp
-        m_MethodName: CompleteTask
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -350,7 +224,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
@@ -377,7 +251,7 @@ MonoBehaviour:
   _isHeader: 0
   _startComplete: 0
   _hasCaution: 0
-  _hasWarning: 0
+  _hasWarning: 1
   _quantity: 1
   _taskDesc: 
   _smin: 
@@ -637,15 +511,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 916106408729072566}
-  - component: {fileID: 4593708001466761407}
-  - component: {fileID: 327609605252270327}
   m_Layer: 0
   m_Name: Clean Adapter (NOT READY)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &916106408729072566
 Transform:
   m_ObjectHideFlags: 0
@@ -661,73 +533,6 @@ Transform:
   m_Father: {fileID: 7391559580426377916}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4593708001466761407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1116771353873358782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4593708001466761407}
-        m_TargetAssemblyTypeName: CamhOO.Task, Assembly-CSharp
-        m_MethodName: CompleteTask
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &327609605252270327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1116771353873358782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &2188257338361307525
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,7 +546,7 @@ GameObject:
   - component: {fileID: 916658312}
   m_Layer: 0
   m_Name: 2.5.9 Close service line drain valve after liquid oxygen stops flowing
-    from purge adapter.
+    from purge adapter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -928,15 +733,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4788040787121926793}
-  - component: {fileID: 433461465053126120}
-  - component: {fileID: 4514478206955877605}
   m_Layer: 0
   m_Name: Clean Adapter (NOT READY)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4788040787121926793
 Transform:
   m_ObjectHideFlags: 0
@@ -952,73 +755,6 @@ Transform:
   m_Father: {fileID: 3476234016760750668}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &433461465053126120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3376817485581433158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 433461465053126120}
-        m_TargetAssemblyTypeName: CamhOO.Task, Assembly-CSharp
-        m_MethodName: CompleteTask
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &4514478206955877605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3376817485581433158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &3683476907751953950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,7 +865,19 @@ MonoBehaviour:
   - {fileID: 3785413133198469625}
   OnStartPool:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnFinishPool:
     m_PersistentCalls:
       m_Calls:
@@ -1144,6 +892,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   OnStartTask:
     m_PersistentCalls:
@@ -1174,15 +934,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6292078633021632077}
-  - component: {fileID: 3790628927112261022}
-  - component: {fileID: 3166249682376172154}
   m_Layer: 0
   m_Name: Place Adapter Firmly on Service Cart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6292078633021632077
 Transform:
   m_ObjectHideFlags: 0
@@ -1198,61 +956,6 @@ Transform:
   m_Father: {fileID: 3462190564229881846}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3790628927112261022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4147855934784961482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &3166249682376172154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4147855934784961482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &4335115025146885190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,15 +965,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3673362336608348772}
-  - component: {fileID: 4893689445367584800}
-  - component: {fileID: 653475477504639728}
   m_Layer: 0
   m_Name: Liquid Stops Flowing (NOT READY)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3673362336608348772
 Transform:
   m_ObjectHideFlags: 0
@@ -1286,73 +987,6 @@ Transform:
   m_Father: {fileID: 3462190564229881846}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4893689445367584800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4335115025146885190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4893689445367584800}
-        m_TargetAssemblyTypeName: CamhOO.Task, Assembly-CSharp
-        m_MethodName: CompleteTask
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &653475477504639728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4335115025146885190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &4478766276227132723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,15 +1123,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6527050206567646358}
-  - component: {fileID: 7985151549661428605}
-  - component: {fileID: 341641984174459878}
   m_Layer: 0
   m_Name: Remove Adapter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6527050206567646358
 Transform:
   m_ObjectHideFlags: 0
@@ -1513,73 +1145,6 @@ Transform:
   m_Father: {fileID: 3462190564229881846}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7985151549661428605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4522235180892537869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 341641984174459878}
-        m_TargetAssemblyTypeName: ChecklistTaskHelper, Assembly-CSharp
-        m_MethodName: OnComplete
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &341641984174459878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4522235180892537869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &5010698183607862138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,15 +1154,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5447914966134955968}
-  - component: {fileID: 3033458951665101682}
-  - component: {fileID: 3076584067106197089}
   m_Layer: 0
   m_Name: Open Service Line Shutoff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5447914966134955968
 Transform:
   m_ObjectHideFlags: 0
@@ -1613,61 +1176,6 @@ Transform:
   m_Father: {fileID: 3462190564229881846}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3033458951665101682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5010698183607862138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &3076584067106197089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5010698183607862138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &5065913095001972420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,15 +1185,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8414317491312119069}
-  - component: {fileID: 4759504837942112085}
-  - component: {fileID: 4404448075201116075}
   m_Layer: 0
   m_Name: Remove Adapter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8414317491312119069
 Transform:
   m_ObjectHideFlags: 0
@@ -1701,73 +1207,6 @@ Transform:
   m_Father: {fileID: 3343201000362026530}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4759504837942112085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5065913095001972420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4404448075201116075}
-        m_TargetAssemblyTypeName: ChecklistTaskHelper, Assembly-CSharp
-        m_MethodName: OnComplete
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &4404448075201116075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5065913095001972420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &5352324988379992768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,7 +1219,7 @@ GameObject:
   - component: {fileID: 8349875359285967816}
   - component: {fileID: 4036473140039031989}
   m_Layer: 0
-  m_Name: '2.5 Purge service hose as follows:'
+  m_Name: <b>2.5 PURGE SERVICE HOSE AS FOLLOWS:</b>
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1865,15 +1304,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2810793731347571915}
-  - component: {fileID: 7661541316631769395}
-  - component: {fileID: 714347150155745464}
   m_Layer: 0
   m_Name: Remove Service Hose from Purge Adapter (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2810793731347571915
 Transform:
   m_ObjectHideFlags: 0
@@ -1889,61 +1326,6 @@ Transform:
   m_Father: {fileID: 3462190564229881846}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7661541316631769395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5463009552795940834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &714347150155745464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5463009552795940834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &6119554808570473957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,15 +1335,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4855366396162482635}
-  - component: {fileID: 956620427981935165}
-  - component: {fileID: 3801564524277730785}
   m_Layer: 0
   m_Name: Remove Service Hose from Purge Adapter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4855366396162482635
 Transform:
   m_ObjectHideFlags: 0
@@ -1977,61 +1357,6 @@ Transform:
   m_Father: {fileID: 3462190564229881846}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &956620427981935165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6119554808570473957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &3801564524277730785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6119554808570473957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &6207517054035417999
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,15 +1366,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2490567271828725885}
-  - component: {fileID: 896737561145790893}
-  - component: {fileID: 3190052873700742802}
   m_Layer: 0
   m_Name: Close Service Line Shut Off Valve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2490567271828725885
 Transform:
   m_ObjectHideFlags: 0
@@ -2065,61 +1388,6 @@ Transform:
   m_Father: {fileID: 3462190564229881846}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &896737561145790893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6207517054035417999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &3190052873700742802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6207517054035417999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &6348249568191727298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2133,7 +1401,7 @@ GameObject:
   - component: {fileID: 1410550330}
   m_Layer: 0
   m_Name: 2.5.7 Close service line shutoff valve when a steady stream of liquid oxygen
-    flows from purge adapter.
+    flows from purge adapter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2332,7 +1600,7 @@ MonoBehaviour:
   interactables: []
   _isHeader: 0
   _startComplete: 0
-  _hasCaution: 0
+  _hasCaution: 1
   _hasWarning: 0
   _quantity: 1
   _taskDesc: 
@@ -2409,33 +1677,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
-        m_MethodName: TaskStarted
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
-        m_MethodName: TaskComplete
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnTaskEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -2480,15 +1724,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1558051490591754932}
-  - component: {fileID: 1145146200551989988}
-  - component: {fileID: 2037325609815955727}
   m_Layer: 0
   m_Name: Open Service line drain valve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1558051490591754932
 Transform:
   m_ObjectHideFlags: 0
@@ -2504,61 +1746,6 @@ Transform:
   m_Father: {fileID: 3462190564229881846}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1145146200551989988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6739230895265147375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &2037325609815955727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6739230895265147375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &7054581903590261747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,15 +1755,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1318245936029260540}
-  - component: {fileID: 1285464149992833287}
-  - component: {fileID: 2854397732849582632}
   m_Layer: 0
   m_Name: Clean Adapter (NOT READY)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1318245936029260540
 Transform:
   m_ObjectHideFlags: 0
@@ -2592,73 +1777,6 @@ Transform:
   m_Father: {fileID: 3343201000362026530}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1285464149992833287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7054581903590261747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1285464149992833287}
-        m_TargetAssemblyTypeName: CamhOO.Task, Assembly-CSharp
-        m_MethodName: CompleteTask
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &2854397732849582632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7054581903590261747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &7168631967776197184
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,15 +1786,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1534534524691878848}
-  - component: {fileID: 1471810324803305014}
-  - component: {fileID: 666408002740012920}
   m_Layer: 0
   m_Name: Maintain Pressure (should this be a fail instead?)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1534534524691878848
 Transform:
   m_ObjectHideFlags: 0
@@ -2692,73 +1808,6 @@ Transform:
   m_Father: {fileID: 3462190564229881846}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1471810324803305014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7168631967776197184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1471810324803305014}
-        m_TargetAssemblyTypeName: CamhOO.Task, Assembly-CSharp
-        m_MethodName: CompleteTask
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &666408002740012920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7168631967776197184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &7313306901553760562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,7 +1821,7 @@ GameObject:
   - component: {fileID: 1087261581}
   m_Layer: 0
   m_Name: 2.5.3 Place hose end adapter  firmly and squarely on purge adapter of service
-    cart.
+    cart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2811,7 +1860,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_TargetAssemblyTypeName: ChecklistInteractable, Assembly-CSharp
         m_MethodName: TaskStarted
         m_Mode: 1
         m_Arguments:
@@ -2822,6 +1871,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnTaskCompleted:
     m_PersistentCalls:
       m_Calls:
@@ -2829,6 +1890,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
         m_MethodName: TaskComplete
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2881,15 +1954,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8326294341273237231}
-  - component: {fileID: 1870780575836177110}
-  - component: {fileID: 1150345820376747698}
   m_Layer: 0
   m_Name: Open BuildUp VAlve 45 PSI +-5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8326294341273237231
 Transform:
   m_ObjectHideFlags: 0
@@ -2905,61 +1976,6 @@ Transform:
   m_Father: {fileID: 3462190564229881846}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1870780575836177110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7523661704835337915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1150345820376747698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7523661704835337915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &7571816265714570945
 GameObject:
   m_ObjectHideFlags: 0
@@ -3098,7 +2114,7 @@ GameObject:
   - component: {fileID: 9033553273371673602}
   - component: {fileID: 1087261583}
   m_Layer: 0
-  m_Name: 2.5.1 Remove cap from adapter at end of service hose.
+  m_Name: 2.5.1 Remove cap from adapter at end of service hose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3146,7 +2162,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -3231,15 +2247,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4430428099291173879}
-  - component: {fileID: 5082775609612421313}
-  - component: {fileID: 7386446855350332939}
   m_Layer: 0
   m_Name: Remove Adapter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4430428099291173879
 Transform:
   m_ObjectHideFlags: 0
@@ -3255,73 +2269,6 @@ Transform:
   m_Father: {fileID: 3476234016760750668}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5082775609612421313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8775057965686699658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7386446855350332939}
-        m_TargetAssemblyTypeName: ChecklistTaskHelper, Assembly-CSharp
-        m_MethodName: OnComplete
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &7386446855350332939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8775057965686699658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &8792632065968965929
 GameObject:
   m_ObjectHideFlags: 0
@@ -3331,15 +2278,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508643611418135669}
-  - component: {fileID: 6528431736963886888}
-  - component: {fileID: 8063015266036921863}
   m_Layer: 0
   m_Name: Clean Adapter (NOT READY)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4508643611418135669
 Transform:
   m_ObjectHideFlags: 0
@@ -3355,73 +2300,6 @@ Transform:
   m_Father: {fileID: 3462190564229881846}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6528431736963886888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8792632065968965929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6528431736963886888}
-        m_TargetAssemblyTypeName: CamhOO.Task, Assembly-CSharp
-        m_MethodName: CompleteTask
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &8063015266036921863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8792632065968965929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &8903634418901861871
 GameObject:
   m_ObjectHideFlags: 0
@@ -3431,15 +2309,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2871145839414314929}
-  - component: {fileID: 3118812290458042106}
-  - component: {fileID: 6970880216914531638}
   m_Layer: 0
   m_Name: Steady Flow Achieved (NOT READY)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2871145839414314929
 Transform:
   m_ObjectHideFlags: 0
@@ -3455,73 +2331,6 @@ Transform:
   m_Father: {fileID: 3462190564229881846}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3118812290458042106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8903634418901861871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3118812290458042106}
-        m_TargetAssemblyTypeName: CamhOO.Task, Assembly-CSharp
-        m_MethodName: CompleteTask
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &6970880216914531638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8903634418901861871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &8906244941344287435
 GameObject:
   m_ObjectHideFlags: 0
@@ -3531,15 +2340,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3257200910253320739}
-  - component: {fileID: 4622574913363435993}
-  - component: {fileID: 6385768177448999952}
   m_Layer: 0
   m_Name: Remove Adapter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3257200910253320739
 Transform:
   m_ObjectHideFlags: 0
@@ -3555,73 +2362,6 @@ Transform:
   m_Father: {fileID: 7391559580426377916}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4622574913363435993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8906244941344287435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6385768177448999952}
-        m_TargetAssemblyTypeName: ChecklistTaskHelper, Assembly-CSharp
-        m_MethodName: OnComplete
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &6385768177448999952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8906244941344287435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &9000190085534736425
 GameObject:
   m_ObjectHideFlags: 0
@@ -3631,15 +2371,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4909977529629872143}
-  - component: {fileID: 5248846560050076728}
-  - component: {fileID: 6764078849371638588}
   m_Layer: 0
   m_Name: Place Adapter Firmly on Service Cart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4909977529629872143
 Transform:
   m_ObjectHideFlags: 0
@@ -3655,61 +2393,6 @@ Transform:
   m_Father: {fileID: 7391559580426377916}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5248846560050076728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000190085534736425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f5dfc829a15864faf887410cf1ecca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prerequisites: []
-  _repeatable: 0
-  OnTaskStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskEnabled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTaskDisabled:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &6764078849371638588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000190085534736425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ba59eca54f1e4ab73806cdea3f4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactables: []
-  _isHeader: 0
-  _startComplete: 0
-  _hasCaution: 0
-  _hasWarning: 0
-  _quantity: 1
-  _taskDesc: 
-  _smin: 
-  _hasDetails: 0
-  _detailsData:
-    smin: 
-    zone: 
-    duration: 
-    checkType: 
-    rectification: 
-    warningText: 
-    requireConditions: []
 --- !u!1 &9103808468823187005
 GameObject:
   m_ObjectHideFlags: 0
@@ -3860,7 +2543,7 @@ GameObject:
   - component: {fileID: 3785413133198469625}
   - component: {fileID: 453641475}
   m_Layer: 0
-  m_Name: 2.5.10 Remove service hose from purge adapter.
+  m_Name: 2.5.10 Remove service hose from purge adapter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3899,7 +2582,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
+        m_TargetAssemblyTypeName: ChecklistInteractable, Assembly-CSharp
         m_MethodName: TaskStarted
         m_Mode: 1
         m_Arguments:
@@ -3916,6 +2599,30 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LOXInteractable, Assembly-CSharp
         m_MethodName: TaskComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ChecklistInteractable, Assembly-CSharp
+        m_MethodName: TaskComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4036473140039031989}
+        m_TargetAssemblyTypeName: ChecklistTaskHelper, Assembly-CSharp
+        m_MethodName: OnComplete
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

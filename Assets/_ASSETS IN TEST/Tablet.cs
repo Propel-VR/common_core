@@ -445,7 +445,7 @@ public class Tablet : MonoBehaviour
 
         _scrollContent.rect.SetHeight(h);
 
-        _progressText.text = GetNumTaskComplete(chapterID) + " of " + (_tocChapterData[chapterID].ChecklistItemData.Count) + " complete";
+        _progressText.text = GetNumTaskComplete(chapterID) + " of " + (GetNumTasks(chapterID)) + " complete";
     }
 
     public int GetNextComplete()
@@ -481,7 +481,7 @@ public class Tablet : MonoBehaviour
             {
                 Debug.Log("Setting chapter item #" + i + ", using ID #" + id);
                 _tocChapterItems[i].SetTextAndImage(_tocChapterData[id].ChapterName, _tocChapterData[id].BackgroundSprite);
-                _tocChapterItems[i].SetProgress(GetNumTaskComplete(id), _tocChapterData[id].ChecklistItemData.Count);
+                _tocChapterItems[i].SetProgress(GetNumTaskComplete(id), GetNumTasks(id));
                 if (_tocChapterData[id].Complete)
                     _tocChapterItems[i].Complete();
                 if (_tocChapterData[id].Fail)
@@ -539,6 +539,20 @@ public class Tablet : MonoBehaviour
             if(data.Complete) numTaskComplete++;
 
         return numTaskComplete;
+    }
+
+    /// <summary>
+    /// returns total number on non-header tasks
+    /// </summary>
+    /// <param name="chapterNum">chapter to check</param>
+    /// <returns>number of non-header tasks</returns>
+    private int GetNumTasks(int chapterNum)
+    {
+        int numTasks = 0;
+        foreach (ChecklistItemData data in _tocChapterData[chapterNum].ChecklistItemData)
+            if (!data.IsHeader) numTasks++;
+
+        return numTasks;
     }
 
 
