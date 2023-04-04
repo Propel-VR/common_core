@@ -1,4 +1,5 @@
 using Autohand;
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class Ladder : MonoBehaviour
     //GameObject _topLayer;
 
     bool _hasPlayer = false;
+    [ShowInInspector]
     bool _allowTeleport = false;
 
 

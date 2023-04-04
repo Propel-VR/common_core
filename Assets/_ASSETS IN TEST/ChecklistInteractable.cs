@@ -45,7 +45,7 @@ public class ChecklistInteractable : MonoBehaviour
         if (_anchoredTo)
         {
             _identifierUI.transform.position = _anchoredTo.position + _offset;
-            _completeUI.transform.position = _anchoredTo.position + _offset;
+            //_completeUI.transform.position = _anchoredTo.position + _offset;
         }
         if (_identifierUI.activeInHierarchy)
         {
