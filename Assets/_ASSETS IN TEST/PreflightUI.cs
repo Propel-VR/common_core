@@ -39,6 +39,7 @@ public class PreflightUI : MonoBehaviour
 
         transform.position = _preflightInteractable._UIPos.position;
         transform.rotation = _preflightInteractable._UIPos.rotation;
+        transform.localScale = _preflightInteractable._UIPos.localScale;
 
     }
 

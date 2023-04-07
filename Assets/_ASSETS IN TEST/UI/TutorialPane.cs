@@ -22,6 +22,8 @@ public class TutorialPane : MonoBehaviour
 
     [SerializeField]
     GameObject skipBtn;
+    [SerializeField]
+    TextMeshProUGUI nextBtn;
 
     int currentTutorial = 0;
 
@@ -42,6 +44,9 @@ public class TutorialPane : MonoBehaviour
         }
         else
         {
+            if ((currentTutorial == tutorialContents.Length - 1))
+                nextBtn.text = "Finish";
+
             PlayTutorial();
         }
     }

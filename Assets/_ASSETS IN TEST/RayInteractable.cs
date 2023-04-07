@@ -13,9 +13,11 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
     private float initHoverTime;
     private float fadeInValue;
 
+    private bool lastHover = false;
+
 
     public Transform Player; // mike add for checking distance
-    [SerializeField] UnityEvent onInteract;
+    [SerializeField] UnityEvent onInteract, OnHover, OnUnHover;
     [SerializeField] Transform contextPoint;
     [SerializeField] Color outlineColor = new(0f, 1f, 140f / 255f);
 
@@ -58,8 +60,8 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
     {
         if (isHovering)
         {
+            HoverEventInvoker(true);
             SetOutlineWidth();
-            Debug.Log("IM BEING HOVERED");
             float hoverDelayValue = Mathf.Clamp01((Time.unscaledTime - initHoverTime) / minTimeBeforeFadeIn);
 
             if (hoverDelayValue < 1f)
@@ -74,6 +76,8 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
         // Fade out
         else 
         {
+            HoverEventInvoker(false);
+
             if (forceHighlight)
             {
                 SetOutlineWidth();
@@ -96,10 +100,30 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
         outline.OutlineColor = new Color(outline.OutlineColor.r, outline.OutlineColor.g, outline.OutlineColor.b, fadeInValue);
     }
 
+    private void HoverEventInvoker(bool currentHover)
+    {
+
+        if(lastHover==currentHover)
+        {
+
+            if (currentHover)
+            {
+                OnHover?.Invoke();
+            }
+            else
+            {
+                OnUnHover?.Invoke();
+            }
+
+        }
+
+        lastHover= currentHover;
+
+    }
+
 
     public void OnInteract()
     {
-        Debug.Log("IM BEING INTERACTED");
         if (!stopInteracting && Time.unscaledTime - initHoverTime > minTimeBeforeFadeIn)
         {
             onInteract?.Invoke();

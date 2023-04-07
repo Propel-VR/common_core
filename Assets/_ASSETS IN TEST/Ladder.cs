@@ -18,8 +18,8 @@ public class Ladder : MonoBehaviour
     //GameObject _topLayer;
 
     bool _hasPlayer = false;
-    [ShowInInspector]
-    bool _allowTeleport = false;
+    
+    //bool _allowTeleport = false;
 
 
     private void Start()
@@ -47,13 +47,13 @@ public class Ladder : MonoBehaviour
 
     public void OnPlace()
     {
-        _allowTeleport = false;
+        //_allowTeleport = false;
 
     }
 
     public void OnRemove()
     {
-        _allowTeleport = false;
+        //_allowTeleport = false;
 
     }
 }
