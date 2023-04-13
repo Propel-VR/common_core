@@ -2,6 +2,7 @@ using CamhOO;
 using RootMotion.Demos;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Tutorials.Core.Editor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,6 +17,9 @@ public class PreFlightInteractable : ChecklistInteractable
     private RayInteractable _rayInteractable;
     protected ChecklistTaskHelper _cth;
 
+    [HideInInspector]
+    public string FirstSelection = "", CorrectSelection="", RectificationSelection ="", CorrectRectification="";
+
     [SerializeField]
     private Transform _uiPos;
     public Transform _UIPos
@@ -29,7 +33,8 @@ public class PreFlightInteractable : ChecklistInteractable
         base.Awake();
         _rayInteractable = GetComponent<RayInteractable>();
         _cth = Task.GetComponent<ChecklistTaskHelper>();
-
+        CorrectSelection = "Complete";
+        CorrectRectification = "N/A";
     }
 
 
@@ -40,6 +45,11 @@ public class PreFlightInteractable : ChecklistInteractable
 
     public void CheckComplete()
     {
+        if (FirstSelection.IsNullOrEmpty())
+        {
+            FirstSelection = "Complete";
+        }
+
         _complete = true;
 
         Task.CompleteTask();
@@ -58,6 +68,9 @@ public class PreFlightInteractable : ChecklistInteractable
 
     public override void TaskComplete()
     {
+
+        ReportUI.Instance.AddItem(Task.name, FirstSelection, CorrectSelection, RectificationSelection, CorrectRectification);
+
         _rayInteractable.forceHighlight = false;
         _identifierUI.SetActive(false);
         if (_completeUI != null)
@@ -77,5 +90,57 @@ public class PreFlightInteractable : ChecklistInteractable
     public virtual void UpdateRectification()
     {
         
+    }
+
+    public void Clean()
+    {
+        if (FirstSelection.IsNullOrEmpty())
+        {
+            FirstSelection = "Snag Found";
+        }
+
+        if (RectificationSelection.IsNullOrEmpty())
+        {
+            RectificationSelection = "Clean";
+        }
+    }
+
+    public void Service()
+    {
+        if (FirstSelection.IsNullOrEmpty())
+        {
+            FirstSelection = "Snag Found";
+        }
+
+        if (RectificationSelection.IsNullOrEmpty())
+        {
+            RectificationSelection = "Service";
+        }
+    }
+
+    public void Replace()
+    {
+        if (FirstSelection.IsNullOrEmpty())
+        {
+            FirstSelection = "Snag Found";
+        }
+
+        if (RectificationSelection.IsNullOrEmpty())
+        {
+            RectificationSelection = "Replace";
+        }
+    }
+
+    public void WriteUp()
+    {
+        if (FirstSelection.IsNullOrEmpty())
+        {
+            FirstSelection = "Snag Found";
+        }
+
+        if (RectificationSelection.IsNullOrEmpty())
+        {
+            RectificationSelection = "Create E-1";
+        }
     }
 }

@@ -6,7 +6,9 @@ using UnityEngine;
 public class LoxManager : MonoBehaviour
 {
     [SerializeField]
-    TaskPool taskManager;
+    TaskPool _taskManager;
+
+    public ModuleMode _moduleMode;
 
     private void Start()
     {
@@ -16,8 +18,15 @@ public class LoxManager : MonoBehaviour
     private IEnumerator StartPool()
     {
         yield return new WaitForSeconds(1);
-        taskManager.StartPool();
+        _taskManager.StartPool();
 
+    }
+
+    public enum ModuleMode
+    {
+
+        Guided,
+        UnGuided
     }
 
 }

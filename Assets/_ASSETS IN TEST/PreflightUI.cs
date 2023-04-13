@@ -45,6 +45,7 @@ public class PreflightUI : MonoBehaviour
 
     public void CheckComplete()
     {
+        _preflightInteractable.CheckComplete();
         if (_preflightInteractable && _preflightInteractable.Task != null)
         {
             _preflightInteractable.CheckComplete();
@@ -85,21 +86,15 @@ public class PreflightUI : MonoBehaviour
 
     public void TryReplace()
     {
+        _preflightInteractable.Replace();
         _replaceButton.SetActive(false);
         _badSound.Play();
 
     }
 
-    public void TryRepair()
-    {
-        _repairButton.SetActive(false);
-        _badSound.Play();
-
-
-    }
-
     public void TryService()
     {
+        _preflightInteractable.Service();
         _serviceButton.SetActive(false);
         _badSound.Play();
 
@@ -108,6 +103,7 @@ public class PreflightUI : MonoBehaviour
 
     public void TryWriteUp()
     {
+        _preflightInteractable.WriteUp();
         if (_preflightInteractable is WriteUpInteractable)
         {
             _preflightInteractable.MakeReadyForInteract();

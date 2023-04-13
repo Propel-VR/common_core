@@ -11,6 +11,13 @@ public class WriteUpInteractable : PreFlightInteractable
     [SerializeField]
     float _interactionDelay;
 
+
+    private void Start()
+    {
+        CorrectRectification = "Create E-1";
+        CorrectSelection = "Snag Found";
+    }
+
     public override void MakeReadyForInteract()
     {
         base.MakeReadyForInteract();
