@@ -32,7 +32,7 @@ public class NPCNavigation : MonoBehaviour
     {
         agent.destination = goal.position;
         anim.SetFloat("speed", agent.velocity.magnitude);
-        Debug.Log(agent.velocity);
+        
         /*Vector3 velocity = transform.position - lastPosition;
         float speed = velocity.magnitude / Time.deltaTime;
         lastPosition = transform.position;
