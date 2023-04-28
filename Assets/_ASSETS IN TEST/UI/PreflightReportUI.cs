@@ -1,3 +1,4 @@
+using Autohand;
 using NaughtyAttributes;
 using Sirenix.OdinInspector;
 using System.Collections;
@@ -15,9 +16,30 @@ public class PreflightReportUI : ReportUI
     [SerializeField]
     ReportSummary _summary;
 
+    float _mins=0, _secs=0;
+
+    bool _timing=true;
+
     protected void Awake()
     {
         Instance = this;
+    }
+
+    protected void Update()
+    {
+
+        base.Update();
+        if (_timing)
+        {
+            _secs += Time.deltaTime;
+
+            if (_secs >= 60)
+            {
+                _mins++;
+                _secs -= 60;
+            }
+        }
+        
     }
 
     [Sirenix.OdinInspector.Button]
@@ -34,6 +56,10 @@ public class PreflightReportUI : ReportUI
         }
         formEntries.Clear();
 
+        filterTexts[0].text = "All Checks ("+data.Count+")";
+        filterTexts[1].text = "Snags (" + GetSnagsTotal() + ")";
+        filterTexts[2].text = "Incorrect (" + GetSnagsIncorrect() + ")";
+
         // Create panel
         foreach (PreflightReportData rd in data)
         {
@@ -49,11 +75,21 @@ public class PreflightReportUI : ReportUI
 
         }
 
+        //teleport player to report location
+        if (playerLocation)
+        {
+            AutoHandPlayer.Instance.SetPosition(playerLocation.position);
+            AutoHandPlayer.Instance.SetRotation(playerLocation.rotation);
+        }
+
+        _timing= false;
 
         //SET UP SUMMARY
         _summary.SetChecks(GetNumChecksComplete(), GetTotalChecks());
         _summary.SetRectifications(GetRectComplete(), GetRectTotal());
         _summary.SetSnags(GetSnagsCorrect(), GetSnagsTotal());
+
+        _summary.SetTextData("Pre-flight Checks", "Inspect Power Plant #3", "Guided", ""+_mins+" min "+(int)_secs+" sec");
 
         FilterList();
 
@@ -108,6 +144,17 @@ public class PreflightReportUI : ReportUI
         return count;
     }
 
+    private int GetSnagsIncorrect()
+    {
+        int count = 0;
+        foreach (PreflightReportData d in data)
+        {
+            if (!(d.CheckReq.Equals(d.CheckDone)))
+                count++;
+        }
+        return count;
+    }
+
     private int GetSnagsTotal()
     {
         int count = 0;
@@ -116,7 +163,6 @@ public class PreflightReportUI : ReportUI
             if (d.CheckReq.Equals("Snag Found"))
                 count++;
         }
-
         return count;
     }
 
@@ -166,30 +212,38 @@ public class PreflightReportUI : ReportUI
         }
     }
 
-    public void AddItemData(PreflightReportData d)
+    public void AddItemData(PreflightReportData d, bool complete)
     {
 
         bool found = false;
 
-        for(int i=0; i<data.Count;i++)
+        for (int i = 0; i < data.Count; i++)
         {
             if (data[i].TaskName.Equals(d.TaskName))
             {
                 found = true;
-                
-                if(data[i].Evaluation && !d.Evaluation)
+
+                if (data[i].Evaluation && !d.Evaluation)
                 {
                     data[i].SetInfo(d);
                 }
 
-                data[i].numCmplt++;
+                if(complete)
+                    data[i].numCmplt++;
+
+                data[i].numTotal++;
 
                 break;
             }
         }
 
-        if(!found)
+        if (!found)
+        {
+            if(complete)
+                d.numCmplt++;
+
             data.Add(d);
+        }
     }
 
 }
@@ -202,7 +256,7 @@ public class PreflightReportData : ReportData
 
     public string CheckDone, CheckReq;
     public string RectificationDone, RectificationReq;
-    public int numCmplt;
+    public int numCmplt, numTotal;
 
     public PreFlightInteractable Interactable;
 
@@ -220,7 +274,9 @@ public class PreflightReportData : ReportData
         CheckReq = checkReq;
         RectificationDone = recDone;
         RectificationReq = recReq;
-        numCmplt = 1;
+        numCmplt = 0;
+        numTotal = 1;
+
 
         Interactable = interactable;
 
@@ -237,6 +293,8 @@ public class PreflightReportData : ReportData
         RectificationDone = recDone;
         RectificationReq = recReq;
         kvp = d;
+        numCmplt = 0;
+        numTotal = 1;
 
         Interactable = interactable;
 

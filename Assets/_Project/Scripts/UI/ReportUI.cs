@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Sirenix.OdinInspector;
+using Autohand;
 
 public class ReportUI : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class ReportUI : MonoBehaviour
     [SerializeField] RectTransform infoTranform;
     [SerializeField] TextMeshProUGUI infoText;
     [SerializeField] Color FilterSelected, FilterUnselected;
-    [SerializeField] TextMeshProUGUI[] filterTexts;
+    [SerializeField] protected TextMeshProUGUI[] filterTexts;
 
     protected int _filterIndex=0;
 
@@ -28,6 +29,8 @@ public class ReportUI : MonoBehaviour
 
     private List<ReportData> reportData = new List<ReportData>();
 
+    [SerializeField]
+    protected Transform playerLocation;
 
     //List<RiskObjectAssesment> objects;
 
@@ -128,6 +131,11 @@ public class ReportUI : MonoBehaviour
             */
         }
 
+        if (playerLocation)
+        {
+            AutoHandPlayer.Instance.SetPosition(playerLocation.position);
+            AutoHandPlayer.Instance.SetRotation(playerLocation.rotation);
+        }
 
         transform.GetChild(0).gameObject.SetActive(true);
 
@@ -139,7 +147,7 @@ public class ReportUI : MonoBehaviour
         */
     }
 
-    private void Update()
+    protected void Update()
     {
         if (infoTranform.gameObject.activeInHierarchy && infoTarget)
         {
@@ -197,7 +205,7 @@ public void ShowResponse (Transform label, RiskObjectAssesment assesment)
         
         infoText.SetText(text);
         
-        LayoutRebuilder.ForceRebuildLayoutImmediate(infoText.transform.parent.GetComponent<RectTransform>()); // Fixes an awful unity bug of container not fitting content
+        //LayoutRebuilder.ForceRebuildLayoutImmediate(infoText.transform.parent.GetComponent<RectTransform>()); // Fixes an awful unity bug of container not fitting content
     }
 
     public void HideInfo ()

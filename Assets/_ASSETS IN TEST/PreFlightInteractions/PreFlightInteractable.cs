@@ -90,7 +90,7 @@ public class PreFlightInteractable : ChecklistInteractable
     public override void TaskComplete()
     {
         PreflightReportData data = new PreflightReportData(Task.name, FirstSelection, CorrectSelection, RectificationSelection, CorrectRectification, this);
-        PreflightReportUI.Instance.AddItemData(data);
+        PreflightReportUI.Instance.AddItemData(data,true);
 
         _rayInteractable.forceHighlight = false;
         _identifierUI.SetActive(false);
@@ -99,6 +99,16 @@ public class PreFlightInteractable : ChecklistInteractable
             _completeUI.transform.position = _UIPos.position;
             _completeUI.transform.rotation = _UIPos.rotation;
             _completeUI.SetActive(true);
+        }
+    }
+
+    public void AddToReportUncomplete()
+    {
+        if (!_complete)
+        {
+            PreflightReportData data = new PreflightReportData(Task.name, "Nothing", CorrectSelection, "Nothing", CorrectRectification, this);
+            PreflightReportUI.Instance.AddItemData(data, false);
+
         }
     }
 

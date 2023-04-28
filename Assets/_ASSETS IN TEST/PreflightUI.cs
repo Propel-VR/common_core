@@ -103,6 +103,7 @@ public class PreflightUI : MonoBehaviour
     public void TryWriteUp()
     {
         _preflightInteractable.WriteUp();
+
         if (_preflightInteractable is WriteUpInteractable)
         {
             _preflightInteractable.MakeReadyForInteract();

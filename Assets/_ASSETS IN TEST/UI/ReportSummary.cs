@@ -6,12 +6,19 @@ using UnityEngine.UI;
 
 public class ReportSummary : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI module, subMod, mode, duration;
+    [SerializeField] TextMeshProUGUI _module, _subMod, _mode, _duration;
 
 
     [SerializeField] Slider[] sliders;
     [SerializeField] TextMeshProUGUI[] completions;
 
+    public void SetTextData(string module, string subMod, string mode, string dur)
+    {
+        _module.text = module;
+        _subMod.text = subMod;
+        _mode.text = mode;
+        _duration.text = dur;
+    }
 
     public void SetChecks(int completed, int total)
     {

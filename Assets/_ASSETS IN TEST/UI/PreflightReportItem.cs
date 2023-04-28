@@ -1,6 +1,7 @@
 using Autohand;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class PreflightReportItem : ReportItem
     [SerializeField] Sprite wrongSprite;
     [SerializeField] Color rightColor = Color.white;
     [SerializeField] Color wrongColor = Color.white;
+    [SerializeField] TextMeshProUGUI qtyLabel;
 
     public void Init(PreflightReportData rd)
     {
@@ -19,6 +21,7 @@ public class PreflightReportItem : ReportItem
         labels[0].SetText(rd.TaskName);
         labels[1].SetText(rd.CheckReq);
         labels[2].SetText(rd.RectificationReq);
+        qtyLabel.text = rd.numCmplt + "/" + rd.numTotal;
 
         labels[1].color = rd.CheckReq.Equals("Complete") ? rightColor : wrongColor;
         labels[2].color = Color.white;
@@ -33,13 +36,17 @@ public class PreflightReportItem : ReportItem
             {
                 PreflightReportUI.Instance.HideInfo();
             });
+            ColorBlock bc = buttons[1].colors;
+            bc.highlightedColor= Color.clear;
+            buttons[1].colors = bc;
+
         }
         else
         {
             buttons[1].onClick.AddListener(() =>
             {
 
-                string msg = "you initially selected " + rd.CheckDone;
+                string msg = "You initially selected " + rd.CheckDone;
                 PreflightReportUI.Instance.ShowInfo(images[0].transform, msg);
             });
         }
@@ -52,12 +59,16 @@ public class PreflightReportItem : ReportItem
                 PreflightReportUI.Instance.HideInfo();
             });
 
+            ColorBlock bc = buttons[2].colors;
+            bc.highlightedColor = Color.clear;
+            buttons[2].colors = bc;
+
         }
         else
         {
             buttons[2].onClick.AddListener(() => {
 
-                string msg = "you initially selected " + rd.RectificationDone;
+                string msg = "You initially selected " + rd.RectificationDone;
                 PreflightReportUI.Instance.ShowInfo(images[1].transform, msg);
             });
         }
