@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using System;
+using UnityEngine.Events;
 
 namespace LM
 {
@@ -215,6 +216,31 @@ namespace LM
         public List<string> Notes => _notes;
 
         #endregion
+
+        /// <summary>
+        /// Called when the task is started
+        /// </summary>
+        public event Action OnTaskStarted;
+
+        /// <summary>
+        /// Called when the task is successfully completed
+        /// </summary>
+        public event Action OnTaskCompleted;
+
+        /// <summary>
+        /// Called if the task objects becomes active
+        /// </summary>
+        public event Action OnTaskEnabled;
+
+        /// <summary>
+        /// Called if the task object becomes disabled (task cannot be completed at this time)
+        /// </summary>
+        public event Action OnTaskDisabled;
+
+        void StartTask()
+        {
+            //_taskManager.StartTask(this);
+        }
 
     }
 
