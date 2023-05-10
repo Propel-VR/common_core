@@ -27,21 +27,22 @@ public class WriteUpInteractable : PreFlightInteractable
 
     public void DoInteraction()
     {
-        HasBeenChecked();
+
         StartCoroutine(Interact());
+        HasBeenChecked();
     }
 
     public IEnumerator Interact()
     {
-        yield return new WaitForSeconds(_interactionDelay);
         OnInteracted?.Invoke();
+        yield return new WaitForSeconds(_interactionDelay);
         OnWriteUpInteraction?.Invoke();
         UpdateRectification();
     }
 
     public override void UpdateRectification()
     {
-        _cth.UpdateRectification(_cth.GetID(),"Written Up");
+        _cth.UpdateRectification(_cth.GetID(),"Created E-1");
     }
 
 }

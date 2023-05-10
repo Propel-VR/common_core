@@ -6,28 +6,34 @@ using UnityEngine.AI;
 public class NPCNavigation : MonoBehaviour
 {
     public Animator anim;
+    public NavMeshAgent agent;
+
     public bool isWalking;
-    private Rigidbody rb;
+    
     Vector3 lastPosition;
 
-    // Start is called before the first frame update
     public Transform goal;
     public float walkThreshold;
 
-    public NavMeshAgent agent;
+    
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        rb = GetComponent<Rigidbody>();
 
-        agent.destination = goal.position;
+        // agent.updatePosition = false;
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 velocity = transform.position - lastPosition;
+        agent.destination = goal.position;
+        anim.SetFloat("speed", agent.velocity.magnitude);
+        Debug.Log(agent.velocity);
+        /*Vector3 velocity = transform.position - lastPosition;
         float speed = velocity.magnitude / Time.deltaTime;
         lastPosition = transform.position;
 
@@ -46,7 +52,10 @@ public class NPCNavigation : MonoBehaviour
                 anim.SetTrigger("Stop Walking");
             }
             isWalking = false;
-        }
-        
+        */
     }
+
+
 }
+
+

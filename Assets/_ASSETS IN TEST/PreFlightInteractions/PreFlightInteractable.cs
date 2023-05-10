@@ -2,7 +2,7 @@ using CamhOO;
 using RootMotion.Demos;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Tutorials.Core.Editor;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -20,8 +20,12 @@ public class PreFlightInteractable : ChecklistInteractable
     [HideInInspector]
     public string FirstSelection = "", CorrectSelection="", RectificationSelection ="", CorrectRectification="";
 
+    public Transform ContextPoint;
+
     [SerializeField]
     private Transform _uiPos;
+
+    private bool contextState=false;
     public Transform _UIPos
     {
         get { return _uiPos; }
@@ -37,6 +41,23 @@ public class PreFlightInteractable : ChecklistInteractable
         CorrectRectification = "N/A";
     }
 
+    public void SetContextState(bool state)
+    {
+        contextState= state;
+        
+        if(contextState)
+        {
+            _rayInteractable.forceHighlight= true;
+            gameObject.SetLayerRecursively(5);
+        }
+        else
+        {
+            _rayInteractable.forceHighlight = false;
+            gameObject.SetLayerRecursively(7);
+
+        }
+
+    }
 
     public virtual void MakeReadyForInteract()
     {
@@ -45,17 +66,17 @@ public class PreFlightInteractable : ChecklistInteractable
 
     public void CheckComplete()
     {
-        if (FirstSelection.IsNullOrEmpty())
+        if (string.IsNullOrEmpty(FirstSelection))
         {
             FirstSelection = "Complete";
+            RectificationSelection = "N/A";
         }
 
         _complete = true;
 
         Task.CompleteTask();
         HasBeenChecked();
-        OnInteracted.Invoke();
-        
+        OnInteracted.Invoke();    
     }
 
 
@@ -68,8 +89,8 @@ public class PreFlightInteractable : ChecklistInteractable
 
     public override void TaskComplete()
     {
-
-        ReportUI.Instance.AddItem(Task.name, FirstSelection, CorrectSelection, RectificationSelection, CorrectRectification);
+        PreflightReportData data = new PreflightReportData(Task.name, FirstSelection, CorrectSelection, RectificationSelection, CorrectRectification, this);
+        PreflightReportUI.Instance.AddItemData(data,true);
 
         _rayInteractable.forceHighlight = false;
         _identifierUI.SetActive(false);
@@ -78,6 +99,16 @@ public class PreFlightInteractable : ChecklistInteractable
             _completeUI.transform.position = _UIPos.position;
             _completeUI.transform.rotation = _UIPos.rotation;
             _completeUI.SetActive(true);
+        }
+    }
+
+    public void AddToReportUncomplete()
+    {
+        if (!_complete)
+        {
+            PreflightReportData data = new PreflightReportData(Task.name, "Nothing", CorrectSelection, "Nothing", CorrectRectification, this);
+            PreflightReportUI.Instance.AddItemData(data, false);
+
         }
     }
 
@@ -94,12 +125,12 @@ public class PreFlightInteractable : ChecklistInteractable
 
     public void Clean()
     {
-        if (FirstSelection.IsNullOrEmpty())
+        if (string.IsNullOrEmpty(FirstSelection))
         {
             FirstSelection = "Snag Found";
         }
 
-        if (RectificationSelection.IsNullOrEmpty())
+        if (string.IsNullOrEmpty(RectificationSelection))
         {
             RectificationSelection = "Clean";
         }
@@ -107,12 +138,12 @@ public class PreFlightInteractable : ChecklistInteractable
 
     public void Service()
     {
-        if (FirstSelection.IsNullOrEmpty())
+        if (string.IsNullOrEmpty(FirstSelection))
         {
             FirstSelection = "Snag Found";
         }
 
-        if (RectificationSelection.IsNullOrEmpty())
+        if (string.IsNullOrEmpty(RectificationSelection))
         {
             RectificationSelection = "Service";
         }
@@ -120,12 +151,12 @@ public class PreFlightInteractable : ChecklistInteractable
 
     public void Replace()
     {
-        if (FirstSelection.IsNullOrEmpty())
+        if (string.IsNullOrEmpty(FirstSelection))
         {
             FirstSelection = "Snag Found";
         }
 
-        if (RectificationSelection.IsNullOrEmpty())
+        if (string.IsNullOrEmpty(RectificationSelection))
         {
             RectificationSelection = "Replace";
         }
@@ -133,12 +164,12 @@ public class PreFlightInteractable : ChecklistInteractable
 
     public void WriteUp()
     {
-        if (FirstSelection.IsNullOrEmpty())
+        if (string.IsNullOrEmpty(FirstSelection))
         {
             FirstSelection = "Snag Found";
         }
 
-        if (RectificationSelection.IsNullOrEmpty())
+        if (string.IsNullOrEmpty(RectificationSelection))
         {
             RectificationSelection = "Create E-1";
         }

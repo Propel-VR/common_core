@@ -88,7 +88,7 @@ public class ChecklistTaskHelper : MonoBehaviour
     {
         [HideInInspector]
         public string smin;
-        public string zone, duration, checkType, rectification, warningText;
+        public string zone, duration, checkType, rectification, warningText, cautionText;
         public RequiredConditionsData[] requireConditions;
     }
 
