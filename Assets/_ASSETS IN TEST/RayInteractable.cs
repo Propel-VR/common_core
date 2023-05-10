@@ -18,7 +18,7 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
 
     public Transform Player; // mike add for checking distance
     [SerializeField] UnityEvent onInteract, OnHover, OnUnHover;
-    [SerializeField] Transform contextPoint;
+
     [SerializeField] Color outlineColor = new(0f, 1f, 140f / 255f);
 
     private Outline outline;
@@ -50,10 +50,6 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
         outline.OutlineColor = outlineColor;
         outline.OutlineMode = Outline.Mode.None;
 
-        if (contextPoint == null)
-        {
-            contextPoint = GameObject.Instantiate(new GameObject(), this.transform).transform;
-        }
     }
 
     private void Update()
@@ -193,8 +189,4 @@ public class RayInteractable : MonoBehaviour, IInteractableObject
         }
     }
 
-    public Vector3 GetContextPoint()
-    {
-        return contextPoint.position;
-    }
 }

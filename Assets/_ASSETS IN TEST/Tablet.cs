@@ -145,7 +145,6 @@ public class Tablet : MonoBehaviour
         ChecklistItemData item = _tocChapterData[chapterID].ChecklistItemData[id];
 
         item.CurrentQuantity = item.CurrentQuantity+1;
-        Debug.Log("NEW QTY"+item.CurrentQuantity);
 
         _tocChapterData[chapterID].ChecklistItemData[id] = item;
 
@@ -154,34 +153,34 @@ public class Tablet : MonoBehaviour
             if (item.Current)
             {
                 _analogSlider.AutoScroll(1.0f / _tocChapterData[chapterID].ChecklistItemData.Count);
-                item.Complete = true;
-                item.Current = false;
 
-                _tocChapterData[chapterID].ChecklistItemData[id] = item;
+            }
+                
+            item.Complete = true;
+            item.Current = false;
+
+            _tocChapterData[chapterID].ChecklistItemData[id] = item;
 
 
-                if (id <= _tocChapterData[chapterID].ChecklistItemData.Count - 2)
+            if (id <= _tocChapterData[chapterID].ChecklistItemData.Count - 2)
+            {
+
+                item = _tocChapterData[chapterID].ChecklistItemData[id + 1];
+                if (!item.Complete)
                 {
+                    item.Current = true;
 
-                    item = _tocChapterData[chapterID].ChecklistItemData[id + 1];
-                    if (!item.Complete)
+                    for (int i = 0; i < item.Interactables.Count; i++)
                     {
-                        item.Current = true;
-
-                        for (int i = 0; i < item.Interactables.Count; i++)
+                        if (!item.Interactables[i].IsComplete)
                         {
-                            if (!item.Interactables[i].IsComplete)
-                            {
-                                item.Interactables[i].TaskStarted();
+                            item.Interactables[i].TaskStarted();
 
-                            }
                         }
-                        _tocChapterData[chapterID].ChecklistItemData[id + 1] = item;
                     }
+                    _tocChapterData[chapterID].ChecklistItemData[id + 1] = item;
                 }
             }
-
-
 
         }
         else
@@ -553,6 +552,21 @@ public class Tablet : MonoBehaviour
             if (!data.IsHeader) numTasks++;
 
         return numTasks;
+    }
+
+    public void AddUncompleteTasksToReport()
+    {
+        foreach(ChecklistItemData data in _tocChapterData[_currentChapterID].ChecklistItemData)
+        {
+            if(!data.Complete)
+            {
+                foreach(PreFlightInteractable i in data.Interactables) 
+                {
+                    i.AddToReportUncomplete();
+
+                }
+            }
+        }
     }
 
 

@@ -17,7 +17,11 @@ public class DetailedPage : MonoBehaviour
     [SerializeField]
     GameObject _warningGo;
     [SerializeField]
+    GameObject _cautionGO;
+    [SerializeField]
     TextMeshProUGUI _warningText;
+    [SerializeField]
+    TextMeshProUGUI _cautionText;
 
     [SerializeField]
     List<GameObject> _reqGOs;
@@ -82,7 +86,16 @@ public class DetailedPage : MonoBehaviour
             _warningGo.SetActive(true);
             _warningText.text = data.warningText;
         }
-        
+        if (string.IsNullOrEmpty(data.cautionText))
+        {
+            _cautionGO.SetActive(false);
+        }
+        else
+        {
+            _cautionGO.SetActive(true);
+            _cautionText.text = data.cautionText;
+        }
+
 
         /*REQUIREMENT TEXT AND SPRITES*/
 

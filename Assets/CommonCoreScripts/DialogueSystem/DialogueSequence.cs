@@ -33,7 +33,13 @@ namespace CommonCoreScripts.DialogueSystem
         
         public UnityEvent OnSequenceStart;
         public UnityEvent OnSequenceEnd;
-        
+
+
+        private void Start()
+        {
+            PlayerPrefs.SetString("Language", "EN");
+        }
+
         [Button("DEBUG: Start Dialogue")]
         public void StartSequence()
         {

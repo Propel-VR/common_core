@@ -3,39 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Sirenix.OdinInspector;
+using Autohand;
 
 public class ReportUI : MonoBehaviour
 {
 
-    public static ReportUI Instance { get; private set; }
+    public static ReportUI BaseInstance { get; private set; }
 
-    [Header("Ressource")]
-    [SerializeField] Color defaultColor = Color.white;
-    [SerializeField] Color rightColor = Color.white;
-    [SerializeField] Color wrongColor = Color.white;
-    [SerializeField] Sprite rightSprite;
-    [SerializeField] Sprite wrongSprite;
-    [SerializeField] Sprite passSprite, failSprite;
-
+   
     [Header("References")]
-    //[SerializeField] PlayerReferences targetPlayer;
-    //[SerializeField] MainPanelUI mainPanel;
-    [SerializeField] RectTransform parent;
-    [SerializeField] RectTransform template;
-    [SerializeField] TextMeshProUGUI scoresBoth;
-    [SerializeField] TextMeshProUGUI scoresType;
-    [SerializeField] TextMeshProUGUI scoresResponse;
+    [SerializeField] protected RectTransform parent;
+    [SerializeField] protected RectTransform template;
     [SerializeField] RectTransform infoTranform;
     [SerializeField] TextMeshProUGUI infoText;
+    [SerializeField] Color FilterSelected, FilterUnselected;
+    [SerializeField] protected TextMeshProUGUI[] filterTexts;
 
-    List<RectTransform> formEntries = new();
-    public List<ReportData> reportData = new List<ReportData>();
+    protected int _filterIndex=0;
+
+    protected Transform infoTarget;
+
+    protected List<RectTransform> formEntries = new();
+
+
+    private List<ReportData> reportData = new List<ReportData>();
+
+    [SerializeField]
+    protected Transform playerLocation;
 
     //List<RiskObjectAssesment> objects;
 
-    private void Awake()
+    protected void Awake()
     {
-        Instance= this;
+        BaseInstance= this;
     }
 
     private void Start ()
@@ -43,10 +44,38 @@ public class ReportUI : MonoBehaviour
         infoTranform.gameObject.SetActive(false);
     }
 
-    public void Open ()
+
+
+    public void SelectFilter(int filterIndex)
+    {
+        _filterIndex=filterIndex;
+
+        foreach(TextMeshProUGUI t in filterTexts)
+        {
+            t.color = FilterUnselected;
+            t.fontStyle = FontStyles.Normal;
+        }
+
+        filterTexts[filterIndex].color = FilterSelected;
+        filterTexts[filterIndex].fontStyle = FontStyles.Underline;
+
+        FilterList();
+    }
+
+
+    public virtual void FilterList()
+    {
+
+    }
+
+
+    public virtual void Open ()
     {
         //objects = RiskAssesmentManager.GetRisksAssesed();
         //int total = RiskAssesmentManager.GetTotalNonBonusRiskCount();
+
+        Debug.Log("PARENT OPEN");
+
         template.gameObject.SetActive(false);
 
         // Cleanup
@@ -63,36 +92,22 @@ public class ReportUI : MonoBehaviour
 
         foreach(ReportData rd in reportData)
         {
-            RectTransform formEntry = Instantiate(template, parent);
-            TextMeshProUGUI label0 = formEntry.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
-            TextMeshProUGUI label1 = formEntry.GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
-            TextMeshProUGUI label2 = formEntry.GetChild(0).GetChild(2).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
-            Image icon1 = formEntry.GetChild(0).GetChild(1).GetChild(0).GetChild(1).GetComponent<Image>();
-            Image icon2 = formEntry.GetChild(0).GetChild(2).GetChild(0).GetChild(1).GetComponent<Image>();
-            Image icon3 = formEntry.GetChild(0).GetChild(3).GetChild(0).GetChild(1).GetComponent<Image>();
-            Button button0 = formEntry.GetChild(0).GetChild(0).GetChild(0).GetComponent<Button>();
-            Button button1 = formEntry.GetChild(0).GetChild(1).GetChild(0).GetComponent<Button>();
-            Button button2 = formEntry.GetChild(0).GetChild(2).GetChild(0).GetComponent<Button>();
-            Button button3 = formEntry.GetChild(0).GetChild(3).GetChild(0).GetComponent<Button>();
+            GameObject formEntry = Instantiate(template, parent).gameObject;
+
+            formEntry.GetComponent<ReportItem>().Init(rd);
+
+           
 
             formEntry.gameObject.SetActive(true);
 
-            label0.SetText(rd.TaskName);
-            label1.SetText(rd.CheckReq);
-            label2.SetText(rd.RectificationReq);
-
-            label1.color = rd.CheckReq.Equals(rd.CheckDone) ? rightColor : wrongColor;
-            label2.color = rd.RectificationReq.Equals(rd.RectificationDone) ? rightColor : wrongColor;
+           
 
             //label1.fontStyle = obj.IsTypeCorrect ? FontStyles.Normal : FontStyles.Strikethrough;
             //label2.fontStyle = obj.IsResponseCorrect ? FontStyles.Normal : FontStyles.Strikethrough;
             
-            icon1.color = label1.color;
-            icon2.color = label2.color;
-                
-            icon1.sprite = rd.CheckReq.Equals(rd.CheckDone) ? rightSprite : wrongSprite;
-            icon2.sprite = rd.RectificationReq.Equals(rd.RectificationDone) ? rightSprite : wrongSprite;
-            icon3.sprite = rd.Evaluation ? passSprite : failSprite;
+            //icon1.color = label1.color;
+            //icon2.color = label2.color;
+            
 
             /*
             var risk = obj;
@@ -114,11 +129,15 @@ public class ReportUI : MonoBehaviour
             if(obj.IsTypeCorrect && obj.IsResponseCorrect) typeAndResponseCorrect++;
             formEntries.Add(formEntry);
             */
-
-            transform.GetChild(0).gameObject.SetActive(true);
         }
 
-        
+        if (playerLocation)
+        {
+            AutoHandPlayer.Instance.SetPosition(playerLocation.position);
+            AutoHandPlayer.Instance.SetRotation(playerLocation.rotation);
+        }
+
+        transform.GetChild(0).gameObject.SetActive(true);
 
         // Set score
         /*
@@ -128,64 +147,102 @@ public class ReportUI : MonoBehaviour
         */
     }
 
-        public void AddItem(string taskName, string checkDone, string  checkReq, string  recDone, string  recReq)
+    protected void Update()
+    {
+        if (infoTranform.gameObject.activeInHierarchy && infoTarget)
         {
-            
-            ReportData newData = new ReportData();
-            newData.TaskName = taskName;
-            newData.CheckDone = checkDone;
-            newData.CheckReq = checkReq;
-            newData.RectificationDone = recDone;
-            newData.RectificationReq= recReq;
-            newData.Evaluation = recReq.Equals(recDone) && checkReq.Equals(checkDone);
-
+            infoTranform.position = infoTarget.position + Vector3.up * 0.01f;
         }
-
-        /*
-        public void ShowType (Transform label, RiskObjectAssesment assesment)
-        {
-        infoTranform.gameObject.SetActive(true);
-        infoTranform.position = label.transform.position + Vector3.up * 0.01f;
-        if(assesment.IsTypeCorrect)
-        {
-            infoText.SetText(RiskAsset.correctRiskType[assesment.riskObject.Asset.Type]);
-        }
-        else
-        {
-            infoText.SetText(RiskAsset.incorrectRiskType[assesment.riskObject.Asset.Type]);
-        }
-        LayoutRebuilder.ForceRebuildLayoutImmediate(infoText.transform.parent.GetComponent<RectTransform>()); // Fixes an awful unity bug of container not fitting content
     }
 
-    public void ShowResponse (Transform label, RiskObjectAssesment assesment)
+
+
+    public void AddItem(ReportData data)
+    {
+
+        reportData.Add(data);
+
+
+    }
+
+    /*
+    public void ShowType (Transform label, RiskObjectAssesment assesment)
+    {
+    infoTranform.gameObject.SetActive(true);
+    infoTranform.position = label.transform.position + Vector3.up * 0.01f;
+    if(assesment.IsTypeCorrect)
+    {
+        infoText.SetText(RiskAsset.correctRiskType[assesment.riskObject.Asset.Type]);
+    }
+    else
+    {
+        infoText.SetText(RiskAsset.incorrectRiskType[assesment.riskObject.Asset.Type]);
+    }
+    LayoutRebuilder.ForceRebuildLayoutImmediate(infoText.transform.parent.GetComponent<RectTransform>()); // Fixes an awful unity bug of container not fitting content
+}
+
+public void ShowResponse (Transform label, RiskObjectAssesment assesment)
+{
+    infoTranform.gameObject.SetActive(true);
+    infoTranform.position = label.transform.position + Vector3.up * 0.01f;
+    if (assesment.IsResponseCorrect)
+    {
+        infoText.SetText(RiskAsset.correctResponseType[assesment.riskObject.Asset.Response]);
+    }
+    else
+    {
+        infoText.SetText(RiskAsset.incorrectResponseType[assesment.riskObject.Asset.Response]);
+    }
+    LayoutRebuilder.ForceRebuildLayoutImmediate(infoText.transform.parent.GetComponent<RectTransform>()); // Fixes an awful unity bug of container not fitting content
+}
+*/
+
+
+    public void ShowInfo(Transform obj, string text)
     {
         infoTranform.gameObject.SetActive(true);
-        infoTranform.position = label.transform.position + Vector3.up * 0.01f;
-        if (assesment.IsResponseCorrect)
-        {
-            infoText.SetText(RiskAsset.correctResponseType[assesment.riskObject.Asset.Response]);
-        }
-        else
-        {
-            infoText.SetText(RiskAsset.incorrectResponseType[assesment.riskObject.Asset.Response]);
-        }
-        LayoutRebuilder.ForceRebuildLayoutImmediate(infoText.transform.parent.GetComponent<RectTransform>()); // Fixes an awful unity bug of container not fitting content
+        infoTarget = obj;
+        
+        infoText.SetText(text);
+        
+        //LayoutRebuilder.ForceRebuildLayoutImmediate(infoText.transform.parent.GetComponent<RectTransform>()); // Fixes an awful unity bug of container not fitting content
     }
-    */
 
     public void HideInfo ()
     {
         infoTranform.gameObject.SetActive(false);
     }
 
-    public struct ReportData
+}
+
+[System.Serializable]
+public class ReportData
+{
+
+    public string TaskName;
+    public bool Evaluation;
+
+    public Dictionary<string, object> kvp = new Dictionary<string, object>();
+
+    public ReportData()
     {
 
-        public string TaskName;
-        public string CheckDone, CheckReq;
-        public string RectificationDone, RectificationReq;
-        public bool Evaluation;
+    }
+
+    public ReportData(string taskName, bool eval)
+    {
+        TaskName = taskName;
+        
+
+        Evaluation = eval;
     }
 
 
+    public ReportData(string taskName, bool eval, Dictionary<string, object> d)
+    {
+        TaskName = taskName;
+        kvp = d;
+
+        Evaluation = eval;
+    }
 }

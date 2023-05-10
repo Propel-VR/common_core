@@ -48,7 +48,6 @@ public class PreflightUI : MonoBehaviour
         _preflightInteractable.CheckComplete();
         if (_preflightInteractable && _preflightInteractable.Task != null)
         {
-            _preflightInteractable.CheckComplete();
             _goodSound.Play();
         }
         gameObject.SetActive(false);
@@ -104,6 +103,7 @@ public class PreflightUI : MonoBehaviour
     public void TryWriteUp()
     {
         _preflightInteractable.WriteUp();
+
         if (_preflightInteractable is WriteUpInteractable)
         {
             _preflightInteractable.MakeReadyForInteract();

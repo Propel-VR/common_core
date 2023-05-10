@@ -20,6 +20,7 @@ namespace CommonCoreScripts.DialogueSystem
             speakerText.text = chunk.GetCurrentLanguageText();
             nameText.text = chunk.speaker;
             portait.sprite = chunk.speakerSprite;
+            ShowDialogueOptions(chunk);
             //animator.SetTrigger("ShowDialogue");
         }
         
@@ -30,16 +31,17 @@ namespace CommonCoreScripts.DialogueSystem
         
         public override void ShowDialogueOptions(DialogueChunk chunk)
         {
+            HideDialogueOptions();
             for (int i = 0; i < chunk.nextChunks.Count; i++)
             {
                 buttons[i].SetText(chunk.GetCurrentLanguageAnswer(i));
-                buttons[i].ShowButton();
+                buttons[i].gameObject.SetActive(true);
             }
         }
 
         public override void HideDialogueOptions()
         {
-            foreach (var button in buttons) button.HideButton();
+            foreach (var button in buttons) button.gameObject.SetActive(false);
         }
 
         public override void ShowSpeakerName(DialogueChunk chunk)
