@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e928d5602be119e47b4da0bd30f2d504, type: 3}
+  m_Name: PreFlight Check - QEC
+  m_EditorClassIdentifier: 
+  _name: QEC PreFlight Check
+  _configuration:
+    location: 0
+    weather: 0
+    timeOfDay: 0
+    tasks:
+    - {fileID: 11400000, guid: 36b672962d431bc4eb45ebc66ad2539e, type: 2}
+    - {fileID: 11400000, guid: 7a994107bd0996044b5af67d564004c5, type: 2}
+    - {fileID: 11400000, guid: a211740cfc0c5ba4ca122e75e8143e10, type: 2}
+    - {fileID: 11400000, guid: 9165da87c4bb7e0449adabf4a5820c12, type: 2}
+    - {fileID: 11400000, guid: 4f1db6ec0bdf0394083abd90c102e003, type: 2}
+    - {fileID: 11400000, guid: 31bb4fa41daff64498dbb77eb863f246, type: 2}
+    - {fileID: 11400000, guid: 835a11b3843bb8647be29fa931164d74, type: 2}
