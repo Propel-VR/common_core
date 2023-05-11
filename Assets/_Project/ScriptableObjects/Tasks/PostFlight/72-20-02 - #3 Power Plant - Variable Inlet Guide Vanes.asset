@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f05d6c534421d47b32c0ddcefabb2f, type: 3}
+  m_Name: 72-20-02 - #3 Power Plant - Variable Inlet Guide Vanes
+  m_EditorClassIdentifier: 
+  _name: Variable Inlet Guide Vanes
+  _description: "Inspect for damage and evidence of contamination and/or salt deposits.
+    \_"
+  _category: {fileID: 11400000, guid: e419c54a126294e4b97ef6303f92b131, type: 2}
+  _subModule: {fileID: 11400000, guid: 6e6a867fbd4e8de4da5bf0f6850cce01, type: 2}
+  _module: {fileID: 11400000, guid: f17e19e820935574f8182402b997fa5a, type: 2}
+  _orderWithinSubmodule: 19
+  _checkType: 0
+  _canDefect: 1
+  _rectificationType: 0
+  _SMIN: 72-20-02
+  _zone: 432
+  _manMinutes: 1
+  _trade: AVN
+  _pwr: 
+  _warnings:
+  - type: 0
+    description: <b>Fuel:</b> Fuel is flammable and is an irritant to skin, eyes,
+      and respiratory tract. Use gloves and eye protection while working with the
+      fuel system. Avoid repeated or prolonged skin contact. Fuel also contains benzene,
+      a cancer-causing agent. Handle only in well-ventilated areas. Keep away from
+      sparks, open flames, or other sources of ignition
+  _cautions: []
+  _requiredConditions:
+  - type: 4
+    description: Use Gloves and Eye Protection as needed.
+  - type: 17
+    description: Ensure no FOD is present, use strong light.
+  - type: 17
+    description: Maintain Foreign Object Control / tool control.
+  _notes: []

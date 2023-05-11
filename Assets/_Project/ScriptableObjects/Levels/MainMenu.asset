@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b10c642d207e65479f24bd12ff8acc5, type: 3}
+  m_Name: MainMenu
+  m_EditorClassIdentifier: 
+  scenes:
+  - _sceneAssetObject: {fileID: 102900000, guid: a6105823e9b31474f855fc6b262339b5,
+      type: 3}
+    _name: Base
+    _path: Assets/_Project/Scenes/Base.unity
+  - _sceneAssetObject: {fileID: 102900000, guid: bb2b8eb5f2510c540acf7a2726ac80bf,
+      type: 3}
+    _name: Player
+    _path: Assets/_Project/Scenes/Player.unity
+  - _sceneAssetObject: {fileID: 102900000, guid: d968a9b5994538842818f778dc090efd,
+      type: 3}
+    _name: MainMenu
+    _path: Assets/_Project/Scenes/MainMenu.unity
+  - _sceneAssetObject: {fileID: 102900000, guid: d903ea8e40639c849b8bcdeecf88a172,
+      type: 3}
+    _name: MainMenuLighting
+    _path: Assets/_Project/Scenes/Lighting/MainMenuLighting.unity
+  activeScene:
+    _sceneAssetObject: {fileID: 102900000, guid: d903ea8e40639c849b8bcdeecf88a172,
+      type: 3}
+    _name: MainMenuLighting
+    _path: Assets/_Project/Scenes/Lighting/MainMenuLighting.unity

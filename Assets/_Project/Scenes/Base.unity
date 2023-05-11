@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &365037056
+--- !u!1 &479547738
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,83 +131,764 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 365037059}
-  - component: {fileID: 365037058}
-  - component: {fileID: 365037057}
+  - component: {fileID: 479547739}
+  - component: {fileID: 479547740}
   m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
+  m_Name: TaskManager
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &365037057
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365037056}
-  m_Enabled: 1
---- !u!20 &365037058
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365037056}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &365037059
+--- !u!4 &479547739
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365037056}
+  m_GameObject: {fileID: 479547738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1538764208}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &479547740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479547738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc1f9f04b68f9e4c83ece3eb7ec42d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tasks: []
+--- !u!1 &757981439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 757981440}
+  - component: {fileID: 757981441}
+  - component: {fileID: 757981442}
+  m_Layer: 0
+  m_Name: Configurator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &757981440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757981439}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1538764208}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &757981441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757981439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42cb4539fe717d9449aeb145d6dd0536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneResolver: {fileID: 757981442}
+--- !u!114 &757981442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757981439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d8df78c59cfc46a7556b66e916073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 102900000, guid: f6ab0e40e5754d34aa72784710cfa879, type: 3}
+    - {fileID: 102900000, guid: 9f673437a362f0842be6022257959d65, type: 3}
+    - {fileID: 102900000, guid: e1230f738cc811f4c9380cdb41c5998c, type: 3}
+    - {fileID: 102900000, guid: 3ca5382a81093824cb26200ae7a9e0b1, type: 3}
+    - {fileID: 11400000, guid: 0d2f44336313ebb4d9e53b4d8bfe12ae, type: 2}
+    - {fileID: 102900000, guid: 93aea20dbd21ef7489116b954eea194a, type: 3}
+    - {fileID: 11400000, guid: 6e6a867fbd4e8de4da5bf0f6850cce01, type: 2}
+    - {fileID: 102900000, guid: db4f85b5b8906b8439edc8fc75bf440d, type: 3}
+    - {fileID: 11400000, guid: ba505a4d085830647a1b88e0ce2886d6, type: 2}
+    - {fileID: 102900000, guid: a6105823e9b31474f855fc6b262339b5, type: 3}
+    - {fileID: 11400000, guid: dde0fe62537c3914ab77d5674eabeab3, type: 2}
+    - {fileID: 102900000, guid: 3ab32fb392b073f419ff9c7087860f77, type: 3}
+    - {fileID: 11400000, guid: f17e19e820935574f8182402b997fa5a, type: 2}
+    - {fileID: 102900000, guid: bfbb670e13ed51c4f832a623dab57fb8, type: 3}
+    - {fileID: 102900000, guid: b6cd1bf2701f7d54f818ff3c2ffefc9c, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _locationScenes
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[LM.Management.Location, Assembly-CSharp],[CommonCoreScripts.SceneManagement.SceneRef,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[LM.Management.Location,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 2|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
+    - Name: _sceneAssetObject
+      Entry: 10
+      Data: 0
+    - Name: _name
+      Entry: 1
+      Data: Hanger
+    - Name: _path
+      Entry: 1
+      Data: Assets/_Project/Scenes/Environments/Hanger.unity
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _weatherScenes
+      Entry: 7
+      Data: 3|System.Collections.Generic.Dictionary`2[[LM.Management.Weather, Assembly-CSharp],[CommonCoreScripts.SceneManagement.SceneRef,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 4|System.Collections.Generic.EnumEqualityComparer`1[[LM.Management.Weather,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 5|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
+    - Name: _sceneAssetObject
+      Entry: 10
+      Data: 1
+    - Name: _name
+      Entry: 1
+      Data: Sunny
+    - Name: _path
+      Entry: 1
+      Data: Assets/_Project/Scenes/Weather/Sunny.unity
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _timeScenes
+      Entry: 7
+      Data: 6|System.Collections.Generic.Dictionary`2[[LM.Management.TimeOfDay, Assembly-CSharp],[CommonCoreScripts.SceneManagement.SceneRef,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 7|System.Collections.Generic.EnumEqualityComparer`1[[LM.Management.TimeOfDay,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 8|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
+    - Name: _sceneAssetObject
+      Entry: 10
+      Data: 2
+    - Name: _name
+      Entry: 1
+      Data: Evening
+    - Name: _path
+      Entry: 1
+      Data: Assets/_Project/Scenes/Time/Evening.unity
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 9|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
+    - Name: _sceneAssetObject
+      Entry: 10
+      Data: 3
+    - Name: _name
+      Entry: 1
+      Data: Morning
+    - Name: _path
+      Entry: 1
+      Data: Assets/_Project/Scenes/Time/Morning.unity
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _moduleScenes
+      Entry: 7
+      Data: 10|System.Collections.Generic.Dictionary`2[[LM.TaskManagement.TaskModule,
+        Assembly-CSharp],[LM.Management.SceneResolver+ModuleScenes, Assembly-CSharp]],
+        mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 11|System.Collections.Generic.ObjectEqualityComparer`1[[LM.TaskManagement.TaskModule,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 12|LM.Management.SceneResolver+ModuleScenes, Assembly-CSharp
+    - Name: scenes
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[CommonCoreScripts.SceneManagement.SceneRef,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 14|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
+    - Name: _sceneAssetObject
+      Entry: 10
+      Data: 5
+    - Name: _name
+      Entry: 1
+      Data: PreFlightBase
+    - Name: _path
+      Entry: 1
+      Data: Assets/_Project/Scenes/Modules/PreFlightBase.unity
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: subModuleSpecificScenes
+      Entry: 7
+      Data: 15|System.Collections.Generic.Dictionary`2[[LM.TaskManagement.TaskSubModule,
+        Assembly-CSharp],[LM.Management.SceneResolver+SubModuleScenes, Assembly-CSharp]],
+        mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 16|System.Collections.Generic.ObjectEqualityComparer`1[[LM.TaskManagement.TaskSubModule,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 6
+    - Name: $v
+      Entry: 7
+      Data: 17|LM.Management.SceneResolver+SubModuleScenes, Assembly-CSharp
+    - Name: scenes
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[CommonCoreScripts.SceneManagement.SceneRef,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 19|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
+    - Name: _sceneAssetObject
+      Entry: 10
+      Data: 7
+    - Name: _name
+      Entry: 1
+      Data: PreFlightQEC3
+    - Name: _path
+      Entry: 1
+      Data: Assets/_Project/Scenes/Modules/PreFlightQEC3.unity
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: taskSpecificScenes
+      Entry: 7
+      Data: 20|System.Collections.Generic.Dictionary`2[[LM.TaskManagement.Task, Assembly-CSharp],[LM.Management.SceneResolver+TaskScenes,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 21|System.Collections.Generic.ObjectEqualityComparer`1[[LM.TaskManagement.Task,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 8
+    - Name: $v
+      Entry: 7
+      Data: 22|LM.Management.SceneResolver+TaskScenes, Assembly-CSharp
+    - Name: scenes
+      Entry: 7
+      Data: 23|System.Collections.Generic.List`1[[CommonCoreScripts.SceneManagement.SceneRef,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 24|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
+    - Name: _sceneAssetObject
+      Entry: 10
+      Data: 9
+    - Name: _name
+      Entry: 1
+      Data: Base
+    - Name: _path
+      Entry: 1
+      Data: Assets/_Project/Scenes/Base.unity
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 10
+    - Name: $v
+      Entry: 7
+      Data: 25|LM.Management.SceneResolver+SubModuleScenes, Assembly-CSharp
+    - Name: scenes
+      Entry: 7
+      Data: 26|System.Collections.Generic.List`1[[CommonCoreScripts.SceneManagement.SceneRef,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 27|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
+    - Name: _sceneAssetObject
+      Entry: 10
+      Data: 11
+    - Name: _name
+      Entry: 1
+      Data: PreFlightExterior
+    - Name: _path
+      Entry: 1
+      Data: Assets/_Project/Scenes/Modules/PreFlightExterior.unity
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: taskSpecificScenes
+      Entry: 7
+      Data: 28|System.Collections.Generic.Dictionary`2[[LM.TaskManagement.Task, Assembly-CSharp],[LM.Management.SceneResolver+TaskScenes,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 29|System.Collections.Generic.ObjectEqualityComparer`1[[LM.TaskManagement.Task,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 12
+    - Name: $v
+      Entry: 7
+      Data: 30|LM.Management.SceneResolver+ModuleScenes, Assembly-CSharp
+    - Name: scenes
+      Entry: 7
+      Data: 31|System.Collections.Generic.List`1[[CommonCoreScripts.SceneManagement.SceneRef,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 32|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
+    - Name: _sceneAssetObject
+      Entry: 10
+      Data: 13
+    - Name: _name
+      Entry: 1
+      Data: PostFlightBase
+    - Name: _path
+      Entry: 1
+      Data: Assets/_Project/Scenes/Modules/PostFlightBase.unity
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: subModuleSpecificScenes
+      Entry: 7
+      Data: 33|System.Collections.Generic.Dictionary`2[[LM.TaskManagement.TaskSubModule,
+        Assembly-CSharp],[LM.Management.SceneResolver+SubModuleScenes, Assembly-CSharp]],
+        mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 34|System.Collections.Generic.ObjectEqualityComparer`1[[LM.TaskManagement.TaskSubModule,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 6
+    - Name: $v
+      Entry: 7
+      Data: 35|LM.Management.SceneResolver+SubModuleScenes, Assembly-CSharp
+    - Name: scenes
+      Entry: 7
+      Data: 36|System.Collections.Generic.List`1[[CommonCoreScripts.SceneManagement.SceneRef,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 37|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
+    - Name: _sceneAssetObject
+      Entry: 10
+      Data: 14
+    - Name: _name
+      Entry: 1
+      Data: PostFlightQEC3
+    - Name: _path
+      Entry: 1
+      Data: Assets/_Project/Scenes/Modules/PostFlightQEC3.unity
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: taskSpecificScenes
+      Entry: 7
+      Data: 38|System.Collections.Generic.Dictionary`2[[LM.TaskManagement.Task, Assembly-CSharp],[LM.Management.SceneResolver+TaskScenes,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 39|System.Collections.Generic.ObjectEqualityComparer`1[[LM.TaskManagement.Task,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _baseScenes:
+  - _sceneAssetObject: {fileID: 102900000, guid: a6105823e9b31474f855fc6b262339b5,
+      type: 3}
+    _name: Base
+    _path: Assets/_Project/Scenes/Base.unity
+  - _sceneAssetObject: {fileID: 102900000, guid: bb2b8eb5f2510c540acf7a2726ac80bf,
+      type: 3}
+    _name: Player
+    _path: Assets/_Project/Scenes/Player.unity
+  _lightingScenesFolder: Assets/_Project/Scenes/Lighting
+--- !u!1 &910723358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 910723359}
+  - component: {fileID: 910723361}
+  - component: {fileID: 910723360}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &910723359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910723358}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -494.497, y: 39.8761, z: -489.71967}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1552921338
+--- !u!114 &910723360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910723358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 711081bfdb7211248b2790032a3d3cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firstLevel: {fileID: 11400000, guid: 9e5ce0898a46429468c3013f4a5411e2, type: 2}
+  _loadingScene:
+    _sceneAssetObject: {fileID: 102900000, guid: 8e1d104f1b36706438e1531fad91c285,
+      type: 3}
+    _name: LoadingScene
+    _path: Assets/_Project/Scenes/LoadingScene.unity
+  _splashScene:
+    _sceneAssetObject: {fileID: 102900000, guid: 5614c0b41e534464b8752650abc4c5b6,
+      type: 3}
+    _name: SplashScene
+    _path: Assets/_Project/Scenes/SplashScene.unity
+  _fadeInDelaySeconds: 0
+--- !u!114 &910723361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910723358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c899b354e845ad24c8eb322360d8ab66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loadLevelsAsync: 1
+  _logEvents: 0
+  _simulateSlowLoadTimes: 0
+  _loadLevel: {fileID: 0}
+--- !u!1 &1538764207
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,89 +896,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1552921340}
-  - component: {fileID: 1552921339}
+  - component: {fileID: 1538764208}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!108 &1552921339
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552921338}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &1552921340
+--- !u!4 &1538764208
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552921338}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_GameObject: {fileID: 1538764207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -494.497, y: 39.8761, z: -489.71967}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 479547739}
+  - {fileID: 757981440}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

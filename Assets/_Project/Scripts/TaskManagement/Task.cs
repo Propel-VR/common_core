@@ -121,6 +121,10 @@ namespace LM.TaskManagement
 
         [SerializeField]
         [TabGroup("General")]
+        TaskModule _module;
+
+        [SerializeField]
+        [TabGroup("General")]
         int _orderWithinSubmodule;
 
         [SerializeField]
@@ -187,6 +191,8 @@ namespace LM.TaskManagement
         public TaskCategory Category => _category;
 
         public TaskSubModule SubModule => _subModule;
+
+        public TaskModule Module => _module;
 
         public int OrderWithinSubmodule => _orderWithinSubmodule;
 

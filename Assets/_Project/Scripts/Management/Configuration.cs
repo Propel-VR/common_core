@@ -38,6 +38,10 @@ namespace LM.Management
 
         public TimeOfDay timeOfDay;
 
+        public TaskModule module;
+
+        public List<TaskSubModule> subModules;
+
         public List<Task> tasks;
     }
 

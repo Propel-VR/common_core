@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using System.Linq;
 
 
-namespace CamhOO
+namespace CommonCoreScripts
 {
 
     /// <summary>
