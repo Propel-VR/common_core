@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.18375662, g: 0.2282639, b: 0.29946053, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,8 +97,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000004, guid: d9bf16a10b6eece4d909932fb5ce824e,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 08b8a87e81370d349bed11919fd3c233,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -167,7 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc1f9f04b68f9e4c83ece3eb7ec42d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tasks: []
 --- !u!1 &757981439
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,8 +239,6 @@ MonoBehaviour:
     - {fileID: 102900000, guid: 93aea20dbd21ef7489116b954eea194a, type: 3}
     - {fileID: 11400000, guid: 6e6a867fbd4e8de4da5bf0f6850cce01, type: 2}
     - {fileID: 102900000, guid: db4f85b5b8906b8439edc8fc75bf440d, type: 3}
-    - {fileID: 11400000, guid: ba505a4d085830647a1b88e0ce2886d6, type: 2}
-    - {fileID: 102900000, guid: a6105823e9b31474f855fc6b262339b5, type: 3}
     - {fileID: 11400000, guid: dde0fe62537c3914ab77d5674eabeab3, type: 2}
     - {fileID: 102900000, guid: 3ab32fb392b073f419ff9c7087860f77, type: 3}
     - {fileID: 11400000, guid: f17e19e820935574f8182402b997fa5a, type: 2}
@@ -541,7 +540,19 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
       Data: 
@@ -550,7 +561,7 @@ MonoBehaviour:
       Data: 8
     - Name: $v
       Entry: 7
-      Data: 22|LM.Management.SceneResolver+TaskScenes, Assembly-CSharp
+      Data: 22|LM.Management.SceneResolver+SubModuleScenes, Assembly-CSharp
     - Name: scenes
       Entry: 7
       Data: 23|System.Collections.Generic.List`1[[CommonCoreScripts.SceneManagement.SceneRef,
@@ -564,61 +575,6 @@ MonoBehaviour:
     - Name: _sceneAssetObject
       Entry: 10
       Data: 9
-    - Name: _name
-      Entry: 1
-      Data: Base
-    - Name: _path
-      Entry: 1
-      Data: Assets/_Project/Scenes/Base.unity
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 10
-    - Name: $v
-      Entry: 7
-      Data: 25|LM.Management.SceneResolver+SubModuleScenes, Assembly-CSharp
-    - Name: scenes
-      Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[CommonCoreScripts.SceneManagement.SceneRef,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 27|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
-    - Name: _sceneAssetObject
-      Entry: 10
-      Data: 11
     - Name: _name
       Entry: 1
       Data: PreFlightExterior
@@ -636,11 +592,11 @@ MonoBehaviour:
       Data: 
     - Name: taskSpecificScenes
       Entry: 7
-      Data: 28|System.Collections.Generic.Dictionary`2[[LM.TaskManagement.Task, Assembly-CSharp],[LM.Management.SceneResolver+TaskScenes,
+      Data: 25|System.Collections.Generic.Dictionary`2[[LM.TaskManagement.Task, Assembly-CSharp],[LM.Management.SceneResolver+TaskScenes,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 29|System.Collections.Generic.ObjectEqualityComparer`1[[LM.TaskManagement.Task,
+      Data: 26|System.Collections.Generic.ObjectEqualityComparer`1[[LM.TaskManagement.Task,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 8
@@ -677,23 +633,23 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 10
-      Data: 12
+      Data: 10
     - Name: $v
       Entry: 7
-      Data: 30|LM.Management.SceneResolver+ModuleScenes, Assembly-CSharp
+      Data: 27|LM.Management.SceneResolver+ModuleScenes, Assembly-CSharp
     - Name: scenes
       Entry: 7
-      Data: 31|System.Collections.Generic.List`1[[CommonCoreScripts.SceneManagement.SceneRef,
+      Data: 28|System.Collections.Generic.List`1[[CommonCoreScripts.SceneManagement.SceneRef,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 32|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
+      Data: 29|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
     - Name: _sceneAssetObject
       Entry: 10
-      Data: 13
+      Data: 11
     - Name: _name
       Entry: 1
       Data: PostFlightBase
@@ -711,12 +667,12 @@ MonoBehaviour:
       Data: 
     - Name: subModuleSpecificScenes
       Entry: 7
-      Data: 33|System.Collections.Generic.Dictionary`2[[LM.TaskManagement.TaskSubModule,
+      Data: 30|System.Collections.Generic.Dictionary`2[[LM.TaskManagement.TaskSubModule,
         Assembly-CSharp],[LM.Management.SceneResolver+SubModuleScenes, Assembly-CSharp]],
         mscorlib
     - Name: comparer
       Entry: 7
-      Data: 34|System.Collections.Generic.ObjectEqualityComparer`1[[LM.TaskManagement.TaskSubModule,
+      Data: 31|System.Collections.Generic.ObjectEqualityComparer`1[[LM.TaskManagement.TaskSubModule,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 8
@@ -732,20 +688,20 @@ MonoBehaviour:
       Data: 6
     - Name: $v
       Entry: 7
-      Data: 35|LM.Management.SceneResolver+SubModuleScenes, Assembly-CSharp
+      Data: 32|LM.Management.SceneResolver+SubModuleScenes, Assembly-CSharp
     - Name: scenes
       Entry: 7
-      Data: 36|System.Collections.Generic.List`1[[CommonCoreScripts.SceneManagement.SceneRef,
+      Data: 33|System.Collections.Generic.List`1[[CommonCoreScripts.SceneManagement.SceneRef,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 37|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
+      Data: 34|CommonCoreScripts.SceneManagement.SceneRef, Assembly-CSharp
     - Name: _sceneAssetObject
       Entry: 10
-      Data: 14
+      Data: 12
     - Name: _name
       Entry: 1
       Data: PostFlightQEC3
@@ -763,11 +719,11 @@ MonoBehaviour:
       Data: 
     - Name: taskSpecificScenes
       Entry: 7
-      Data: 38|System.Collections.Generic.Dictionary`2[[LM.TaskManagement.Task, Assembly-CSharp],[LM.Management.SceneResolver+TaskScenes,
+      Data: 35|System.Collections.Generic.Dictionary`2[[LM.TaskManagement.Task, Assembly-CSharp],[LM.Management.SceneResolver+TaskScenes,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 39|System.Collections.Generic.ObjectEqualityComparer`1[[LM.TaskManagement.Task,
+      Data: 36|System.Collections.Generic.ObjectEqualityComparer`1[[LM.TaskManagement.Task,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 8

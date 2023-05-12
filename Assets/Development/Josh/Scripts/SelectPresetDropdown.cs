@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using LM.Management;
+using System;
 
 
 namespace Dev.Josh
@@ -23,6 +24,12 @@ namespace Dev.Josh
             _dropdown.ClearOptions();
             _dropdown.AddOptions(_presets.ConvertAll(preset => preset.name));
             _dropdown.onValueChanged.AddListener(OnValueChanged);
+        }
+
+
+        private void Start()
+        {
+            Configurator.Instance.LoadPreset(_presets[_dropdown.value]);
         }
 
         private void OnDestroy()

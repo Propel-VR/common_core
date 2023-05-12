@@ -3,7 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LM.TaskManagement;
+using Sirenix.OdinInspector;
 
+#if UNITY_EDITOR
+using UnityEditor.SceneManagement;
+#endif
 
 namespace LM.Management
 {
@@ -16,10 +20,21 @@ namespace LM.Management
 
         #endregion
 
+        #region Serialized and Private Fields
+
         [SerializeField]
         SceneResolver _sceneResolver;
 
+        [Space, ShowInInspector, HideReferenceObjectPicker]
         Configuration _configuration;
+
+        [ShowInInspector, OnValueChanged("LoadPreset")]
+        [Tooltip("Drag a preset into this field to load it into the configuration.")]
+        Preset _loadPreset;
+
+        #endregion
+
+        public Configuration Configuration { get => _configuration; set => _configuration = value; }
 
         #region Monobehaviour Methods
 
@@ -31,24 +46,12 @@ namespace LM.Management
 
         #endregion
 
-        public void SetWeather(Weather weather)
-        {
-            _configuration.weather = weather;
-        }
-
-        public void SetLocation(Location location)
-        {
-            _configuration.location = location;
-        }
-
-        public void SetTimeOfDay(TimeOfDay timeOfDay)
-        {
-            _configuration.timeOfDay = timeOfDay;
-        }
-
         public void LoadPreset(Preset preset)
         {
             _configuration = preset.Configuration;
+
+            // reset the preset to null in case we're loading from the inspector
+            _loadPreset = null;
         }
 
         public void LoadConfiguration()
@@ -60,10 +63,37 @@ namespace LM.Management
 
 
             // begin loading new scenes
-            SceneManager.Instance.LoadLevel(level);
-
-            // hand off tasks to TaskManager
+            SceneManager.Instance.LoadLevel(level, () => TaskManager.Instance.StartChecklist());
         }
+
+        #region Editor
+#if UNITY_EDITOR
+
+        [Button("Load Configuration")]
+        void LoadConfigurationInEditor()
+        {
+            if (_sceneResolver == null)
+            {
+                Debug.LogWarning("[Configurator]: Reference to a SceneResolver is missing but required in order to load a configuration.");
+                return;
+            }
+
+            if (Application.isPlaying)
+            {
+                LoadConfiguration();
+                return;
+            }
+
+            Level level = _sceneResolver.ResolveConfiguration(_configuration);
+
+            EditorSceneManager.OpenScene(level.activeScene.path);
+
+            foreach (SceneRef scene in level.scenes)
+                EditorSceneManager.OpenScene(scene.path, OpenSceneMode.Additive);
+        }
+
+#endif
+        #endregion
     }
 
 }

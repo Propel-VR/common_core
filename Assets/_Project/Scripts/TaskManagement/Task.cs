@@ -223,6 +223,41 @@ namespace LM.TaskManagement
 
         #endregion
 
+        #region Events
+
+        public event Action OnSetup;
+
+        public event Action OnStarted;
+
+        public event Action OnCompleted;
+
+        #endregion
+
+        public void StartTask()
+        {
+            TaskManager.Instance.StartTask(this);
+        }
+
+        public void CompleteTask()
+        {
+            TaskManager.Instance.StartTask(this);
+        }
+
+        public void DoOnSetup()
+        {
+            OnSetup?.Invoke();
+        }
+
+        public void DoOnStarted()
+        {
+            OnStarted?.Invoke();
+        }
+
+        public void DoOnCompleted()
+        {
+            OnCompleted?.Invoke();
+        }
+
     }
 
 }
