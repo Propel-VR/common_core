@@ -63,7 +63,7 @@ namespace LM.Management
 
 
             // begin loading new scenes
-            SceneManager.Instance.LoadLevel(level, () => TaskManager.Instance.StartChecklist());
+            TransitionManager.Instance.TransitionToLevel(level, false);
         }
 
         #region Editor

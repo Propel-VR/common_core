@@ -504,6 +504,7 @@ namespace CommonCoreScripts.SceneManagement
             Application.backgroundLoadingPriority = ThreadPriority.BelowNormal;
 
             _isLevelReady = true;
+            _curProgress = 0.9f;
 
             if (_logEvents)
                 Debug.Log($"[SceneManager]: ...time to load level: '{Time.unscaledTime - loadLevelStartTime}'");

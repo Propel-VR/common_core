@@ -56,12 +56,23 @@ namespace CommonCoreScripts.SceneManagement
         /// swap back to the player camera and fade back in.
         /// </summary>
         /// <param name="level">The new level to load.</param>
-        public void TransitionToLevel(Level level)
+        /// <param name="autoStartLevel">If true, will automatically fade into the new level, otherwise will stay in the loading scene until <see cref="FinishTransition"/> is called.</param>
+        public void TransitionToLevel(Level level, bool autoStartLevel = true)
         {
             if (IsInTransition)
                 return;
 
+            SceneManager.Instance.CanActivateLevel = autoStartLevel;
             StartCoroutine(TransitionToLevelRoutine(level));
+        }
+
+        /// <summary>
+        /// Finish a previously started transition, exiting the loading scene and fading 
+        /// into the new level.
+        /// </summary>
+        public void FinishTransition()
+        {
+            SceneManager.Instance.CanActivateLevel = true;
         }
 
         #region Private Methods
