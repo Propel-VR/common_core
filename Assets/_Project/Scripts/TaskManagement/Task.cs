@@ -113,7 +113,7 @@ namespace LM.TaskManagement
 
         [SerializeField]
         [TabGroup("General")]
-        TaskCategory _category;
+        TaskModule _module;
 
         [SerializeField]
         [TabGroup("General")]
@@ -121,11 +121,11 @@ namespace LM.TaskManagement
 
         [SerializeField]
         [TabGroup("General")]
-        TaskModule _module;
+        int _orderWithinSubmodule;
 
         [SerializeField]
         [TabGroup("General")]
-        int _orderWithinSubmodule;
+        TaskCategory _category;
 
         [SerializeField]
         [TabGroup("General")]
@@ -188,13 +188,13 @@ namespace LM.TaskManagement
 
         public string Description => _description;
 
-        public TaskCategory Category => _category;
+        public TaskModule Module => _module;
 
         public TaskSubModule SubModule => _subModule;
 
-        public TaskModule Module => _module;
-
         public int OrderWithinSubmodule => _orderWithinSubmodule;
+
+        public TaskCategory Category => _category;
 
         public TaskCheckType CheckType => _checkType;
 
